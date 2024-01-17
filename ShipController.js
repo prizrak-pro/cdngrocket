@@ -76,4 +76,4 @@ export default class Ship {
 	{
 		this.#_fuel -= this.#_consumptionEngine * this.#_powerShunting;
 	}
-}
+}git commit -m "$"
