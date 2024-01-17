@@ -48,7 +48,7 @@ export class UISelectCargo {
 
     createUISelectCargoLevel()
     {
-        listPriceSelectCargoByLevel[this.#selectLevel].forEach(function(element, index) {
+        this.#listPriceSelectCargoByLevel[this.#selectLevel].forEach(function(element, index) {
             this.#createUISelectCargoElement(element[0],element[1],index);
             
         });
