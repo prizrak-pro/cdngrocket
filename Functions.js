@@ -1,9 +1,13 @@
+
+
 export default class Functions {
-	static serializeObject(obj) {
-        return JSON.parse(JSON.stringify(rook));
+
+    static classMap = {
+        PlayerConfig: PlayerConfig,
     }
 
-    static deserializeObjectPlaer = (obj) => {
-        return new Rook(obj);
+    static deserializeObjectPlaer = (string) => {
+        let obj = JSON.parse(string)
+        return new classMap[obj.className](JSON.parse(obj));
     }
 }

@@ -23,13 +23,12 @@ export default class PlayerConfig {
 		}
 	}
 
-	serializeObject() {
-		console.log(this);
-        return JSON.stringify(this);
-    }
-
-    static deserializeObjectPlaer(obj)
-	{
-        return new this(obj);
+	stringSerialize() {
+		obj = {};
+		obj.maxOpenLevel = this.#maxOpenLevel
+		obj.selectLevel = this.#selectLevel
+		obj.ship = this.#ship
+		obj.className = this.constructor.name;
+        return JSON.stringify(obj);
     }
 }
