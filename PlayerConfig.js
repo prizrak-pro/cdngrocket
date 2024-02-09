@@ -31,4 +31,9 @@ export default class PlayerConfig {
 		obj.className = this.constructor.name;
         return JSON.stringify(obj);
     }
+
+	static deserializeObject(string) {
+        let obj = JSON.parse(string)
+        return new PlayerConfig(obj);
+    }
 }
