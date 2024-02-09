@@ -1,4 +1,4 @@
-class Deserialize {
+export default class Deserialize {
 
     static classMap = {
         'PlayerConfig': PlayerConfig
