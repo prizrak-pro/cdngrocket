@@ -24,7 +24,7 @@ export default class PlayerConfig {
 	}
 
 	stringSerialize() {
-		obj = {};
+		let obj = {};
 		obj.maxOpenLevel = this.#maxOpenLevel
 		obj.selectLevel = this.#selectLevel
 		obj.ship = this.#ship
