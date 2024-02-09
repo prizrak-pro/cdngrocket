@@ -23,7 +23,8 @@ export default class PlayerConfig {
 		}
 	}
 
-	serializeObject(obj) {
+	serializeObject() {
+		console.log(this);
         return JSON.parse(JSON.stringify(this));
     }
 
