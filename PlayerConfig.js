@@ -25,7 +25,7 @@ export default class PlayerConfig {
 
 	serializeObject() {
 		console.log(this);
-        return JSON.parse(JSON.stringify(this));
+        return JSON.stringify(this);
     }
 
     static deserializeObjectPlaer(obj)
