@@ -56,6 +56,8 @@ export class UISelectCargo {
     #createUISelectCargoElement(weight, price, i=0)
     {
         let is_hide_element=false
+        console.log(weight);
+        console.log(this.playerConfig.currentShip.maxMassCargo);
         if(weight>this.playerConfig.currentShip.maxMassCargo)
             is_hide_element=true
 
