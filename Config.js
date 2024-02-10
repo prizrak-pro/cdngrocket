@@ -23,10 +23,10 @@ export class PlayerConfig {
 	}
 
 	get maxOpenLevel() {
-		return this.maxOpenLevel;
+		return this.#maxOpenLevel;
 	}
 	set maxOpenLevel(_maxOpenLevel) {
-		this.maxOpenLevel = _maxOpenLevel;
+		this.#maxOpenLevel = _maxOpenLevel;
 	}
 
 	stringSerialize() {
