@@ -84,7 +84,8 @@ export class UISelectCargo {
         if(is_hide_element) {
             create_element.animationFrame = 2;
         }else{
-            this.#select_point.animationFrame = 0;
+            if(this.#select_point)
+                this.#select_point.animationFrame = 0;
             create_element.animationFrame = 1;
             this.#select_point = create_element;
         }
