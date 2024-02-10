@@ -37,5 +37,5 @@ export class PlayerConfig {
 }
 
 export class GameConfig {
-	static #maxLevel = 12;
+	static maxLevel = 12;
 }
