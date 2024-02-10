@@ -1,20 +1,8 @@
 export class UISelectCargo {
 
     //level parametrs
-    #listPriceSelectCargoByLevel = {
-        1:[[800,5000],[400,1000],[200,500]],
-        2:[[800,5000],[400,1000],[200,500]],
-        3:[[800,5000],[400,1000],[200,500]],
-        4:[[800,5000],[400,1000],[200,500]],
-        5:[[800,5000],[400,1000],[200,500]],
-        6:[[800,5000],[400,1000],[200,500]],
-        7:[[800,5000],[400,1000],[200,500]],
-        8:[[800,5000],[400,1000],[200,500]],
-        9:[[800,5000],[400,1000],[200,500]],
-        10:[[800,5000],[400,1000],[200,500]],
-        11:[[800,5000],[400,1000],[200,500]],
-        12:[[800,5000],[400,1000],[201,501]]
-    }
+    #listPriceSelectCargoByLevel;
+
 
     #UISelectCargoFirstPosition = {
         oj1:[139,59],
@@ -45,6 +33,13 @@ export class UISelectCargo {
     {
         this.#selectLevel = value;
     }
+
+    get listPriceSelectCargoByLevel() {
+		return this.#listPriceSelectCargoByLevel;
+	}
+	set listPriceSelectCargoByLevel(_listPriceSelectCargoByLevel) {
+		this.#listPriceSelectCargoByLevel = _listPriceSelectCargoByLevel;
+	}
 
     createUISelectCargoLevel()
     {
