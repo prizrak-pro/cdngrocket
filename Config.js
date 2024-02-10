@@ -60,9 +60,9 @@ export class PlayerConfig {
 	set currentShip(_currentShip) {
 		this.#currentShip = _currentShip;
 	}
-	creatShip(classShip){
-
-		this.#currentShip = _currentShip;
+	creatShip(classShip)
+	{
+		this.#currentShip = new classShip(this.#ship);
 	}
 
 	stringSerialize() {
