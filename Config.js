@@ -14,6 +14,10 @@ export class PlayerConfig {
 		levelStrength: 0
 	};
 
+	#currentShip;
+
+	#_gameConfig;
+
 	constructor(obj)
 	{
 		if(obj){
@@ -21,6 +25,12 @@ export class PlayerConfig {
 			this.#money = obj.money;
 			this.#ship = obj.ship
 		}
+		this.#_gameConfig = GameConfig;
+	}
+
+	get GameConfig()
+	{
+		return this.#_gameConfig;
 	}
 
 	get selectLevel() {
@@ -42,6 +52,17 @@ export class PlayerConfig {
 	}
 	set money(_money) {
 		this.money =+ _money;
+	}
+
+	get currentShip() {
+		return this.#currentShip;
+	}
+	set currentShip(_currentShip) {
+		this.#currentShip = _currentShip;
+	}
+	creatShip(classShip){
+
+		this.#currentShip = _currentShip;
 	}
 
 	stringSerialize() {

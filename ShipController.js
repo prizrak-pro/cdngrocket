@@ -1,6 +1,6 @@
 export default class Ship {
 
-	#_levelShop = 0;
+	#_levelShip = 0;
 	#_coefMainEngine = [1.02, 1.04, 1.06, 1.1, 1.02, 1.002];
 	#_maxMass=[200, 400, 600, 800, 1000, 1200];
 
@@ -25,21 +25,26 @@ export default class Ship {
 	#_powerMain;
 	#_powerShunting;
 
-	constructor(fuel, massCargo=200, level=0) {
-		this.#_fuel = fuel;
-		this.#_levelShop = level;
-		this.#_massCargo = massCargo;
+	constructor(shop_config) {
+		this.#_levelShip = shop_config.levelMass;
+		this.#_levelFuel = shop_config.levelFuel;
+		this.#_levelShuntingEngine = shop_config.levelManeuver;
+		this.#_levelStrength = shop_config.levelStrength;
+
+		// this.#_fuel = fuel;
+		// this.#_levelShip = level;
+		// this.#_massCargo = massCargo;
 		
 		this.#_powerMain = this.calcPowerMain();
 		this.#_powerShunting = this.calcPowerShunting();
 	}
 	
 	calcPowerMain(){
-		return Math.round( (this.#_massShip+this.#_maxMass[this.#_levelShop]+this.#_fuel/100)/100*this.#_coefMainPower*this.#_coefMainEngine[this.#_levelShop] );
+		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_fuel/100)/100*this.#_coefMainPower*this.#_coefMainEngine[this.#_levelShip] );
 	}
 	
 	calcPowerShunting(){
-		return Math.round( (this.#_massShip+this.#_maxMass[this.#_levelShop]+this.#_fuel/100)/100*this.#_coefShuntingPower*this.#_coefShuntingEngine[this.#_levelShuntingEngine] );
+		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_fuel/100)/100*this.#_coefShuntingPower*this.#_coefShuntingEngine[this.#_levelShuntingEngine] );
 	}
 	
 	get powerMain(){
@@ -51,39 +56,36 @@ export default class Ship {
 	}
 	
 	get massShip(){
-		return this.#_massShip+this.#_massCargo+(this.#_fuel/100);
+		return this.#_massShip[this.#_levelStrength]+this.#_massCargo+(this.#_fuel/100);
 	}
 	
 	get massCargo(){
 		this.#_massCargo;
 	}
 	
-	set massCargo(value){
-		this.#_massCargo = value;
-	}
-
 	get maxMassCargo(){
-		this.#_massCargo;
+		this.#_maxMass[this.#_levelShip];
 	}
 
 	get fuel(){
 		return  Math.round(this.#_fuel);
 	}
 	
+	get maxFuel(){
+		this.#_maxFuel[this.#_levelFuel];
+	}
+	
+	set massCargo(value){
+		if (value>this.maxMassCargo)
+		this.#_massCargo = this.maxMassCargo;
+	}
+
 	set fuel(value){
 		this.#_fuel += value;
 		if (this.#_fuel > this.maxFuel)
 			this.#_fuel = this.maxFuel;
 	}
 
-	get maxFuel(){
-		this.#_maxFuel[this.#_levelFuel];
-	}
-
-	set level(value){
-		this.#_levelShop = value;
-	}
-	
 	fullFuelUp()
 	{
 		this.#_fuel = this.maxFuel;

@@ -20,9 +20,13 @@ export class UISelectCargo {
     #selectLevel
 
     globalRuntime
+    playerConfig
+    GameConfig
 
-    constructor(runtime) {
+    constructor(runtime, playerConfig, GameConfig) {
         this.globalRuntime = runtime
+        this.playerConfig = playerConfig
+        this.GameConfig = playerConfig.GameConfig
     }
 
     get Level()
@@ -44,13 +48,17 @@ export class UISelectCargo {
 
     createUISelectCargoLevel()
     {
-        this.#listPriceSelectCargoByLevel[this.#selectLevel].forEach(function(element, index) {
+        this.GameConfig.cargoLevel[this.playerConfig.selectLevel].forEach(function(element, index) {
             this.#createUISelectCargoElement(element[0],element[1],index);
         }, this);
     }
 
-    #createUISelectCargoElement(weight, price, i=0, is_hide_element=false)
+    #createUISelectCargoElement(weight, price, i=0)
     {
+        let is_hide_element=false
+        if(weight>this.playerConfig.ship.maxMassCargo)
+            is_hide_element=true
+
         let create_element;
         let position_oj = this.#setPositionSelectCargoFirstPosition('oj1',i);
         create_element = this.globalRuntime.objects.displayCargoWeight.createInstance(0,position_oj.x,position_oj.y)
