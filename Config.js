@@ -1,6 +1,4 @@
-
-
-export default class PlayerConfig {
+export class PlayerConfig {
 	#maxOpenLevel = 1;
 
 	#selectLevel = -1;
@@ -36,4 +34,8 @@ export default class PlayerConfig {
         let obj = JSON.parse(string)
         return new PlayerConfig(obj);
     }
+}
+
+export class GameConfig {
+	static #maxLevel = 12;
 }
