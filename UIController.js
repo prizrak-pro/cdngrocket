@@ -23,7 +23,7 @@ export class UISelectCargo {
     playerConfig
     GameConfig
 
-    constructor(runtime, playerConfig, GameConfig) {
+    constructor(runtime, playerConfig) {
         this.globalRuntime = runtime
         this.playerConfig = playerConfig
         this.GameConfig = playerConfig.GameConfig
@@ -57,7 +57,7 @@ export class UISelectCargo {
     {
         let is_hide_element=false
         console.log(weight);
-        console.log(this.playerConfig.currentShip.maxMassCargo);
+        console.log(this.playerConfig.currentShip);
         if(weight>this.playerConfig.currentShip.maxMassCargo)
             is_hide_element=true
 
