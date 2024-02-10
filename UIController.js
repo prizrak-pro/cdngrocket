@@ -15,6 +15,7 @@ export class UISelectCargo {
     #UISelectCargoOffset = 116;
     #colorTextYelloHide = [0.7490196078431373, 0.7490196078431373, 0.2509803921568627];
     #colorTextYello = [1,1,0];
+    #select_point;
 
     #selectLevel
 
@@ -82,7 +83,11 @@ export class UISelectCargo {
         create_element.animationFrame = 0;
         if(is_hide_element) {
             create_element.animationFrame = 2;
-        }	
+        }else{
+            this.#select_point.animationFrame = 0;
+            create_element.animationFrame = 1;
+            this.#select_point = create_element;
+        }
     }
 
     #setPositionSelectCargoFirstPosition(element, offset=0)

@@ -3,6 +3,7 @@ export class PlayerConfig {
 
 	#selectLevel = -1;	
 
+	#money = 0;
 
 	#ship = {
 		type: 1,
@@ -17,9 +18,16 @@ export class PlayerConfig {
 	{
 		if(obj){
 			this.#maxOpenLevel = obj.maxOpenLevel;
-			this.#selectLevel = obj.selectLevel;
+			this.#money = obj.money;
 			this.#ship = obj.ship
 		}
+	}
+
+	get selectLevel() {
+		return this.#selectLevel;
+	}
+	set selectLevel(_selectLevel) {
+		this.#selectLevel = _selectLevel;
 	}
 
 	get maxOpenLevel() {
@@ -29,10 +37,17 @@ export class PlayerConfig {
 		this.#maxOpenLevel = _maxOpenLevel;
 	}
 
+	get money() {
+		return this.money;
+	}
+	set money(_money) {
+		this.money =+ _money;
+	}
+
 	stringSerialize() {
 		let obj = {};
 		obj.maxOpenLevel = this.#maxOpenLevel
-		obj.selectLevel = this.#selectLevel
+		obj.money = this.#money
 		obj.ship = this.#ship
 		obj.className = this.constructor.name;
         return JSON.stringify(obj);
