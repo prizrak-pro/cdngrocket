@@ -1,7 +1,8 @@
 export class PlayerConfig {
 	#maxOpenLevel = 1;
 
-	#selectLevel = -1;
+	#selectLevel = -1;	
+
 
 	#ship = {
 		type: 1,
@@ -19,6 +20,13 @@ export class PlayerConfig {
 			this.#selectLevel = obj.selectLevel;
 			this.#ship = obj.ship
 		}
+	}
+
+	get maxOpenLevel() {
+		return this.maxOpenLevel;
+	}
+	set maxOpenLevel(_maxOpenLevel) {
+		this.maxOpenLevel = _maxOpenLevel;
 	}
 
 	stringSerialize() {
