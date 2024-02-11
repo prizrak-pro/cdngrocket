@@ -13,7 +13,7 @@ export default class Ship {
 
 	#_coefMainPower = 30;
 	#_coefShuntingPower = 4;
-	#_consumptionEngine = 0.0028;
+	#_consumptionEngine = 0.0022;
 
 	#_levelStrength = 0;
 	#_massShip = [800, 900, 1000, 1100, 1200, 1400];
@@ -56,7 +56,7 @@ export default class Ship {
 	}
 	
 	get massShip(){
-		return this.#_massShip[this.#_levelStrength]+this.#_massCargo+(this.#_fuel/100);
+		return this.#_massShip[this.#_levelStrength]+this.#_massCargo+Math.round(this.#_fuel/100);
 	}
 	
 	get massCargo(){
