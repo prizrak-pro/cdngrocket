@@ -60,7 +60,7 @@ export default class Ship {
 	}
 	
 	get massCargo(){
-		this.#_massCargo;
+		return this.#_massCargo;
 	}
 	
 	get maxMassCargo(){
@@ -72,7 +72,7 @@ export default class Ship {
 	}
 	
 	get maxFuel(){
-		this.#_maxFuel[this.#_levelFuel];
+		return this.#_maxFuel[this.#_levelFuel];
 	}
 	
 	set massCargo(value){
