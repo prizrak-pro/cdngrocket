@@ -11,7 +11,7 @@ export default class Ship {
 	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
 	#_fuel = 0;
 
-	#_coefMainPower = 30;
+	#_coefMainPower = 40;
 	#_coefShuntingPower = 4;
 	#_consumptionEngine = 0.0002;
 
