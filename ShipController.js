@@ -16,7 +16,7 @@ export default class Ship {
 	#_consumptionEngine = 0.0002;
 
 	#_levelStrength = 0;
-	#_massShip = [800, 900, 1000, 1100, 1200, 1400];
+	#_massShip = [200, 900, 1000, 1100, 1200, 1400];
 	#_strengthShip = [100, 200, 300, 400, 600, 800];
 	
 	#_massCargo=0;
