@@ -35,8 +35,8 @@ export default class Ship {
 		// this.#_levelShip = level;
 		// this.#_massCargo = massCargo;
 		
-		this.#_powerMain = this.calcPowerMain();
-		this.#_powerShunting = this.calcPowerShunting();
+		this.#_powerMain = 400;//this.calcPowerMain();
+		this.#_powerShunting = 200;//this.calcPowerShunting();
 	}
 	
 	calcPowerMain(){
