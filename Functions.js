@@ -6,7 +6,7 @@ export default class Functions {
         PlayerConfig: PlayerConfig,
     }
 
-    static deserializeObjectPlaer = (string) => {
+    static deserializeObjectPlayer = (string) => {
         let obj = JSON.parse(string)
         return new classMap[obj.className](JSON.parse(obj));
     }
