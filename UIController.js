@@ -21,12 +21,14 @@ export class UISelectCargo {
 
     globalRuntime
     playerConfig
+    levelConfig
     GameConfig
 
-    constructor(runtime, playerConfig) {
+    constructor(runtime, playerConfig, levelConfig) {
         this.globalRuntime = runtime
         this.playerConfig = playerConfig
         this.GameConfig = playerConfig.GameConfig
+        this.levelConfig = levelConfig
     }
 
     get Level()
@@ -48,7 +50,7 @@ export class UISelectCargo {
 
     createUISelectCargoLevel()
     {
-        this.GameConfig.cargoLevel[this.playerConfig.selectLevel].forEach(function(element, index) {
+        this.GameConfig.cargoLevel[this.levelConfig.level].forEach(function(element, index) {
             this.#createUISelectCargoElement(element[0],element[1],index);
         }, this);
     }
