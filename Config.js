@@ -118,7 +118,7 @@ export class LevelConfig {
 	}
 
 	addBonus(type) {
-		listBonus[type]++;
+		this.listBonus[type]++;
 	}
 
 	static cargoLevel = {
