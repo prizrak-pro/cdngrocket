@@ -101,9 +101,25 @@ export class GameConfig {
 
 export class LevelConfig {
 
-	
+	level = -1;
+	countCargo = -1;
+	numberMassCargo = -1;
+	listBonus = {
+		1:0,
+		2:0,
+		3:0,
+		4:0,
+		5:0
+	};
 
-	static maxLevel = 12;
+	constructor(level)
+	{
+		this.level = level;
+	}
+
+	addBonus(type) {
+		listBonus[type]++;
+	}
 
 	static cargoLevel = {
 		1:[[600,400],[400,200],[200,100]],
