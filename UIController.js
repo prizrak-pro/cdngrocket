@@ -67,6 +67,8 @@ export class UISelectCargo {
         text_element.text = 1000;
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,213,245);
         buttom_element.instVars.Type = 3;
+        buttom_element.setAnimation('en', from = "beginning")
+        buttom_element.animationFrame = 4
     }
 
     #createUISelectCargoElement(weight, price, i=0)
