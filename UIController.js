@@ -55,14 +55,17 @@ export class UISelectCargo {
         }, this);
     }
 
-    createdUIModalTransfMoney()
+    createdUIModalTransfMoney(value)
     {
         let overflow_element = this.globalRuntime.objects.ModalWindowOverflow.createInstance(0,180,320);
         overflow_element.width = 360;
         overflow_element.height = 640;
         let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
         title_element.text = "вы получили!!!";
-
+        let money_element = this.globalRuntime.objects.Money.createInstance(0,238,252);
+        let text_element = this.globalRuntime.objects.Money.createInstance(0,213,245);
+        text_element.text = 1000;
+        
     }
 
     #createUISelectCargoElement(weight, price, i=0)
