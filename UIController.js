@@ -22,12 +22,12 @@ export class UISelectCargo {
     globalRuntime
     playerConfig
     levelConfig
-    GameConfig
+    gameConfig
 
     constructor(runtime, playerConfig, levelConfig) {
         this.globalRuntime = runtime
         this.playerConfig = playerConfig
-        this.GameConfig = playerConfig.GameConfig
+        this.gameConfig = playerConfig.GameConfig
         this.levelConfig = levelConfig
     }
 
@@ -50,9 +50,17 @@ export class UISelectCargo {
 
     createUISelectCargoLevel()
     {
-        this.GameConfig.cargoLevel[this.levelConfig.level].forEach(function(element, index) {
+        this.gameConfig.cargoLevel[this.levelConfig.level].forEach(function(element, index) {
             this.#createUISelectCargoElement(element[0],element[1],index);
         }, this);
+    }
+
+    createdUIModalTransfMoney()
+    {
+        let overflow_element = this.globalRuntime.objects.ModalWindowOverflow.createInstance(0,180,320);
+        let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
+        title_element.text = "вы получили!!!";
+
     }
 
     #createUISelectCargoElement(weight, price, i=0)
