@@ -58,6 +58,8 @@ export class UISelectCargo {
     createdUIModalTransfMoney()
     {
         let overflow_element = this.globalRuntime.objects.ModalWindowOverflow.createInstance(0,180,320);
+        overflow_element.weight = 360;
+        overflow_element.height = 640;
         let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
         title_element.text = "вы получили!!!";
 
