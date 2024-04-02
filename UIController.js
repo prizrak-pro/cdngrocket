@@ -62,9 +62,11 @@ export class UISelectCargo {
         overflow_element.height = 640;
         let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
         title_element.text = "вы получили!!!";
-        let money_element = this.globalRuntime.objects.Money.createInstance(0,238,252);
-        let text_element = this.globalRuntime.objects.UIText.createInstance(0,213,245);
+        
+        let text_element = this.globalRuntime.objects.UIText.createInstance(0,180,245);
         text_element.text = '1000';
+
+        let money_element = this.globalRuntime.objects.Money.createInstance(0,210,252);
         
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,350);
         buttom_element.instVars.Type = 3;
