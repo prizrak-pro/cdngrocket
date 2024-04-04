@@ -1,4 +1,4 @@
-export default class InputController {
+export default class SpriteController {
 
     #_gameController;
 
