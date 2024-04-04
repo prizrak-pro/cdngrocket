@@ -6,9 +6,9 @@ export default class GameController {
 
 
 
-    constructor(runtime, ship) {
+    constructor(runtime, playerConfig) {
 		this.#_runtime = runtime;
-        this.#_ship = ship;
+        this.#_playerConfig = playerConfig;
 	}
 
     get runtime() {
