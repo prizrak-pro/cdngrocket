@@ -113,7 +113,7 @@ export class UISelectCargo {
         position_oj = this.#setPositionSelectCargoFirstPosition('oj5',i);
         create_element = this.globalRuntime.objects.btnSelectCargoWeight.createInstance(0,position_oj.x,position_oj.y)
         create_element.instVars.IndexElement = i;
-        levelConfig.numberMassCargo = i;
+        this.gameController.levelConfig.numberMassCargo = i;
         create_element.animationFrame = 0;
         if(is_hide_element) {
             create_element.animationFrame = 2;
