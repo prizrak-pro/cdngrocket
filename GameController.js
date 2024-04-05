@@ -3,6 +3,8 @@ export default class GameController {
     #_runtime;
     #_ship;
     #_playerConfig;
+    #_levelConfig;
+
 
 
 
@@ -30,6 +32,13 @@ export default class GameController {
 	}
 	set playerConfig(_playerConfig) {
 		this.#_playerConfig = _playerConfig;
+	}
+
+    get levelConfig() {
+		return this.#_levelConfig;
+	}
+	set levelConfig(_levelConfig) {
+		this.#_levelConfig = _levelConfig;
 	}
 
     
