@@ -24,11 +24,14 @@ export class UISelectCargo {
     levelConfig
     gameConfig
 
-    constructor(runtime, playerConfig, levelConfig) {
-        this.globalRuntime = runtime
-        this.playerConfig = playerConfig
-        this.gameConfig = playerConfig.GameConfig
-        this.levelConfig = levelConfig
+    gameController
+
+    constructor(gameController) {
+        this.globalRuntime = gameController.runtime
+        this.playerConfig = gameController.playerConfig
+        this.gameConfig = gameController.playerConfig.GameConfig
+        this.levelConfig = gameController.levelConfig
+        this.gameConfig = gameController;
     }
 
     get Level()
@@ -110,6 +113,7 @@ export class UISelectCargo {
         position_oj = this.#setPositionSelectCargoFirstPosition('oj5',i);
         create_element = this.globalRuntime.objects.btnSelectCargoWeight.createInstance(0,position_oj.x,position_oj.y)
         create_element.instVars.IndexElement = i;
+        levelConfig.numberMassCargo = i;
         create_element.animationFrame = 0;
         if(is_hide_element) {
             create_element.animationFrame = 2;
