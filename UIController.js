@@ -30,6 +30,7 @@ export class UISelectCargo {
         this.globalRuntime = gameController.runtime
         this.playerConfig = gameController.playerConfig
         this.gameConfig = gameController.playerConfig.GameConfig
+        console.log(gameController.levelConfig);
         this.levelConfig = gameController.levelConfig
         this.gameConfig = gameController;
     }
