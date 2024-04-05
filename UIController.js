@@ -30,9 +30,8 @@ export class UISelectCargo {
         this.globalRuntime = gameController.runtime
         this.playerConfig = gameController.playerConfig
         this.gameConfig = gameController.playerConfig.GameConfig
-        console.log(gameController.levelConfig);
         this.levelConfig = gameController.levelConfig
-        this.gameConfig = gameController;
+        this.gameController = gameController;
     }
 
     get Level()
@@ -54,8 +53,6 @@ export class UISelectCargo {
 
     createUISelectCargoLevel()
     {
-        console.log(this.levelConfig);
-        console.log(this.gameConfig);
         this.gameConfig.cargoLevel[this.levelConfig.level].forEach(function(element, index) {
             this.#createUISelectCargoElement(element[0],element[1],index);
         }, this);
