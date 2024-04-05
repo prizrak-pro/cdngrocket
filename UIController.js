@@ -53,6 +53,7 @@ export class UISelectCargo {
 
     createUISelectCargoLevel()
     {
+        connsole.log(this.levelConfig.level)
         this.gameConfig.cargoLevel[this.levelConfig.level].forEach(function(element, index) {
             this.#createUISelectCargoElement(element[0],element[1],index);
         }, this);
