@@ -57,7 +57,7 @@ export default class Ship {
 	}
 	
 	get massShip(){
-		return this.#_massShip[this.#_levelStrength]+this.#_massCargo+Math.round(this.#_fuel/100);
+		return this.#_massShip[this.#_levelStrength]*this.#_massCoefficient+this.#_massCargo*this.#_massCoefficient+Math.round(this.#_fuel/100)*this.#_massCoefficient;
 	}
 	
 	get massCargo(){
