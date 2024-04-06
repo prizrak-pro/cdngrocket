@@ -37,7 +37,7 @@ export default class Ship {
 		// this.#_massCargo = massCargo;
 		
 		this.#_powerMain = this.calcPowerMain();
-		this.#_powerShunting = 200;//this.calcPowerShunting();
+		this.#_powerShunting = this.calcPowerShunting();
 	}
 	
 	calcPowerMain(){
