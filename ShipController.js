@@ -41,7 +41,7 @@ export default class Ship {
 	}
 	
 	calcPowerMain(){
-		return Math.round( ((this.#_massShip[this.#_levelStrength]*this.#_massCoefficient)+(this.#_maxMass[this.#_levelShip]*this.#_massCoefficient)+((this.#_fuel/100)*this.#_massCoefficient))/100 * this.#_coefMainPower * this.#_coefMainEngine[this.#_levelShip] );
+		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+(this.#_fuel/100))/100 * this.#_coefMainPower * this.#_coefMainEngine[this.#_levelShip] );
 	}
 	
 	calcPowerShunting(){
