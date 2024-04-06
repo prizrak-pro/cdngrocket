@@ -16,11 +16,12 @@ export default class Ship {
 	#_consumptionEngine = 0.0002;
 
 	#_levelStrength = 0;
-	#_massShip = [200, 900, 1000, 1100, 1200, 1400];
+	#_massShip = [700, 900, 1000, 1100, 1200, 1400];
 	#_strengthShip = [100, 200, 300, 400, 600, 800];
 	
 	#_massCargo=0;
-	
+
+	#_massCoefficient = 0.54;
 
 	#_powerMain;
 	#_powerShunting;
@@ -35,12 +36,12 @@ export default class Ship {
 		// this.#_levelShip = level;
 		// this.#_massCargo = massCargo;
 		
-		this.#_powerMain = 400;//this.calcPowerMain();
+		this.#_powerMain = this.calcPowerMain();
 		this.#_powerShunting = 200;//this.calcPowerShunting();
 	}
 	
 	calcPowerMain(){
-		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_fuel/100)/100*this.#_coefMainPower*this.#_coefMainEngine[this.#_levelShip] );
+		return Math.round( ((this.#_massShip[this.#_levelStrength]*this.#_massCoefficient)+(this.#_maxMass[this.#_levelShip]*this.#_massCoefficient)+((this.#_fuel/100)*this.#_massCoefficient))/100 * this.#_coefMainPower * this.#_coefMainEngine[this.#_levelShip] );
 	}
 	
 	calcPowerShunting(){
