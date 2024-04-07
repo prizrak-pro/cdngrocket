@@ -5,7 +5,7 @@ export default class Ship {
 	#_maxMass=[200, 400, 600, 800, 1000, 1200];
 
 	#_levelShuntingEngine = 0;
-	#_coefShuntingEngine = [2.4, 1.4, 1.6, 1.8, 2, 2.4];
+	#_coefShuntingEngine = [2.8, 1.4, 1.6, 1.8, 2, 2.4];
 
 	#_levelFuel = 0;
 	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
