@@ -21,7 +21,7 @@ export default class Ship {
 	
 	#_massCargo=0;
 
-	#_massCoefficient = 0.54;
+	#_massCoefficient = 0.5;
 
 	#_powerMain;
 	#_powerShunting;
