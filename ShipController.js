@@ -2,7 +2,7 @@ export default class Ship {
 
 	#_levelShip = 0;
 	#_coefMainEngine = [1.02, 1.04, 1.06, 1.1, 1.02, 1.002];
-	#_maxMass=[1200, 400, 600, 800, 1000, 1200];
+	#_maxMass=[200, 400, 600, 800, 1000, 1200];
 
 	#_levelShuntingEngine = 0;
 	#_coefShuntingEngine = [1.06, 1.1, 1.4, 1.8, 2, 2.4];
@@ -11,8 +11,8 @@ export default class Ship {
 	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
 	#_fuel = 0;
 
-	#_coefMainPower = 56;
-	#_coefShuntingPower = 8;
+	#_coefMainPower = 52;
+	#_coefShuntingPower = 10;
 	#_consumptionEngine = 0.0002;
 
 	#_levelStrength = 0;
@@ -21,7 +21,7 @@ export default class Ship {
 	
 	#_massCargo=0;
 
-	#_massCoefficient = 0.46;
+	#_massCoefficient = 0.48;
 
 	#_powerMain;
 	#_powerShunting;
