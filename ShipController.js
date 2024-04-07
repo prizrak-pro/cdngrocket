@@ -12,7 +12,7 @@ export default class Ship {
 	#_fuel = 0;
 
 	#_coefMainPower = 52;
-	#_coefShuntingPower = 10;
+	#_coefShuntingPower = 12;
 	#_consumptionEngine = 0.0002;
 
 	#_levelStrength = 0;
@@ -21,7 +21,7 @@ export default class Ship {
 	
 	#_massCargo=0;
 
-	#_massCoefficient = 0.48;
+	#_massCoefficient = 0.46;
 
 	#_powerMain;
 	#_powerShunting;
