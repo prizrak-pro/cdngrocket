@@ -41,11 +41,11 @@ export default class Ship {
 	}
 	
 	calcPowerMain(){
-		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+(this.#_fuel/100))/100 * this.#_coefMainPower * this.#_coefMainEngine[this.#_levelShip] );
+		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+(this.#_maxFuel[this.#_levelFuel]/100))/100 * this.#_coefMainPower * this.#_coefMainEngine[this.#_levelShip] );
 	}
 	
 	calcPowerShunting(){
-		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_fuel/100)/100*this.#_coefShuntingPower*this.#_coefShuntingEngine[this.#_levelShuntingEngine] );
+		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_maxFuel[this.#_levelFuel]/100)/100*this.#_coefShuntingPower*this.#_coefShuntingEngine[this.#_levelShuntingEngine] );
 	}
 	
 	get powerMain(){
