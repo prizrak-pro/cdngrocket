@@ -8,7 +8,7 @@ export default class Ship {
 	#_coefShuntingEngine = [1.08, 1.1, 1.4, 1.8, 2, 2.4];
 
 	#_levelFuel = 0;
-	#_maxFuel = [10000, 2000, 4000, 6000, 8000, 12000];
+	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
 	#_fuel = 0;
 
 	#_coefMainPower = 48;
