@@ -78,7 +78,9 @@ export default class Ship {
 	
 	set massCargo(value){
 		if (value>this.maxMassCargo)
-		this.#_massCargo = this.maxMassCargo;
+			this.#_massCargo = this.maxMassCargo;
+
+		this.#_massCargo = value;
 	}
 
 	set fuel(value){
