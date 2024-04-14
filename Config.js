@@ -121,6 +121,6 @@ export class LevelConfig {
 	}
 
 	sumBonus(type) {
-		return this.listBonus[type]*listBonusPrice[type];
+		return this.listBonus[type]*this.listBonusPrice[type];
 	}
 }
