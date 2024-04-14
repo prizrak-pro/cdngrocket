@@ -103,6 +103,14 @@ export class LevelConfig {
 		5:0
 	};
 
+	listBonusPrice = {
+		1:10,
+		2:20,
+		3:40,
+		4:60,
+		5:100
+	};
+
 	constructor(level)
 	{
 		this.level = level;
@@ -110,5 +118,9 @@ export class LevelConfig {
 
 	addBonus(type) {
 		this.listBonus[type]++;
+	}
+
+	sumBonus(type) {
+		return this.listBonus[type]*listBonusPrice[type];
 	}
 }
