@@ -1,8 +1,13 @@
 export default class Ship {
 
+	#_coefMainPower = 48;
+	#_coefShuntingPower = 12;
+	#_consumptionEngine = 0.0002;
+
 	#_levelShip = 0;
 	#_coefMainEngine = [1.8, 1.7, 1.6, 1.5, 1.4, 1.2];
 	#_maxMass=[200, 400, 600, 800, 1000, 1200];
+	#_massCargo=0;
 
 	#_levelShuntingEngine = 0;
 	#_coefShuntingEngine = [1.2, 1.4, 1.6, 2, 2.4, 2.8];
@@ -11,15 +16,10 @@ export default class Ship {
 	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
 	#_fuel = 0;
 
-	#_coefMainPower = 48;
-	#_coefShuntingPower = 12;
-	#_consumptionEngine = 0.0002;
-
 	#_levelStrength = 0;
 	#_massShip = [700, 900, 1000, 1100, 1200, 1400];
-	#_strengthShip = [100, 200, 300, 400, 600, 800];
-	
-	#_massCargo=0;
+	#_maxStrength = [150, 200, 250, 300, 350, 400];
+	#_strength = 0
 
 	#_massCoefficient = 0.46;
 
@@ -87,6 +87,19 @@ export default class Ship {
 		this.#_fuel += value;
 		if (this.#_fuel > this.maxFuel)
 			this.#_fuel = this.maxFuel;
+	}
+
+	get strength(){
+		return this.#_strength;
+	}
+
+	repairFull(){
+		this.#_strength = this.#_maxStrength[this.#_levelStrength];
+	}
+
+	damage(value){
+		this.#_strength -= value;
+		return (this.#_strength > 0)?true:false;
 	}
 
 	fullFuelUp()
