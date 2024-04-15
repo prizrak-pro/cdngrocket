@@ -78,8 +78,8 @@ export class UISelectCargo {
         // this.globalRuntime.objects.Money.createInstance(0,210,292);
 
         const text_element = this.globalRuntime.objects.UITextTitle.createInstance(0, 0, 290);
-        text_element.text = String(1000);
-        this.globalRuntime.objects.Money.createInstance(0, 180+(String(1000).length*10), 313);
+        text_element.text = String(8888);
+        this.globalRuntime.objects.Money.createInstance(0, 180+(String(8888).length*12), 313);
         
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,380);
         buttom_element.instVars.Type = 3;
