@@ -81,12 +81,13 @@ export class UISelectCargo {
         text_element.text = String(value);
 
         let offset = 0;
-        if(String(value).length<4)
-        {
+        if (String(value).length == 1)
+            offset = 25
+        else if(String(value).length<4)
             offset = (String(value).length*16)
-        } else {
+        else 
             offset = (String(value).length*12)
-        }
+        
         this.globalRuntime.objects.Money.createInstance(0, 180+offset, 313);
         
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,380);
