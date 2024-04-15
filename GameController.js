@@ -29,6 +29,26 @@ export default class GameController {
         }
     }
 
+    mouseDownSelectLevel(e)
+    {
+        const currentLayer = this.runtime.layout.getLayer(0);
+        const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
+        const sprites = this.runtime.objects.btnSelectLevel.getAllInstances();
+        const buttonUI = this.runtime.objects.MainButtonUI.getAllInstances();
+        
+        if(buttonUI[0].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+            console.log("Update Ship");
+        }
+        
+        for(var i = 0; i < sprites.length; i++) {
+            if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                this.levelConfig = new LevelConfig(sprites[i].instVars.level);
+                if (this.levelConfig.level <= this.playerConfig.maxOpenLevel)
+                    this.runtime.goToLayout("SelectCargoLevel")	
+            }
+        }
+    }
+
     mouseDownSelectCargoLevel(e)
     {
         const currentLayer = this.runtime.layout.getLayer(0);
