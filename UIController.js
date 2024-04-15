@@ -81,9 +81,9 @@ export class UISelectCargo {
         text_element.text = String(value);
 
         let offset = 0;
-        if(String(value).length<3)
+        if(String(value).length<4)
         {
-            offset = (String(value).length*15)
+            offset = (String(value).length*18)
         } else {
             offset = (String(value).length*12)
         }
