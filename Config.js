@@ -95,6 +95,9 @@ export class LevelConfig {
 	level = -1;
 	countCargo = -1;
 	numberMassCargo = -1;
+
+	#total = 0;
+
 	listBonus = {
 		1:0,
 		2:0,
@@ -121,6 +124,13 @@ export class LevelConfig {
 	}
 
 	sumBonus(type) {
-		return this.listBonus[type]*this.listBonusPrice[type];
+		 let s = this.listBonus[type]*this.listBonusPrice[type];
+		 this.#total += s;
+		 return s;
+	}
+
+	getTotal()
+	{
+		return this.#total;
 	}
 }
