@@ -42,7 +42,7 @@ export default class GameController {
         
         for(var i = 0; i < sprites.length; i++) {
             if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
-                this.levelConfig = new LevelConfig(sprites[i].instVars.level);
+                this.levelConfig = new this.LevelConfig(sprites[i].instVars.level);
                 if (this.levelConfig.level <= this.playerConfig.maxOpenLevel)
                     this.runtime.goToLayout("SelectCargoLevel")	
             }
