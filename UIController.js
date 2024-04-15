@@ -72,10 +72,10 @@ export class UISelectCargo {
         // let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
         // title_element.text = "вы получили!!!";
         
-        let text_element = this.globalRuntime.objects.UIText.createInstance(0,180,245);
+        let text_element = this.globalRuntime.objects.UIText.createInstance(0,180,285);
         text_element.text = '1000';
 
-        let money_element = this.globalRuntime.objects.Money.createInstance(0,210,252);
+        this.globalRuntime.objects.Money.createInstance(0,210,292);
         
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,350);
         buttom_element.instVars.Type = 3;
