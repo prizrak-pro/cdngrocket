@@ -1,3 +1,5 @@
+import {LevelConfig} from "https://cdn.jsdelivr.net/gh/prizrak-pro/cdngrocket@f5bee4d6ea7628ef624c35935d2615a6649e5208/Config.min.js";
+
 export default class GameController {
 
     runtime;
