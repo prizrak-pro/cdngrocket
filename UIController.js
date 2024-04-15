@@ -67,6 +67,7 @@ export class UISelectCargo {
         let image_element = this.globalRuntime.objects.UIImages.createInstance(0,180,180);
         image_element.width = 180;
         image_element.height = 87.414;
+        image_element.animationFrame = 1
         // let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
         // title_element.text = "вы получили!!!";
         
