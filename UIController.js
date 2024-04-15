@@ -77,11 +77,11 @@ export class UISelectCargo {
         // text_element.text = '1000';
         // this.globalRuntime.objects.Money.createInstance(0,210,292);
 
-        const l3 = globalRuntime.objects.UITextTitle.createInstance(0, 0, 300);
-        l3.width = 180;
-        l3.horizontalAlign = "right";
-        l3.text = String(1000);
-        globalRuntime.objects.Money.createInstance(0, 205, 323);
+        const text_element = this.globalRuntime.objects.UITextTitle.createInstance(0, 0, 300);
+        text_element.width = 180;
+        text_element.horizontalAlign = "right";
+        text_element.text = String(1000);
+        this.globalRuntime.objects.Money.createInstance(0, 205, 323);
         
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,380);
         buttom_element.instVars.Type = 3;
