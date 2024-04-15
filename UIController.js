@@ -60,7 +60,6 @@ export class UISelectCargo {
 
     createdUIModalTransfMoney(value)
     {
-        value = 20;
         let overflow_element = this.globalRuntime.objects.ModalWindowOverflow.createInstance(0,180,320);
         overflow_element.width = 360;
         overflow_element.height = 640;
