@@ -60,6 +60,7 @@ export class UISelectCargo {
 
     createdUIModalTransfMoney(value)
     {
+        value = 20;
         let overflow_element = this.globalRuntime.objects.ModalWindowOverflow.createInstance(0,180,320);
         overflow_element.width = 360;
         overflow_element.height = 640;
@@ -79,7 +80,15 @@ export class UISelectCargo {
 
         const text_element = this.globalRuntime.objects.UITextTitle.createInstance(0, 0, 290);
         text_element.text = String(value);
-        this.globalRuntime.objects.Money.createInstance(0, 180+(String(value).length*15), 313);
+
+        let offset = 0;
+        if(String(value).length<3)
+        {
+            offset = (String(value).length*15)
+        } else {
+            offset = (String(value).length*12)
+        }
+        this.globalRuntime.objects.Money.createInstance(0, 180+offset, 313);
         
         let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,380);
         buttom_element.instVars.Type = 3;
