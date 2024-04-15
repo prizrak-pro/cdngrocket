@@ -72,15 +72,22 @@ export class UISelectCargo {
         // let title_element = this.globalRuntime.objects.UITextTitle.createInstance(0,0,180);
         // title_element.text = "вы получили!!!";
         
-        let text_element = this.globalRuntime.objects.UIText.createInstance(0,180,285);
-        text_element.text = '1000';
+        // let text_element = this.globalRuntime.objects.UIText.createInstance(0,180,285);
+        // text_element.sizePt = 22;
+        // text_element.text = '1000';
+        // this.globalRuntime.objects.Money.createInstance(0,210,292);
 
-        this.globalRuntime.objects.Money.createInstance(0,210,292);
+        const l3 = globalRuntime.objects.UITextTitle.createInstance(0, 0, 300);
+        l3.width = 180;
+        l3.horizontalAlign = "right";
+        l3.text = String(1000);
+        globalRuntime.objects.Money.createInstance(0, 205, 323);
         
-        let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,350);
+        let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,380);
         buttom_element.instVars.Type = 3;
         buttom_element.setAnimation('en')
-        buttom_element.animationFrame = 4
+        buttom_element.animationFrame = 4;
+        
     }
 
     #createUISelectCargoElement(weight, price, i=0)
