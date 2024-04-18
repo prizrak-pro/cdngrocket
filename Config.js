@@ -39,10 +39,10 @@ export class PlayerConfig {
 	}
 
 	get money() {
-		return this.money;
+		return this.#money;
 	}
 	set money(_money) {
-		this.money =+ _money;
+		this.#money =+ _money;
 	}
 
 	get currentShip() {
