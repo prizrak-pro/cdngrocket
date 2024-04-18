@@ -29,7 +29,7 @@ export class UISelectCargo {
     constructor(gameController) {
         this.globalRuntime = gameController.runtime
         this.playerConfig = gameController.playerConfig
-        this.gameConfig = gameController.playerConfig.GameConfig
+        this.gameConfig = gameController.GameConfig
         this.levelConfig = gameController.levelConfig
         this.gameController = gameController;
     }
