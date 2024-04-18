@@ -42,7 +42,7 @@ export class PlayerConfig {
 		return this.#money;
 	}
 	set money(_money) {
-		this.#money =+ _money;
+		this.#money += _money;
 	}
 
 	get currentShip() {
