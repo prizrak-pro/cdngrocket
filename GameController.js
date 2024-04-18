@@ -5,11 +5,13 @@ export default class GameController {
     playerConfig;
     levelConfig;
 
+    GameConfig;
     LevelConfig;
 
 
-    constructor(LevelConfig) {
+    constructor(LevelConfig, GameConfig) {
         this.LevelConfig = LevelConfig;
+        this.GameConfig = GameConfig;
 	}
 
     get ship() {
