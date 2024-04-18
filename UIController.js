@@ -86,7 +86,7 @@ export class UISelectCargo {
         if (String(value).length == 1)
             offset = 27
         else if(String(value).length<3)
-            offset = (String(value).length*16)
+            offset = (String(value).length*17)
         else if(String(value).length<4)
             offset = (String(value).length*15)
         else 
