@@ -52,7 +52,7 @@ export class PlayerConfig {
 
 	get Language()
 	{
-		return GameConfig.listLanguage[this.playerConfig.currentLanguage];
+		return GameConfig.listLanguage[this.#_currentLanguage];
 	}
 
 	set Language(value)
