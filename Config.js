@@ -88,6 +88,14 @@ export class GameConfig {
         11:[[1200,5000],[1000,1000],[800,500]],
         12:[[1200,5000],[1000,1000],[800,501]]
 	}
+
+	static listBonusPrice = {
+		1:10,
+		2:20,
+		3:40,
+		4:60,
+		5:100
+	};
 }
 
 export class LevelConfig {
@@ -106,13 +114,7 @@ export class LevelConfig {
 		5:0
 	};
 
-	listBonusPrice = {
-		1:10,
-		2:20,
-		3:40,
-		4:60,
-		5:100
-	};
+
 
 	constructor(level)
 	{
@@ -124,7 +126,7 @@ export class LevelConfig {
 	}
 
 	sumBonus(type) {
-		 let s = this.listBonus[type]*this.listBonusPrice[type];
+		 let s = this.listBonus[type]*GameConfig.listBonusPrice[type];
 		 this.#total += s;
 		 return s;
 	}
@@ -132,5 +134,10 @@ export class LevelConfig {
 	getTotal()
 	{
 		return this.#total;
+	}
+
+	getMonetCargi()
+	{
+		return GameConfig.cargoLevel[this.level][0];
 	}
 }
