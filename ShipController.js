@@ -104,7 +104,7 @@ export default class Ship {
 
 	fullFuelUp()
 	{
-		this.#_fuel = this.maxFuel[this.#_levelFuel];
+		this.#_fuel = this.maxFuel;
 	}
 
 	fuelConsumptionMainEngine()
