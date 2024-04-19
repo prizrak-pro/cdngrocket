@@ -106,7 +106,7 @@ export default class GameController {
 
     get Language()
 	{
-		this.playerConfig.Language;
+		return this.playerConfig.Language;
 	}
 
 }
