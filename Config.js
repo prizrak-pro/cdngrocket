@@ -50,12 +50,12 @@ export class PlayerConfig {
 		this.#currentShip = new classShip(this.#ship);
 	}
 
-	get Language()
+	get currentLanguage()
 	{
-		GameConfig.listLanguage[this.#_currentLanguage]
+		this.#_currentLanguage;
 	}
 
-	set Language(value)
+	set currentLanguage(value)
 	{
 		switch(value)
 		{
