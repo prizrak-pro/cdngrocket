@@ -133,8 +133,6 @@ export class LevelConfig {
 		5:0
 	};
 
-
-
 	constructor(level)
 	{
 		this.level = level;
@@ -155,7 +153,7 @@ export class LevelConfig {
 		return this.#total;
 	}
 
-	getMonetCargi()
+	getMoneyCargo()
 	{
 		return GameConfig.cargoLevel[this.level][0];
 	}

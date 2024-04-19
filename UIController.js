@@ -135,7 +135,7 @@ export class UISelectCargo {
                     element.text = String(cargoPrice);
                     break;
                 case 399:
-                    element.text = GameConfig.listBonusPrice['1'] + " x";
+                    element.text = gameConfig.listBonusPrice['1'] + " x";
                     break;
                 case 403:
                     element.text = "x " + gameController.levelConfig.listBonus['1'];
@@ -144,7 +144,7 @@ export class UISelectCargo {
                     element.text = String(gameController.levelConfig.sumBonus(1));
                     break;
                 case 314:
-                    element.text =  GameConfig.listBonusPrice['2'] + " x";
+                    element.text =  gameConfig.listBonusPrice['2'] + " x";
                     break;
                 case 362:
                     element.text = "x " + (gameController.levelConfig.listBonus['2']);
@@ -153,7 +153,7 @@ export class UISelectCargo {
                     element.text = String(gameController.levelConfig.sumBonus(2));
                     break;
                 case 404:
-                    element.text =  GameConfig.listBonusPrice['3'] + " x";
+                    element.text =  gameConfig.listBonusPrice['3'] + " x";
                     break;
                 case 405:
                     element.text = "x " + (gameController.levelConfig.listBonus['3']);
@@ -162,7 +162,7 @@ export class UISelectCargo {
                     element.text = String(gameController.levelConfig.sumBonus(3));
                     break;
                 case 413:
-                    element.text =  GameConfig.listBonusPrice['4'] + " x";
+                    element.text =  gameConfig.listBonusPrice['4'] + " x";
                     break;
                 case 414:
                     element.text = "x " + (gameController.levelConfig.listBonus['4']);
