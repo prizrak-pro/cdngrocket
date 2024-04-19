@@ -101,6 +101,84 @@ export class UISelectCargo {
         
     }
 
+    createEndTotal(statLevel)
+    {
+        let cargoCount = 0;
+        let cargoPrice = 0;
+        if(statLevel == "endSuccess")
+        {
+            const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
+            title.text = "successful mission"
+            cargoCount = 1;
+            cargoPrice = 200;
+        } else {
+            const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
+            title.text = "mission failed"
+
+        }
+        
+        let i = 0;
+        let total = 0;
+        let totalObj;
+        this.globalRuntime.objects.UIText.getAllInstances().forEach(function(element) {
+            console.log(cargoPrice);
+            i++;
+            switch(element.uid)
+            {
+                case 411:
+                    element.text = cargoCount + " x";
+                    break;
+                case 401:
+                    element.text = "x " + cargoPrice;
+                    break;
+                case 402:
+                    element.text = String(cargoPrice);
+                    break;
+                case 399:
+                    element.text = GameConfig.listBonusPrice['1'] + " x";
+                    break;
+                case 403:
+                    element.text = "x " + gameController.levelConfig.listBonus['1'];
+                    break;
+                case 381:
+                    element.text = String(gameController.levelConfig.sumBonus(1));
+                    break;
+                case 314:
+                    element.text =  GameConfig.listBonusPrice['2'] + " x";
+                    break;
+                case 362:
+                    element.text = "x " + (gameController.levelConfig.listBonus['2']);
+                    break;
+                case 398:
+                    element.text = String(gameController.levelConfig.sumBonus(2));
+                    break;
+                case 404:
+                    element.text =  GameConfig.listBonusPrice['3'] + " x";
+                    break;
+                case 405:
+                    element.text = "x " + (gameController.levelConfig.listBonus['3']);
+                    break;
+                case 410:
+                    element.text = String(gameController.levelConfig.sumBonus(3));
+                    break;
+                case 413:
+                    element.text =  GameConfig.listBonusPrice['4'] + " x";
+                    break;
+                case 414:
+                    element.text = "x " + (gameController.levelConfig.listBonus['4']);
+                    break;
+                case 415:
+                    element.text = String(gameController.levelConfig.sumBonus(4));
+                    break;
+
+                case 406:
+                    totalObj = element;
+
+            }
+        });
+        totalObj.text = String(gameController.levelConfig.getTotal());
+    }
+
     #createUISelectCargoElement(weight, price, i=0)
     {
         let is_hide_element=false
@@ -153,5 +231,7 @@ export class UISelectCargo {
     {
         return {x:this.#UISelectCargoFirstPosition[element][0],y:this.#UISelectCargoFirstPosition[element][1]+this.#UISelectCargoOffset*offset};
     }
+
+
 
 }

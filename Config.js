@@ -14,7 +14,7 @@ export class PlayerConfig {
 
 	#currentShip;
 
-	#_gameConfig;
+	#_currentLanguage = 0;
 
 	constructor(obj)
 	{
@@ -23,12 +23,6 @@ export class PlayerConfig {
 			this.#money = obj.money;
 			this.#ship = obj.ship
 		}
-		this.#_gameConfig = GameConfig;
-	}
-
-	get GameConfig()
-	{
-		return this.#_gameConfig;
 	}
 
 	get maxOpenLevel() {
@@ -56,6 +50,26 @@ export class PlayerConfig {
 		this.#currentShip = new classShip(this.#ship);
 	}
 
+	get Language()
+	{
+		GameConfig.listLanguage[this.#_currentLanguage]
+	}
+
+	set Language(value)
+	{
+		switch(value)
+		{
+			case 'en':
+				this.#_currentLanguage = 0;
+				break;
+			case 'ru':
+				this.#_currentLanguage = 1;
+				break;
+			default:
+				this.#_currentLanguage = 0;
+		}
+	}
+
 	stringSerialize() {
 		let obj = {};
 		obj.maxOpenLevel = this.#maxOpenLevel
@@ -69,6 +83,9 @@ export class PlayerConfig {
         let obj = JSON.parse(string)
         return new PlayerConfig(obj);
     }
+
+	
+
 }
 
 export class GameConfig {
@@ -96,6 +113,8 @@ export class GameConfig {
 		4:60,
 		5:100
 	};
+
+	static listLanguage = ['en', 'ru'];
 }
 
 export class LevelConfig {
