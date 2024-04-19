@@ -93,14 +93,17 @@ export default class GameController {
                 const but1 = this.runtime.objects.MainButtonUI.getFirstInstance();
                 but1.setAnimation(this.Language)
                 but1.animationFrame = 0;
+                break;
             case 2:
                 const but2 = this.runtime.objects.MainButtonUI.getFirstInstance();
                 but2.setAnimation(this.Language)
                 but2.animationFrame = 1;
+                break;
             case 3:
                 const but3 = this.runtime.objects.MainButtonUI.getFirstInstance();
                 but3.setAnimation(this.Language)
                 but3.animationFrame = 2;
+                break;
         }
     }
 
