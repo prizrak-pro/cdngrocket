@@ -135,40 +135,40 @@ export class UISelectCargo {
                     element.text = String(cargoPrice);
                     break;
                 case 399:
-                    element.text = gameConfig.listBonusPrice['1'] + " x";
+                    element.text = this.gameConfig.listBonusPrice['1'] + " x";
                     break;
                 case 403:
-                    element.text = "x " + gameController.levelConfig.listBonus['1'];
+                    element.text = "x " + this.gameController.levelConfig.listBonus['1'];
                     break;
                 case 381:
-                    element.text = String(gameController.levelConfig.sumBonus(1));
+                    element.text = String(this.gameController.levelConfig.sumBonus(1));
                     break;
                 case 314:
-                    element.text =  gameConfig.listBonusPrice['2'] + " x";
+                    element.text =  this.gameConfig.listBonusPrice['2'] + " x";
                     break;
                 case 362:
-                    element.text = "x " + (gameController.levelConfig.listBonus['2']);
+                    element.text = "x " + (this.gameController.levelConfig.listBonus['2']);
                     break;
                 case 398:
-                    element.text = String(gameController.levelConfig.sumBonus(2));
+                    element.text = String(this.gameController.levelConfig.sumBonus(2));
                     break;
                 case 404:
-                    element.text =  gameConfig.listBonusPrice['3'] + " x";
+                    element.text =  this.gameConfig.listBonusPrice['3'] + " x";
                     break;
                 case 405:
-                    element.text = "x " + (gameController.levelConfig.listBonus['3']);
+                    element.text = "x " + (this.gameController.levelConfig.listBonus['3']);
                     break;
                 case 410:
-                    element.text = String(gameController.levelConfig.sumBonus(3));
+                    element.text = String(this.gameController.levelConfig.sumBonus(3));
                     break;
                 case 413:
-                    element.text =  gameConfig.listBonusPrice['4'] + " x";
+                    element.text =  this.gameConfig.listBonusPrice['4'] + " x";
                     break;
                 case 414:
-                    element.text = "x " + (gameController.levelConfig.listBonus['4']);
+                    element.text = "x " + (this.gameController.levelConfig.listBonus['4']);
                     break;
                 case 415:
-                    element.text = String(gameController.levelConfig.sumBonus(4));
+                    element.text = String(this.gameController.levelConfig.sumBonus(4));
                     break;
 
                 case 406:
@@ -176,7 +176,7 @@ export class UISelectCargo {
 
             }
         });
-        totalObj.text = String(gameController.levelConfig.getTotal());
+        totalObj.text = String(this.gameController.levelConfig.getTotal());
     }
 
     #createUISelectCargoElement(weight, price, i=0)
