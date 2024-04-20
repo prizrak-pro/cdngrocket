@@ -101,6 +101,7 @@ export class UISelectCargo {
         
     }
 
+    /* и показ и начисление*/ 
     createEndTotal()
     {
         let cargoCount = 0;
