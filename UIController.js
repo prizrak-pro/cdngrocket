@@ -122,7 +122,6 @@ export class UISelectCargo {
         let totalObj;
         let self = this;
         this.globalRuntime.objects.UIText.getAllInstances().forEach(function(element) {
-            console.log(this.gameConfig);
             i++;
             switch(element.uid)
             {
