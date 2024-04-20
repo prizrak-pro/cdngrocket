@@ -101,12 +101,11 @@ export class UISelectCargo {
         
     }
 
-    createEndTotal(statLevel)
+    createEndTotal()
     {
         let cargoCount = 0;
         let cargoPrice = 0;
-        console.log(statLevel);
-        if(statLevel == "endSuccess")
+        if(this.levelConfig.levelStatus == "end_success")
         {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
             title.text = "successful mission"

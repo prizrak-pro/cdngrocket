@@ -133,6 +133,8 @@ export class LevelConfig {
 		5:0
 	};
 
+	levelStatus = 'in_process'
+
 	constructor(level)
 	{
 		this.level = level;
