@@ -105,6 +105,7 @@ export class UISelectCargo {
     {
         let cargoCount = 0;
         let cargoPrice = 0;
+        console.log(statLevel);
         if(statLevel == "endSuccess")
         {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
