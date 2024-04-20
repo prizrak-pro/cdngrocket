@@ -110,7 +110,7 @@ export class UISelectCargo {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
             title.text = "successful mission"
             cargoCount = 1;
-            cargoPrice = 200;
+            cargoPrice = this.gameController.levelConfig.getMoneyCargo();
         } else {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
             title.text = "mission failed"
@@ -132,7 +132,7 @@ export class UISelectCargo {
                     element.text = "x " + cargoPrice;
                     break;
                 case 402:
-                    element.text = String(cargoPrice);
+                    element.text = String(self.gameController.levelConfig.sumCargo(cargoPrice));
                     break;
                 case 399:
                     element.text = self.gameConfig.listBonusPrice['1'] + " x";

@@ -150,6 +150,11 @@ export class LevelConfig {
 		 return s;
 	}
 
+	sumCargo(sum) {
+		this.#total += sum;
+		return s;
+   }
+
 	getTotal()
 	{
 		return this.#total;

@@ -110,7 +110,7 @@ export default class GameController {
                     if(element.uid == 422)
                     {
                         element.setAnimation(self.Language)
-                        element.animationFrame = 2;
+                        element.animationFrame = 3;
                     }
                 });
                 break;
