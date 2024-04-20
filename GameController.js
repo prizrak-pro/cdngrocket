@@ -105,7 +105,7 @@ export default class GameController {
                 but3.animationFrame = 2;
                 break;
             case 4:
-                this.globalRuntime.objects.MainButtonUI.getAllInstances().forEach(function(element) {
+                this.runtime.objects.MainButtonUI.getAllInstances().forEach(function(element) {
                     if(element.uid == 422)
                     {
                         element.setAnimation(this.Language)
