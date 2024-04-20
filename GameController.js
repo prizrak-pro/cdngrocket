@@ -87,28 +87,29 @@ export default class GameController {
 
     setUIButton(level)
     {
+        console.log(this.Language);
         switch(level)
         {
             case 1:
                 const but1 = this.runtime.objects.MainButtonUI.getFirstInstance();
-                but1.setAnimation(this.Language)
+                but1.setAnimation(this.playerConfig.Language)
                 but1.animationFrame = 0;
                 break;
             case 2:
                 const but2 = this.runtime.objects.MainButtonUI.getFirstInstance();
-                but2.setAnimation(this.Language)
+                but2.setAnimation(this.playerConfig.Language)
                 but2.animationFrame = 1;
                 break;
             case 3:
                 const but3 = this.runtime.objects.MainButtonUI.getFirstInstance();
-                but3.setAnimation(this.Language)
+                but3.setAnimation(this.playerConfig.Language)
                 but3.animationFrame = 2;
                 break;
             case 4:
                 this.runtime.objects.MainButtonUI.getAllInstances().forEach(function(element) {
                     if(element.uid == 422)
                     {
-                        element.setAnimation(this.Language)
+                        element.setAnimation(this.playerConfig.Language)
                         element.animationFrame = 2;
                     }
                 });
