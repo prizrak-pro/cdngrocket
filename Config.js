@@ -152,7 +152,7 @@ export class LevelConfig {
 
 	sumCargo(sum) {
 		this.#total += sum;
-		return s;
+		return sum;
    }
 
 	getTotal()
