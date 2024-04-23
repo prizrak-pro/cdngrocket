@@ -30,7 +30,7 @@ export class YandexSDC {
 			console.log(ysdk)
 			window.ysdk = ysdk;
 			yaInitFlag = true;
-            this.constructor.controlActivation = false;
+            this.constructor.controlActivation = true;
 		});
     }
 
@@ -47,7 +47,7 @@ export class YandexSDC {
                 }
             }, 1);
           });
-        await promise;
+        let t = await promise;
     }
 
 
