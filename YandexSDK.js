@@ -5,7 +5,6 @@ export class YandexSDC {
 
     constructor(control = false)
     {
-        console.log(this.#controlActivation);
         if (control)
         {
             this.#addYandexSDK();
@@ -23,25 +22,18 @@ export class YandexSDC {
     }
 
     #initSDK() {
-        console.log(window.ysdk);
         YaGames
 		.init()
 		.then(ysdk => {
 			console.log('Yandex SDK initialized');
-			console.log(ysdk)
 			window.ysdk = ysdk;
-            console.log(window.ysdk);
 		});
-        console.log(window.ysdk);
     }
 
     async #expectationInitSDK()
     {
-        let self = this;
-        console.log(this.#controlActivation)
         setTimeout(function f() {
-            //console.log(self.#controlActivation)
-            if(self.#controlActivation) {
+            if(typeof window.ysdk !== "undefined") {
                 console.log("EDNTIME");
                 resolve(1)
             } else {
