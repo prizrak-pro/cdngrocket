@@ -37,9 +37,10 @@ export class YandexSDC {
 
     async #expectationInitSDK()
     {
+        let self = this;
         setTimeout(function f() {
-            console.log(this.constructor.controlActivation)
-            if(this.constructor.controlActivation) {
+            console.log(self.constructor.controlActivation)
+            if(self.constructor.controlActivation) {
                 console.log("EDNTIME");
                 resolve(1)
             } else {
