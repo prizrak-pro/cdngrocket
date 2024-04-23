@@ -55,7 +55,7 @@ export class YandexSDC {
                 }
             }, 1);
           });
-        let t = await this.#expectationInitSDK();
+        let t = await promise;
         console.log('controlInitSDK');
     }
 
