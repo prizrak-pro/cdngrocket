@@ -5,6 +5,7 @@ export class YandexSDC {
 
     constructor(control = false)
     {
+        console.log(this.constructor.controlActivation);
         if (control)
         {
             this.#addYandexSDK();
