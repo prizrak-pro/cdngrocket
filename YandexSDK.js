@@ -19,22 +19,20 @@ export class YandexSDC {
         s.src = 'https://yandex.ru/games/sdk/v2';
         s.async = false;
         t.parentNode.insertBefore(s, t);
-       	s.onload = this.#initSDK(this);
+       	s.onload = this.#initSDK;
     }
 
-    #initSDK(self) {
+    #initSDK() {
+        console.log(window.ysdk);
         YaGames
 		.init()
 		.then(ysdk => {
 			console.log('Yandex SDK initialized');
 			console.log(ysdk)
 			window.ysdk = ysdk;
-			//yaInitFlag = true;
-            console.log(this);
-            console.log(self);
-            self.#controlActivation = true;
-            console.log(self.#controlActivation)
+            console.log(window.ysdk);
 		});
+        console.log(window.ysdk);
     }
 
     async #expectationInitSDK()
