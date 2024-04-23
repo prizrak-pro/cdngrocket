@@ -38,7 +38,18 @@ export class YandexSDC {
 
     async #expectationInitSDK()
     {
-        setTimeout(function f() {
+        // setTimeout(function f() {
+        //     if(typeof window.ysdk !== "undefined") {
+        //         console.log("EDNTIME");
+                
+        //     } else {
+        //         console.log("STARTTIME");
+        //         setTimeout(f, 1); 
+        //     }
+        // }, 1);
+
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(function f() {
             if(typeof window.ysdk !== "undefined") {
                 console.log("EDNTIME");
                 resolve(1)
@@ -47,6 +58,11 @@ export class YandexSDC {
                 setTimeout(f, 1); 
             }
         }, 1);
+          });
+            
+          let result = await promise;
+          resolve(1)
+
     }
 
     // async #controlInitSDK(){
