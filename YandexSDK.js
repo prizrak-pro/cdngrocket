@@ -24,6 +24,7 @@ export class YandexSDC {
 
     #initSDK() {
         let self = this;
+        console.log(this);
         YaGames
 		.init()
 		.then(ysdk => {
@@ -31,6 +32,8 @@ export class YandexSDC {
 			console.log(ysdk)
 			window.ysdk = ysdk;
 			//yaInitFlag = true;
+            console.log(this);
+            console.log(self);
             self.#controlActivation = true;
             console.log(self.#controlActivation)
 		});
