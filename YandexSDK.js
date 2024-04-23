@@ -38,30 +38,30 @@ export class YandexSDC {
 
     async #expectationInitSDK()
     {
-        await setTimeout(function f() {
-            if(typeof window.ysdk !== "undefined") {
-                console.log("EDNTIME");
-                return 1;
-            } else {
-                console.log("STARTTIME");
-                setTimeout(f, 1); 
-            }
-        }, 1);
-
-        // let promise = new Promise((resolve, reject) => {
-        //     setTimeout(function f() {
+        // await setTimeout(function f() {
         //     if(typeof window.ysdk !== "undefined") {
         //         console.log("EDNTIME");
-        //         resolve(1)
+        //         return 1;
         //     } else {
         //         console.log("STARTTIME");
         //         setTimeout(f, 1); 
         //     }
         // }, 1);
-        //   });
+
+        await new Promise((resolve, reject) => {
+            setTimeout(function f() {
+                if(typeof window.ysdk !== "undefined") {
+                    console.log("EDNTIME");
+                    resolve(1)
+                } else {
+                    console.log("STARTTIME");
+                    setTimeout(f, 1); 
+                }
+            }, 1);
+        });
             
-        //   await promise;
-        //   return 1;
+          //await promise;
+          return 1;
 
     }
 
