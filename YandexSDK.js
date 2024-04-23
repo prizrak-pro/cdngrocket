@@ -13,9 +13,8 @@ export class YandexSDC {
         {
             this.#addYandexSDK(); 
             await this.#expectationInitSDK()
-            this.#controlActivation = true;
         }
-        return this.#controlActivation;
+        return this.isActivation;
     }
 
     get isActivation()
