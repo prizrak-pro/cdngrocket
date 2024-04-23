@@ -23,7 +23,6 @@ export class YandexSDC {
     }
 
     #initSDK(self) {
-        console.log(self);
         YaGames
 		.init()
 		.then(ysdk => {
