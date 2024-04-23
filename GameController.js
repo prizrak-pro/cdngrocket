@@ -4,6 +4,7 @@ export default class GameController {
     #_ship;
     playerConfig;
     levelConfig;
+    yandexSDC;
 
     GameConfig;
     LevelConfig;
