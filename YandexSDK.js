@@ -18,7 +18,7 @@ export class YandexSDC {
         return this.#controlActivation;
     }
 
-    get Activation()
+    get isActivation()
     {
         if(typeof window.ysdk !== "undefined") 
             return true
