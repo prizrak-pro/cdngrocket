@@ -38,7 +38,7 @@ export class YandexSDC {
 
     async #expectationInitSDK()
     {
-        setTimeout(function f() {
+        await setTimeout(function f() {
             if(typeof window.ysdk !== "undefined") {
                 console.log("EDNTIME");
                 return 1;
