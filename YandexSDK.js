@@ -1,7 +1,7 @@
 export class YandexSDC {
 
     #controlActivation = false;
-    
+
     constructor(control = false)
     {
         this.#controlActivation = control;
@@ -13,7 +13,9 @@ export class YandexSDC {
         {
             this.#addYandexSDK(); 
             await this.#expectationInitSDK()
+            this.#controlActivation = true;
         }
+        return this.#controlActivation;
     }
 
     #addYandexSDK(d = document) {
