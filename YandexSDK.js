@@ -19,7 +19,7 @@ export class YandexSDC {
         s.src = 'https://yandex.ru/games/sdk/v2';
         s.async = false;
         t.parentNode.insertBefore(s, t);
-       	s.onload = this.#initSDK;s
+       	s.onload = this.#initSDK;
     }
 
     #initSDK() {
@@ -31,6 +31,7 @@ export class YandexSDC {
 			window.ysdk = ysdk;
 			//yaInitFlag = true;
             this.constructor.controlActivation = true;
+            console.log(this.constructor.controlActivation)
 		});
     }
 
