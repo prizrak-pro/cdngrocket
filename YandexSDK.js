@@ -35,20 +35,35 @@ export class YandexSDC {
 		});
     }
 
+    async #expectationInitSDK()
+    {
+        setTimeout(function f() {
+            console.log(this.constructor.controlActivation)
+            if(this.constructor.controlActivation) {
+                console.log("EDNTIME");
+                resolve(1)
+            } else {
+                console.log("STARTTIME");
+                setTimeout(f, 1); 
+            }
+        }, 1);
+    }
 
     async #controlInitSDK(){
-		let promise = new Promise((resolve, reject) => {
-            setTimeout(function f() {
-                if(this.constructor.controlActivation) {
-                    console.log("EDNTIME");
-                    resolve(1)
-                } else {
-                    console.log("STARTTIME");
-                    setTimeout(f, 1); 
-                }
-            }, 1);
-          });
-        let t = await promise;
+		// let promise = new Promise((resolve, reject) => {
+        //     setTimeout(function f() {
+        //         console.log(this.constructor.controlActivation)
+        //         if(this.constructor.controlActivation) {
+        //             console.log("EDNTIME");
+        //             resolve(1)
+        //         } else {
+        //             console.log("STARTTIME");
+        //             setTimeout(f, 1); 
+        //         }
+        //     }, 1);
+        //   });
+        let t = await this.#expectationInitSDK();
+        console.log('controlInitSDK');
     }
 
 
