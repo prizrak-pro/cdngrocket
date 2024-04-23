@@ -29,7 +29,7 @@ export class YandexSDC {
 			console.log('Yandex SDK initialized');
 			console.log(ysdk)
 			window.ysdk = ysdk;
-			yaInitFlag = true;
+			//yaInitFlag = true;
             this.constructor.controlActivation = true;
 		});
     }
