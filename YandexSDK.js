@@ -44,21 +44,21 @@ export class YandexSDC {
     }
 
     async #controlInitSDK(){
-		// let promise = new Promise((resolve, reject) => {
-        //     setTimeout(function f() {
-        //         console.log(this.constructor.controlActivation)
-        //         if(this.constructor.controlActivation) {
-        //             console.log("EDNTIME");
-        //             resolve(1)
-        //         } else {
-        //             console.log("STARTTIME");
-        //             setTimeout(f, 1); 
-        //         }
-        //     }, 1);
-        //   });
+		let promise = new Promise((resolve, reject) => {
+            setTimeout(function f() {
+                if(typeof window.ysdk !== "undefined") {
+                    console.log("EDNTIME");
+                    resolve(1)
+                } else {
+                    console.log("STARTTIME");
+                    setTimeout(f, 1); 
+                }
+            }, 1);
+          });
         let t = await this.#expectationInitSDK();
         console.log('controlInitSDK');
     }
 
+    
 
 }
