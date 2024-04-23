@@ -18,6 +18,13 @@ export class YandexSDC {
         return this.#controlActivation;
     }
 
+    get Activation()
+    {
+        if(typeof window.ysdk !== "undefined") 
+            return true
+        return false;
+    }
+
     #addYandexSDK(d = document) {
         var t = d.getElementsByTagName('script')[0];
         var s = d.createElement('script');
@@ -38,49 +45,16 @@ export class YandexSDC {
 
     async #expectationInitSDK()
     {
-        // await setTimeout(function f() {
-        //     if(typeof window.ysdk !== "undefined") {
-        //         console.log("EDNTIME");
-        //         return 1;
-        //     } else {
-        //         console.log("STARTTIME");
-        //         setTimeout(f, 1); 
-        //     }
-        // }, 1);
-
         await new Promise((resolve, reject) => {
             setTimeout(function f() {
                 if(typeof window.ysdk !== "undefined") {
-                    console.log("EDNTIME");
                     resolve(1)
                 } else {
-                    console.log("STARTTIME");
                     setTimeout(f, 1); 
                 }
             }, 1);
         });
-            
-          //await promise;
-          return 1;
+        return 1;
 
     }
-
-    // async #controlInitSDK(){
-	// 	let promise = new Promise((resolve, reject) => {
-    //         setTimeout(function f() {
-    //             if(typeof window.ysdk !== "undefined") {
-    //                 console.log("EDNTIME");
-    //                 resolve(1)
-    //             } else {
-    //                 console.log("STARTTIME");
-    //                 setTimeout(f, 1); 
-    //             }
-    //         }, 1);
-    //       });
-    //     let t = await promise;
-    //     console.log('controlInitSDK');
-    // }
-
-    
-
 }
