@@ -61,7 +61,7 @@ export class YandexSDC {
           });
             
           let result = await promise;
-          resolve(1)
+          return 1;
 
     }
 
