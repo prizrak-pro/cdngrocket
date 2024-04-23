@@ -1,11 +1,11 @@
 export class YandexSDC {
 
-    static controlActivation = false;
+    #controlActivation = false;
 
 
     constructor(control = false)
     {
-        console.log(this.constructor.controlActivation);
+        console.log(this.#controlActivation);
         if (control)
         {
             this.#addYandexSDK();
@@ -30,8 +30,8 @@ export class YandexSDC {
 			console.log(ysdk)
 			window.ysdk = ysdk;
 			//yaInitFlag = true;
-            this.constructor.controlActivation = true;
-            console.log(this.constructor.controlActivation)
+            this.#controlActivation = true;
+            console.log(this.#controlActivation)
 		});
     }
 
@@ -39,8 +39,8 @@ export class YandexSDC {
     {
         let self = this;
         setTimeout(function f() {
-            console.log(self.constructor.controlActivation)
-            if(self.constructor.controlActivation) {
+            console.log(self.#controlActivation)
+            if(self.#controlActivation) {
                 console.log("EDNTIME");
                 resolve(1)
             } else {
