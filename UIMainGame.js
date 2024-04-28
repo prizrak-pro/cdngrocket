@@ -50,6 +50,7 @@ export default class UIMainGame {
         this.#line_fuel.x = 48+piont;
 
         piont =  Math.round((this.#value_strength*258)/this.#max_strength);
+        console.log(piont);
         this.#line_strength.x = 315-piont;
 
     }
@@ -63,6 +64,8 @@ export default class UIMainGame {
     setStrength(value)
     {
         this.#value_strength = value;
+        console.log(this.#value_strength);
+        console.log(value);
         this.#calculation();
     }
 
