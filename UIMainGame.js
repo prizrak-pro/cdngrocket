@@ -29,16 +29,16 @@ export default class UIMainGame {
     #init()
     {
 
-        let panel_bg = this.#globalRuntime.objects.UILevelPanel.createInstance(1,177,18);
+        let panel_bg = this.#globalRuntime.objects.UILevelPanel.createInstance(1,177,19);
         panel_bg.animationFrame = 1
 
-        panel_bg = this.#globalRuntime.objects.UILevelPanel.createInstance(1,186,44);
+        panel_bg = this.#globalRuntime.objects.UILevelPanel.createInstance(1,186,45);
         panel_bg.animationFrame = 1
 
-        this.#line_fuel = this.#globalRuntime.objects.UILevelPanel.createInstance(1,306,18);
+        this.#line_fuel = this.#globalRuntime.objects.UILevelPanel.createInstance(1,306,19);
         this.#line_fuel.animationFrame = 2
 
-        this.#line_strength = this.#globalRuntime.objects.UILevelPanel.createInstance(1,57,44);
+        this.#line_strength = this.#globalRuntime.objects.UILevelPanel.createInstance(1,57,45);
         this.#line_strength.animationFrame = 3
 
         let panel = this.#globalRuntime.objects.UILevelPanel.createInstance(1,180,32);
