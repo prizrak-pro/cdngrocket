@@ -1,0 +1,38 @@
+export default class UIMainGame {
+
+    #globalRuntime;
+
+    #line_fuel;
+    #line_strength;
+
+
+    constructor(runtime) {
+        this.#globalRuntime = runtime;
+        this.#init();
+    }
+
+    #48/306 20
+
+    #57/315 44
+
+    #init()
+    {
+
+        let panel_bg = this.#globalRuntime.objects.UILevelPanel.createInstance(1,177,20);
+        panel_bg.animationFrame = 1
+
+        panel_bg = this.#globalRuntime.objects.UILevelPanel.createInstance(1,186,44);
+        panel_bg.animationFrame = 1
+
+        this.#line_fuel = this.#globalRuntime.objects.UILevelPanel.createInstance(1,306,20);
+        this.#line_fuel.animationFrame = 2
+
+        this.#line_strength = this.#globalRuntime.objects.UILevelPanel.createInstance(1,57,44);
+        this.#line_strength.animationFrame = 3
+
+        let panel = this.#globalRuntime.objects.UILevelPanel.createInstance(1,180,32);
+        panel.animationFrame = 0
+
+
+    }
+
