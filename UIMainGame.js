@@ -5,15 +5,25 @@ export default class UIMainGame {
     #line_fuel;
     #line_strength;
 
+    #max_fuel;
+    #max_strength;
 
-    constructor(runtime) {
+    #value_fuel;
+    #value_strength;
+
+
+    constructor(runtime, max_fuel, max_strength) {
         this.#globalRuntime = runtime;
         this.#init();
+
+        this.#max_fuel = this.#value_fuel = max_fuel;
+        this.#max_strength = this.#value_strength = max_strength;
+
     }
 
-    #48/306 20
+    // 48/306 20
 
-    #57/315 44
+    // 57/315 44
 
     #init()
     {
@@ -32,7 +42,28 @@ export default class UIMainGame {
 
         let panel = this.#globalRuntime.objects.UILevelPanel.createInstance(1,180,32);
         panel.animationFrame = 0
+    }
 
+    #calculation()
+    {
+        let piont =  Math.round((this.#value_fuel*258)/this.#max_fuel);
+        this.#line_fuel.width = 48+piont;
+
+        piont =  Math.round((this.#value_strength*258)/this.#max_strength);
+        this.#line_strength.width = 315-piont;
 
     }
 
+    setFuel(value)
+    {
+        this.#value_fuel = value;
+        this.#calculation();
+    }
+
+    setStrength(value)
+    {
+        this.#value_strength = value;
+        this.#calculation();
+    }
+
+}
