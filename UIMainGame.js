@@ -49,9 +49,10 @@ export default class UIMainGame {
         let piont =  Math.round((this.#value_fuel*258)/this.#max_fuel);
         this.#line_fuel.x = 48+piont;
 
-        piont =  Math.round((this.#value_strength*258)/this.#max_strength);
-        console.log(piont);
-        this.#line_strength.x = 315-piont;
+        console.log((this.#value_strength*258)/this.#max_strength);
+        let piont_s =  Math.round((this.#value_strength*258)/this.#max_strength);
+        console.log(piont_s);
+        this.#line_strength.x = 315-piont_s;
 
     }
 
