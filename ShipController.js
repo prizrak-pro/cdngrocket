@@ -93,6 +93,10 @@ export default class Ship {
 		return this.#_strength;
 	}
 
+	get maxStrength(){
+		this.#_maxStrength[this.#_levelStrength];
+	}
+
 	repairFull(){
 		this.#_strength = this.#_maxStrength[this.#_levelStrength];
 	}
