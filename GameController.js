@@ -26,7 +26,7 @@ export default class GameController {
     {
         const currentLayer = this.runtime.layout.getLayer(0);
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
-        const sprites = this.runtime.objects.MainButtonUI.getAllInstances();
+        const sprites = this.runtime.objects.UIMainButton.getAllInstances();
         if(sprites[0].containsPoint(mouseXYAr[0], mouseXYAr[1])){
             this.runtime.goToLayout("SelectLevel")
         }
@@ -37,7 +37,7 @@ export default class GameController {
         const currentLayer = this.runtime.layout.getLayer(0);
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
         const sprites = this.runtime.objects.btnSelectLevel.getAllInstances();
-        const buttonUI = this.runtime.objects.MainButtonUI.getAllInstances();
+        const buttonUI = this.runtime.objects.UIMainButton.getAllInstances();
         
         if(buttonUI[0].containsPoint(mouseXYAr[0], mouseXYAr[1])){
             console.log("Update Ship");
@@ -58,7 +58,7 @@ export default class GameController {
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
         
         
-        const btnStart = this.runtime.objects.MainButtonUI.getAllInstances()[0];
+        const btnStart = this.runtime.objects.UIMainButton.getAllInstances()[0];
         if(btnStart.containsPoint(mouseXYAr[0], mouseXYAr[1])){
             this.runtime.goToLayout("Level"+this.levelConfig.level)
             return;
@@ -91,23 +91,23 @@ export default class GameController {
         switch(level)
         {
             case 1:
-                const but1 = this.runtime.objects.MainButtonUI.getFirstInstance();
+                const but1 = this.runtime.objects.UIMainButton.getFirstInstance();
                 but1.setAnimation(this.Language)
                 but1.animationFrame = 0;
                 break;
             case 2:
-                const but2 = this.runtime.objects.MainButtonUI.getFirstInstance();
+                const but2 = this.runtime.objects.UIMainButton.getFirstInstance();
                 but2.setAnimation(this.Language)
                 but2.animationFrame = 1;
                 break;
             case 3:
-                const but3 = this.runtime.objects.MainButtonUI.getFirstInstance();
+                const but3 = this.runtime.objects.UIMainButton.getFirstInstance();
                 but3.setAnimation(this.Language)
                 but3.animationFrame = 2;
                 break;
             case 4:
                 let self = this;
-                this.runtime.objects.MainButtonUI.getAllInstances().forEach(function(element) {
+                this.runtime.objects.UIMainButton.getAllInstances().forEach(function(element) {
                     if(element.uid == 422)
                     {
                         element.setAnimation(self.Language)

@@ -120,4 +120,17 @@ export default class Ship {
 	{
 		this.#_fuel -= this.#_consumptionEngine * this.#_powerShunting;
 	}
+
+	currentUIMassCargo()
+	{
+
+	}
+	nextUIMassCargo()
+	{
+		
+	}
+	nextUIMassCargo()
+	{
+		
+	}
 }
