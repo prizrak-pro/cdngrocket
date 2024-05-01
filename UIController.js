@@ -94,7 +94,7 @@ export class UISelectCargo {
         
         this.globalRuntime.objects.Money.createInstance(0, 180+offset, 313);
         
-        let buttom_element = this.globalRuntime.objects.MainButtonUI.createInstance(0,180,380);
+        let buttom_element = this.globalRuntime.objects.UIMainButton.createInstance(0,180,380);
         buttom_element.instVars.Type = 3;
         buttom_element.setAnimation('en')
         buttom_element.animationFrame = 4;
