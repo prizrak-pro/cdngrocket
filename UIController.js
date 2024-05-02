@@ -183,46 +183,47 @@ export class UISelectCargo {
     shipUpdate()
     {
         //Заголовок
+        let self = this;
         this.globalRuntime.objects.Text.getAllInstances().forEach(function(element) {
             switch(element.uid)
             {
                 case 301:
-                    element.text =  this.gameController.dict('cargo') + ": " + this.#numberWithSpaces(this.gameController.ship.massCargo);
+                    element.text =  self.gameController.dict('cargo') + ": " + self.#numberWithSpaces(self.gameController.ship.massCargo);
                     break;
                 case 312:
-                    element.text =  this.gameController.dict('fuel') + ": " + this.#numberWithSpaces(this.gameController.ship.maxFuel);
+                    element.text =  self.gameController.dict('fuel') + ": " + self.#numberWithSpaces(self.gameController.ship.maxFuel);
                     break;
                 case 313:
-                    element.text =  this.gameController.dict('shunting') + ": " + this.#numberWithSpaces(this.gameController.ship.currentShuntingEngine());
+                    element.text =  self.gameController.dict('shunting') + ": " + self.#numberWithSpaces(self.gameController.ship.currentShuntingEngine());
                     break;
                 case 316:
-                    element.text =  this.gameController.dict('strength') + ": " + this.#numberWithSpaces(this.gameController.ship.maxStrength);
+                    element.text =  self.gameController.dict('strength') + ": " + self.#numberWithSpaces(self.gameController.ship.maxStrength);
                     break;
 
                 case 12:
-                    element.text =  this.gameController.ship.nextMassCargo>0?this.#numberWithSpaces(this.gameController.ship.nextMassCargo):"MAX";
+                    element.text =  self.gameController.ship.nextMassCargo>0?self.#numberWithSpaces(self.gameController.ship.nextMassCargo):"MAX";
                     break;
                 case 5:
-                    element.text =  this.gameController.ship.nextFuel>0?this.#numberWithSpaces(this.gameController.ship.nextFuel):"MAX";
+                    element.text =  self.gameController.ship.nextFuel>0?self.#numberWithSpaces(self.gameController.ship.nextFuel):"MAX";
                     break;
                 case 13:
-                    element.text =  this.gameController.ship.nextShuntingEngine>0?this.#numberWithSpaces(this.gameController.ship.nextShuntingEngine):"MAX";
+                    element.text =  self.gameController.ship.nextShuntingEngine>0?self.#numberWithSpaces(self.gameController.ship.nextShuntingEngine):"MAX";
                     break;
                 case 14:
-                    element.text =  this.gameController.ship.nextStrength>0?this.#numberWithSpaces(this.gameController.ship.nextStrength):"MAX";
+                    element.text =  self.gameController.ship.nextStrength>0?self.#numberWithSpaces(self.gameController.ship.nextStrength):"MAX";
                     break;
 
                 case 7:
-                    element.text =  this.gameController.ship.priceUpdateMassCargo>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateMassCargo):"";
+                    element.text =  self.gameController.ship.priceUpdateMassCargo>0?self.#numberWithSpaces(self.gameController.ship.priceUpdateMassCargo):"";
                     break;
                 case 17:
-                    element.text =  this.gameController.ship.priceUpdateFuel>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateFuel):"";
+                    element.text =  self.gameController.ship.priceUpdateFuel>0?self.#numberWithSpaces(self.gameController.ship.priceUpdateFuel):"";
                     break;
                 case 20:
-                    element.text =  this.gameController.ship.priceUpdateShuntingEngine>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateShuntingEngine):"";
+                    element.text =  self.gameController.ship.priceUpdateShuntingEngine>0?self.#numberWithSpaces(self.gameController.ship.priceUpdateShuntingEngine):"";
                     break;
                 case 10:
-                    element.text =  this.gameController.ship.priceUpdateStrength>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateStrength):"";
+                    element.text =  self.gameController.ship.priceUpdateStrength>0?self.#numberWithSpaces(self.gameController.ship.priceUpdateStrength):"";
                     break;
             }
         });
