@@ -233,16 +233,16 @@ export class UISelectCargo {
             switch(element.uid)
             {
                 case 275:
-                    element.animationFrame = this.gameController.ship.levelMassCargo;
+                    element.animationFrame = self.gameController.ship.levelMassCargo;
                     break;
                 case 253:
-                    element.animationFrame = this.gameController.ship.levelFuel;
+                    element.animationFrame = self.gameController.ship.levelFuel;
                     break;
                 case 231:
-                    element.animationFrame = this.gameController.ship.levelShuntingEngine;
+                    element.animationFrame = self.gameController.ship.levelShuntingEngine;
                     break;
                 case 209:
-                    element.animationFrame = this.gameController.ship.levelStrength;
+                    element.animationFrame = self.gameController.ship.levelStrength;
                     break;
             }
         });
