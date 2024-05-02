@@ -188,7 +188,7 @@ export class UISelectCargo {
             switch(element.uid)
             {
                 case 301:
-                    element.text =  self.gameController.dict('cargo') + ": " + self.#numberWithSpaces(self.gameController.ship.massCargo);
+                    element.text =  self.gameController.dict('cargo') + ": " + self.#numberWithSpaces(self.gameController.ship.maxMassCargo);
                     break;
                 case 312:
                     element.text =  self.gameController.dict('fuel') + ": " + self.#numberWithSpaces(self.gameController.ship.maxFuel);
