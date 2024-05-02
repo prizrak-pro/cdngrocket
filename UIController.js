@@ -17,7 +17,7 @@ export class UISelectCargo {
     #colorTextYello = [1,1,0];
     #select_point;
 
-    #selectLevel
+    #selectLevel;
 
     globalRuntime
     playerConfig
