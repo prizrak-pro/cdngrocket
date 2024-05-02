@@ -18,11 +18,16 @@ export default class DictConroller {
         }
     }
 
-	constructor() {
-
+	constructor(lang = 'en') {
+        this.#lang = lang;
 	}
     dict(value){
         return this.#dictionary[this.#lang][value];
+    }
+
+    get Language()
+    {
+        return this.#lang;
     }
 
 }

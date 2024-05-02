@@ -8,14 +8,29 @@ export default class GameController {
     yandexSDC;
     
     GameConfig;
-    LevelConfig;
+    #LevelConfig;
+    #DictConroller;
+    #PlayerConfig;
+    #Ship;
 
-    constructor(LevelConfig, GameConfig, DictConroller) {
-        this.LevelConfig = LevelConfig;
+    constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship) {
+        this.#LevelConfig = LevelConfig;
         this.GameConfig = GameConfig;
-
-        this.#_dict = new DictConroller();
+        this.#DictConroller = DictConroller;
+        this.#PlayerConfig = PlayerConfig;
+        this.#Ship = Ship;
 	}
+
+    init(runtime, yandexSDC)
+    {
+        this.runtime = runtime;
+        this.yandexSDC = yandexSDC;
+
+        this.playerConfig = new this.#PlayerConfig();
+        this.playerConfig.creatShip(this.#Ship);
+
+        this.#_dict = new this.#DictConroller();
+    }
 
     get ship() {
 		return this.playerConfig.currentShip;
@@ -28,6 +43,11 @@ export default class GameController {
     {
         return this.#_dict.dict(value);
     }
+
+    get Language()
+	{
+        return this.#_dict.Language;
+	}
 
     mouseDownMainPage(e)
     {
@@ -52,7 +72,7 @@ export default class GameController {
         
         for(var i = 0; i < sprites.length; i++) {
             if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
-                this.levelConfig = new this.LevelConfig(sprites[i].instVars.level);
+                this.levelConfig = new this.#LevelConfig(sprites[i].instVars.level);
                 if (this.levelConfig.level <= this.playerConfig.maxOpenLevel)
                     this.runtime.goToLayout("SelectCargoLevel")	
             }
@@ -124,10 +144,4 @@ export default class GameController {
                 break;
         }
     }
-
-    get Language()
-	{
-		return this.playerConfig.Language;
-	}
-
 }

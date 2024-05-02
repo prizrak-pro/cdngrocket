@@ -14,8 +14,6 @@ export class PlayerConfig {
 
 	#currentShip;
 
-	#_currentLanguage = 0;
-
 	constructor(obj)
 	{
 		if(obj){
@@ -48,26 +46,6 @@ export class PlayerConfig {
 	creatShip(classShip)
 	{
 		this.#currentShip = new classShip(this.#ship);
-	}
-
-	get Language()
-	{
-		return GameConfig.listLanguage[this.#_currentLanguage];
-	}
-
-	set Language(value)
-	{
-		switch(value)
-		{
-			case 'en':
-				this.#_currentLanguage = 0;
-				break;
-			case 'ru':
-				this.#_currentLanguage = 1;
-				break;
-			default:
-				this.#_currentLanguage = 0;
-		}
 	}
 
 	stringSerialize() {
@@ -113,8 +91,6 @@ export class GameConfig {
 		4:60,
 		5:100
 	};
-
-	static listLanguage = ['en', 'ru'];
 }
 
 export class LevelConfig {
