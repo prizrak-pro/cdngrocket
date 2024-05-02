@@ -67,7 +67,7 @@ export default class GameController {
         const buttonUI = this.runtime.objects.UIMainButton.getAllInstances();
         
         if(buttonUI[0].containsPoint(mouseXYAr[0], mouseXYAr[1])){
-            console.log("Update Ship");
+            this.runtime.goToLayout("UpdateShip")	
         }
         
         for(var i = 0; i < sprites.length; i++) {
