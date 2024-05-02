@@ -7,18 +7,22 @@ export default class Ship {
 	#_levelShip = 0;
 	#_coefMainEngine = [1.8, 1.7, 1.6, 1.5, 1.4, 1.2];
 	#_maxMass=[200, 400, 600, 800, 1000, 1200];
+	#_priceLevelShip=[200, 400, 600, 800, 1000];
 	#_massCargo=0;
 
 	#_levelShuntingEngine = 0;
 	#_coefShuntingEngine = [1.2, 1.4, 1.6, 2, 2.4, 2.8];
+	#_priceLevelShuntingEngine=[200, 400, 600, 800, 1000];
 
 	#_levelFuel = 0;
 	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
+	#_priceLevelFuel=[200, 400, 600, 800, 1000];
 	#_fuel = 0;
 
 	#_levelStrength = 0;
 	#_massShip = [700, 900, 1000, 1100, 1200, 1400];
 	#_maxStrength = [150, 200, 250, 300, 350, 400];
+	#_priceLevelStrength=[200, 400, 600, 800, 1000];
 	#_strength = 0
 
 	#_massCoefficient = 0.46;
@@ -121,16 +125,76 @@ export default class Ship {
 		this.#_fuel -= this.#_consumptionEngine * this.#_powerShunting;
 	}
 
-	currentUIMassCargo()
+	//Update ship
+	get nextMassCargo()
 	{
+		if (this.#_levelShip == 5)
+			return 0;
+		return this.#_maxMass[this.#_levelShip+1];
+	}
+	get levelMassCargo()
+	{
+		return this.#_levelShip;
+	}
+	get priceUpdateMassCargo()
+	{
+		if (this.#_levelShip == 5)
+			return 0;
+		return this.#_priceLevelShip[this.#_levelShip];
+	}
 
+	currentShuntingEngine()
+	{	
+		return this.#_coefShuntingEngine[this.#_levelShuntingEngine];
 	}
-	nextUIMassCargo()
+	get nextShuntingEngine()
 	{
-		
+		if (this.#_levelShuntingEngine == 5)
+			return 0;
+		return this.#_coefShuntingEngine[this.#_levelShuntingEngine+1];
 	}
-	nextUIMassCargo()
+	get levelShuntingEngine()
 	{
-		
+		return this.#_levelShuntingEngine;
+	}
+	get priceUpdateShuntingEngine()
+	{
+		if (this.#_levelShuntingEngine == 5)
+			return 0;
+		return this.#_priceLevelShuntingEngine[this.#_levelShuntingEngine];
+	}
+
+	get nextFuel()
+	{
+		if (this.#_levelFuel == 5)
+			return 0;
+		return this.#_maxFuel[this.#_levelFuel+1];
+	}
+	get levelFuel()
+	{
+		return this.#_levelFuel;
+	}
+	get priceUpdateFuel()
+	{
+		if (this.#_levelFuel == 5)
+			return 0;
+		return this.#_priceLevelFuel[this.#_levelFuel];
+	}
+
+	nextStrength()
+	{
+		if (this.#_levelStrength == 5)
+			return 0;
+		return this.#_maxStrength[this.#_levelStrength+1];
+	}
+	get levelStrength()
+	{
+		return this.#_levelStrength;
+	}
+	get priceUpdateStrength()
+	{
+		if (this.#_levelStrength == 5)
+			return 0;
+		return this.#_priceLevelStrength[this.#_levelStrength];
 	}
 }

@@ -2,17 +2,19 @@ export default class GameController {
 
     runtime;
     #_ship;
+    #_dict;
     playerConfig;
     levelConfig;
     yandexSDC;
-
+    
     GameConfig;
     LevelConfig;
 
-
-    constructor(LevelConfig, GameConfig) {
+    constructor(LevelConfig, GameConfig, DictConroller) {
         this.LevelConfig = LevelConfig;
         this.GameConfig = GameConfig;
+
+        this.#_dict = new DictConroller();
 	}
 
     get ship() {
@@ -21,6 +23,11 @@ export default class GameController {
 	set ship(_ship) {
 		this.#_ship = _ship;
 	}
+
+    dict(value)
+    {
+        return this.#_dict.dict(value);
+    }
 
     mouseDownMainPage(e)
     {

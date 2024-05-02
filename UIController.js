@@ -180,6 +180,78 @@ export class UISelectCargo {
         totalObj.text = String(this.gameController.levelConfig.getTotal());
     }
 
+    shipUpdate()
+    {
+        //Заголовок
+        this.globalRuntime.objects.Text.getAllInstances().forEach(function(element) {
+            switch(element.uid)
+            {
+                case 301:
+                    element.text =  this.gameController.dict('cargo') + ": " + this.#numberWithSpaces(this.gameController.ship.massCargo);
+                    break;
+                case 312:
+                    element.text =  this.gameController.dict('fuel') + ": " + this.#numberWithSpaces(this.gameController.ship.maxFuel);
+                    break;
+                case 313:
+                    element.text =  this.gameController.dict('shunting') + ": " + this.#numberWithSpaces(this.gameController.ship.currentShuntingEngine());
+                    break;
+                case 316:
+                    element.text =  this.gameController.dict('strength') + ": " + this.#numberWithSpaces(this.gameController.ship.maxStrength);
+                    break;
+
+                case 12:
+                    element.text =  this.gameController.ship.nextMassCargo>0?this.#numberWithSpaces(this.gameController.ship.nextMassCargo):"MAX";
+                    break;
+                case 5:
+                    element.text =  this.gameController.ship.nextFuel>0?this.#numberWithSpaces(this.gameController.ship.nextFuel):"MAX";
+                    break;
+                case 13:
+                    element.text =  this.gameController.ship.nextShuntingEngine>0?this.#numberWithSpaces(this.gameController.ship.nextShuntingEngine):"MAX";
+                    break;
+                case 14:
+                    element.text =  this.gameController.ship.nextStrength>0?this.#numberWithSpaces(this.gameController.ship.nextStrength):"MAX";
+                    break;
+
+                case 7:
+                    element.text =  this.gameController.ship.priceUpdateMassCargo>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateMassCargo):"";
+                    break;
+                case 17:
+                    element.text =  this.gameController.ship.priceUpdateFuel>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateFuel):"";
+                    break;
+                case 20:
+                    element.text =  this.gameController.ship.priceUpdateShuntingEngine>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateShuntingEngine):"";
+                    break;
+                case 10:
+                    element.text =  this.gameController.ship.priceUpdateStrength>0?this.#numberWithSpaces(this.gameController.ship.priceUpdateStrength):"";
+                    break;
+            }
+        });
+
+        
+        this.globalRuntime.objects.UpdateShipPanel.getAllInstances().forEach(function(element) {
+            switch(element.uid)
+            {
+                case 275:
+                    element.animationFrame = this.gameController.ship.levelMassCargo;
+                    break;
+                case 253:
+                    element.animationFrame = this.gameController.ship.levelFuel;
+                    break;
+                case 231:
+                    element.animationFrame = this.gameController.ship.levelShuntingEngine;
+                    break;
+                case 209:
+                    element.animationFrame = this.gameController.ship.levelStrength;
+                    break;
+            }
+        });
+        //this.runtime.getObjectByUID(uid)
+    }
+
+    #numberWithSpaces(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
     #createUISelectCargoElement(weight, price, i=0)
     {
         let is_hide_element=false

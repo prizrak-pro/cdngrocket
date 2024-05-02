@@ -1,4 +1,3 @@
-dictionary
 export default class DictConroller {
 
     #lang='en'
@@ -6,18 +5,24 @@ export default class DictConroller {
     #dictionary = 
     {
         'en':{
-
+            'cargo': "Cargo",
+            'fuel': "Fuel",
+            'shunting':"Maneuverability",
+            'strength':"Strength"
         },
         'ru':{
-            
+            'cargo': "Груз",
+            'fuel': "Топливо",
+            'shunting':"Маневренность",
+            'strength':"Прочность"
         }
     }
 
 	constructor(shop_config) {
 
 	}
-    dict(){
-
+    dict(value){
+        return this.#dictionary[this.#lang][value];
     }
 
 }
