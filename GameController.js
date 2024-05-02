@@ -18,10 +18,10 @@ export default class GameController {
 	}
 
     get ship() {
-		return this.#_ship;
+		return this.playerConfig.currentShip;
 	}
 	set ship(_ship) {
-		this.#_ship = _ship;
+        this.playerConfig.currentShip = _ship;
 	}
 
     dict(value)
