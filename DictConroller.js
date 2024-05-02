@@ -18,7 +18,7 @@ export default class DictConroller {
         }
     }
 
-	constructor(shop_config) {
+	constructor() {
 
 	}
     dict(value){
