@@ -181,7 +181,7 @@ export default class Ship {
 		return this.#_priceLevelFuel[this.#_levelFuel];
 	}
 
-	nextStrength()
+	get nextStrength()
 	{
 		if (this.#_levelStrength == 5)
 			return 0;
