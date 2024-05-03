@@ -225,6 +225,7 @@ export default class GameController {
         this.#_shipVisual.instVars.PowerMainEngine = this.playerConfig.currentShip.powerMain;
         this.#_shipVisual.instVars.PowerShuntingEngine = this.playerConfig.currentShip.powerShunting;
         this.playerConfig.currentShip.repairFull();
+        this.massCalculation();
     }
 
     massCalculation()
@@ -286,8 +287,8 @@ export default class GameController {
 			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==0)?2:this.globalVar.instVars.powerShuntingL1;
         } else {
-			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
-			FireMiniRight.setAnimation("2", "beginning");
+			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
+			FireMiniLeft.setAnimation("2", "beginning");
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==1)?3:this.globalVar.instVars.powerShuntingL1;
         }
     }
