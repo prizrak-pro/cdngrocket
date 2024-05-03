@@ -49,6 +49,11 @@ export default class GameController {
         return this.#_dict.Language;
 	}
 
+    get Money()
+    {
+        return this.playerConfig.money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
     mouseDownMainPage(e)
     {
         const currentLayer = this.runtime.layout.getLayer(0);
