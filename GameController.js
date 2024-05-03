@@ -1,11 +1,11 @@
 export default class GameController {
 
     runtime;
-    #_ship;
     #_dict;
     playerConfig;
     levelConfig;
     yandexSDC;
+    globalVar;
     
     GameConfig;
     #LevelConfig;
@@ -25,10 +25,11 @@ export default class GameController {
         this.#Ship = Ship;
 	}
 
-    init(runtime, yandexSDC)
+    init(runtime, yandexSDC, globalVar)
     {
         this.runtime = runtime;
         this.yandexSDC = yandexSDC;
+        this.globalVar = globalVar;
 
         this.playerConfig = new this.#PlayerConfig();
         this.playerConfig.creatShip(this.#Ship);
