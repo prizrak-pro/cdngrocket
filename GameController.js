@@ -229,7 +229,7 @@ export default class GameController {
     massCalculation()
     {
         this.#_shipVisual.behaviors.physics.density = this.playerConfig.currentShip.massShip;
-        this.#_uiMainGame.setFuel(this.playerConfig.fuel);
+        this.#_uiMainGame.setFuel(this.playerConfig.currentShip.fuel);
     }
 
     fuelConsumptionMainEngine()
