@@ -1,7 +1,7 @@
 export class PlayerConfig {
 	#maxOpenLevel = 1;
 
-	#money = 0;
+	#money = 10000;
 
 	#ship = {
 		type: 1,

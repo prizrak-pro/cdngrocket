@@ -183,7 +183,11 @@ export class UISelectCargo {
     shipUpdate()
     {
         //Заголовок
+        console.log('GOGOGO');
         let self = this;
+
+
+        this.runtime.getObjectByUID(8).text = this.gameController.playerConfig.money;
         this.globalRuntime.objects.Text.getAllInstances().forEach(function(element) {
             element.text = "";
             switch(element.uid)
