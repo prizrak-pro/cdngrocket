@@ -147,7 +147,7 @@ export default class GameController {
                 }
 
                 if(sprites[i].instVars.Type != 5)
-                    this.runtime.goToLayout("SelectLevel");
+                    this.runtime.goToLayout("UpdateShip");
             }
         }
     }
