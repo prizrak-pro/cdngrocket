@@ -7,8 +7,7 @@ export class PlayerConfig {
 		type: 1,
 		levelMass: 0,
 		levelFuel: 0,
-		levelEfficiency: 0,
-		levelManeuver: 0,
+		levelShuntingEngine: 0,
 		levelStrength: 0
 	};
 
@@ -43,6 +42,72 @@ export class PlayerConfig {
 	set currentShip(_currentShip) {
 		this.#currentShip = _currentShip;
 	}
+
+	updateMassCargo() {
+		if(this.#currentShip.priceUpdateMassCargo > 0 && this.#money >= this.#currentShip.priceUpdateMassCargo)
+		{
+			this.#money -= this.#currentShip.priceUpdateMassCargo;
+			if(this.#money >=0 )
+			{
+				this.#ship.levelMass++;
+				return true;				
+			}
+		}
+		return false;
+	}
+
+	updateFuel() {
+		if(this.#currentShip.priceUpdateFuel > 0 && this.#money >= this.#currentShip.priceUpdateFuel)
+		{
+			this.#money -= this.#currentShip.priceUpdateFuel;
+			if(this.#money >=0 )
+			{
+				this.#ship.levelFuel++;
+				return true;				
+			}
+		}
+		return false;
+	}
+
+	updateFuel() {
+		if(this.#currentShip.priceUpdateFuel > 0 && this.#money >= this.#currentShip.priceUpdateFuel)
+		{
+			this.#money -= this.#currentShip.priceUpdateFuel;
+			if(this.#money >=0 )
+			{
+				this.#ship.levelFuel++;
+				return true;				
+			}
+		}
+		return false;
+	}
+
+	updateShuntingEngine() {
+		if(this.#currentShip.priceUpdateShuntingEngine > 0 && this.#money >= this.#currentShip.priceUpdateShuntingEngine)
+		{
+			this.#money -= this.#currentShip.priceUpdateShuntingEngine;
+			if(this.#money >=0 )
+			{
+				this.#ship.levelShuntingEngine++;
+				return true;				
+			}
+		}
+		return false;
+	}
+
+	updateStrength() {
+		if(this.#currentShip.priceUpdateStrength > 0 && this.#money >= this.#currentShip.priceUpdateStrength)
+		{
+			this.#money -= this.#currentShip.priceUpdateStrength;
+			if(this.#money >=0 )
+			{
+				this.#ship.levelStrength++;
+				return true;				
+			}
+		}
+		return false;
+	}
+
 	creatShip(classShip)
 	{
 		this.#currentShip = new classShip(this.#ship);

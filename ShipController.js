@@ -33,7 +33,7 @@ export default class Ship {
 	constructor(shop_config) {
 		this.#_levelShip = shop_config.levelMass;
 		this.#_levelFuel = shop_config.levelFuel;
-		this.#_levelShuntingEngine = shop_config.levelManeuver;
+		this.#_levelShuntingEngine = shop_config.levelShuntingEngine;
 		this.#_levelStrength = shop_config.levelStrength;
 
 		// this.#_fuel = fuel;

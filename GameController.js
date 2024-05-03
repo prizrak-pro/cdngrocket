@@ -113,6 +113,46 @@ export default class GameController {
             
     }
 
+    mouseDownUpdateShip(e)
+    {
+        const currentLayer = globalRuntime.layout.getLayer(0);
+        const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
+        const sprites = globalRuntime.objects.UIMainButton.getAllInstances();
+        
+        for(var i = 0; i < sprites.length; i++) {
+            if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                switch(sprites[i].instVars.Type)
+                {
+                    case 1:
+                        if (this.playerConfig.updateMassCargo())
+                            this.playerConfig.creatShip(this.#Ship);
+                        break;
+                    case 2:
+                        if (this.playerConfig.updateFuel())
+                            this.playerConfig.creatShip(this.#Ship);
+                        break;
+                    case 3:
+                        if (this.playerConfig.updateShuntingEngine())
+                            this.playerConfig.creatShip(this.#Ship);
+                        break;
+                    case 4:
+                        if (this.playerConfig.updateStrength())
+                            this.playerConfig.creatShip(this.#Ship);
+                        break;
+                    case 5:
+                        this.runtime.goToLayout("SelectLevel")
+                        break;
+                        
+                }
+
+                if(sprites[i].instVars.Type != 5)
+                    this.runtime.goToLayout("SelectLevel");
+            }
+        }
+    }
+
+
+
     setUIButton(level)
     {
         switch(level)
@@ -143,5 +183,10 @@ export default class GameController {
                 });
                 break;
         }
+    }
+
+    #updateMassCargo()
+    {
+
     }
 }
