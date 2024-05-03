@@ -212,7 +212,12 @@ export class UISelectCargo {
                 case 14:
                     element.text =  this.gameController.ship.nextStrength>0?this.#numberWithSpaces(this.gameController.ship.nextStrength):"MAX";
                     break;
+            }
+        });
 
+        this.globalRuntime.objects.UpdatePrice.getAllInstances().forEach(function(element) {
+            switch(element.uid)
+            {
                 case 7:
                     if (this.gameController.ship.priceUpdateMassCargo>0)
                         element.text = this.#numberWithSpaces(this.gameController.ship.priceUpdateMassCargo)
@@ -240,7 +245,6 @@ export class UISelectCargo {
             }
         });
 
-        
         this.globalRuntime.objects.UpdateShipPanel.getAllInstances().forEach(function(element) {
             switch(element.uid)
             {
