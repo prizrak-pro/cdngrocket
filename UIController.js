@@ -183,11 +183,8 @@ export class UISelectCargo {
     shipUpdate()
     {
         //Заголовок
-        console.log('GOGOGO');
         let self = this;
-
-
-        this.runtime.getInstanceByUID(8).text = this.gameController.playerConfig.money;
+        this.globalRuntime.getInstanceByUID(8).text = this.gameController.playerConfig.money;
         this.globalRuntime.objects.Text.getAllInstances().forEach(function(element) {
             element.text = "";
             switch(element.uid)
@@ -227,25 +224,25 @@ export class UISelectCargo {
                     if (self.gameController.ship.priceUpdateMassCargo>0)
                         element.text = self.#numberWithSpaces(self.gameController.ship.priceUpdateMassCargo)
                     else
-                        self.runtime.getInstanceByUID(6).destroy();
+                        self.globalRuntime.getInstanceByUID(6).destroy();
                     break;
                 case 17:
                     if (self.gameController.ship.priceUpdateFuel>0)
                         element.text = self.#numberWithSpaces(self.gameController.ship.priceUpdateFuel)
                     else
-                        self.runtime.getInstanceByUID(15).destroy();
+                        self.globalRuntime.getInstanceByUID(15).destroy();
                     break;
                 case 20:
                     if (self.gameController.ship.priceUpdateShuntingEngine>0)
                         element.text = self.#numberWithSpaces(self.gameController.ship.priceUpdateShuntingEngine)
                     else
-                        self.runtime.getInstanceByUID(19).destroy();
+                        self.globalRuntime.getInstanceByUID(19).destroy();
                     break;
                 case 10:
                     if (self.gameController.ship.priceUpdateStrength>0)
                         element.text = self.#numberWithSpaces(self.gameController.ship.priceUpdateStrength)
                     else
-                        self.runtime.getInstanceByUID(9).destroy();
+                        self.globalRuntime.getInstanceByUID(9).destroy();
                     break;
             }
         });
