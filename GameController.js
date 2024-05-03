@@ -221,15 +221,15 @@ export default class GameController {
 
     setParametrsShip()
     {
-        this.#_shipVisual.instVars.PowerMainEngine = PlayShip.powerMain;
-        this.#_shipVisual.instVars.PowerShuntingEngine = PlayShip.powerShunting;
+        this.#_shipVisual.instVars.PowerMainEngine = this.playerConfig.currentShip.powerMain;
+        this.#_shipVisual.instVars.PowerShuntingEngine = this.playerConfig.currentShip.powerShunting;
         this.playerConfig.currentShip.repairFull();
     }
 
     massCalculation()
     {
-        this.#_shipVisual.behaviors.physics.density = this.playerConfig.massShip;
-        this.#_uiMainGame.setFuel(PlayShip.fuel);
+        this.#_shipVisual.behaviors.physics.density = this.playerConfig.currentShip.massShip;
+        this.#_uiMainGame.setFuel(this.playerConfig.fuel);
     }
 
     fuelConsumptionMainEngine()
