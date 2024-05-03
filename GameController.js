@@ -254,11 +254,11 @@ export default class GameController {
 			const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("1", "beginning");
 			this.fuelConsumptionMainEngine();
-            this.globalVar.instVars.powerMain1 = 1;
+            this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==0)?2:this.globalVar.instVars.powerMain1;
         } else {
             const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("2", "beginning");
-            this.globalVar.instVars.powerMain1 = 0;
+            this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==1)?3:this.globalVar.instVars.powerMain1;
         }
     }
 
