@@ -262,6 +262,36 @@ export default class GameController {
         }
     }
 
+    controlShuntingPowerR(run=false)
+    {
+        if(run) {
+            this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
+			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
+			FireMiniRight.setAnimation("1", "beginning");
+			this.fuelConsumptionShuntingEngine();
+            this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==0)?2:this.globalVar.instVars.powerShuntingR1;
+        } else {
+			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
+			FireMiniRight.setAnimation("2", "beginning");
+            this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==1)?3:this.globalVar.instVars.powerShuntingR1;
+        }
+    }
+
+    controlShuntingPowerL(run=false)
+    {
+        if(run) {
+            this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting.powerShunting, 0);
+			const FireMiniLeft = runtime.objects.FireMiniLeft.getFirstInstance();
+			FireMiniLeft.setAnimation("1", "beginning");
+			this.fuelConsumptionShuntingEngine();
+            this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==0)?2:this.globalVar.instVars.powerShuntingL1;
+        } else {
+			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
+			FireMiniRight.setAnimation("2", "beginning");
+            this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==1)?3:this.globalVar.instVars.powerShuntingL1;
+        }
+    }
+
     //задаю временные параметры
     addVisualObjectShip(value)
     {
