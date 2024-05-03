@@ -13,6 +13,10 @@ export default class GameController {
     #PlayerConfig;
     #Ship;
 
+    //временные
+    #_shipVisual;
+    #_uiMainGame;
+
     constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship) {
         this.#LevelConfig = LevelConfig;
         this.GameConfig = GameConfig;
@@ -204,8 +208,50 @@ export default class GameController {
         }
     }
 
-    #updateMassCargo()
+    //работа с визуалом корабля
+    allStopAnim()
     {
+        const Fire = this.runtime.objects.Fire.getFirstInstance();
+        const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
+        const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
+        Fire.stopAnimation();
+        FireMiniLeft.stopAnimation();
+        FireMiniRight.stopAnimation();
+    }
 
+    setParametrsShip()
+    {
+        this.#_shipVisual.instVars.PowerMainEngine = PlayShip.powerMain;
+        this.#_shipVisual.instVars.PowerShuntingEngine = PlayShip.powerShunting;
+        this.playerConfig.currentShip.repairFull();
+    }
+
+    massCalculation()
+    {
+        this.#_shipVisual.behaviors.physics.density = this.playerConfig.massShip;
+        this.#_uiMainGame.setFuel(PlayShip.fuel);
+    }
+
+    fuelConsumptionMainEngine()
+    {
+        this.playerConfig.currentShip.fuelConsumptionMainEngine();
+        this.massCalculation();
+    }
+
+    fuelConsumptionShuntingEngine()
+    {
+        this.playerConfig.currentShip.fuelConsumptionShuntingEngine();
+        this.massCalculation();
+    }
+
+    //задаю временные параметры
+    addVisualObjectShip(value)
+    {
+        this.#_shipVisual = value;
+    }
+
+    setUIMainGames(value)
+    {
+        this.#_uiMainGame = value;
     }
 }
