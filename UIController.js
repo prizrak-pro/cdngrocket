@@ -185,7 +185,7 @@ export class UISelectCargo {
         //Заголовок
         let self = this;
         console.log(this.globalRuntime)
-        this.globalRuntime.getInstanceByUid(8).text = this.gameController.playerConfig.money;
+        this.globalRuntime.getInstanceByUid(8).text = this.#numberWithSpaces(this.gameController.playerConfig.money);
         this.globalRuntime.objects.Text.getAllInstances().forEach(function(element) {
             element.text = "";
             switch(element.uid)
