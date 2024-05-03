@@ -90,10 +90,19 @@ export default class GameController {
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
         
         
-        const btnStart = this.runtime.objects.UIMainButton.getAllInstances()[0];
-        if(btnStart.containsPoint(mouseXYAr[0], mouseXYAr[1])){
-            this.runtime.goToLayout("Level"+this.levelConfig.level)
-            return;
+        const btnStart = this.runtime.objects.UIMainButton.getAllInstances()
+        for(var i = 0; i < btnStart.length; i++) {
+            if(btnStart[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                switch(btnStart[i].instVars.Type)
+                {
+                    case 1:
+                        this.runtime.goToLayout("Level"+this.levelConfig.level)
+                        return;
+                    case 2:
+                        this.runtime.goToLayout("SelectLevel")
+                        return;
+                }
+            }
         }
         
         const sprites = this.runtime.objects.btnSelectCargoWeight.getAllInstances();
@@ -174,9 +183,13 @@ export default class GameController {
                 but2.animationFrame = 1;
                 break;
             case 3:
-                const but3 = this.runtime.objects.UIMainButton.getFirstInstance();
-                but3.setAnimation(this.Language)
-                but3.animationFrame = 2;
+                let but = this.runtime.getInstanceByUid(298)
+                but.setAnimation(this.Language)
+                but.animationFrame = 2;
+
+                but = this.runtime.getInstanceByUid(21)
+                but.setAnimation(this.Language)
+                but.animationFrame = 5;
                 break;
             case 4:
                 let self = this;
