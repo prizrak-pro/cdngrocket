@@ -184,7 +184,13 @@ export class UISelectCargo {
     {
         //Заголовок
         let self = this;
-        console.log(this.globalRuntime)
+        
+        this.globalRuntime.getInstanceByUid(8).text = this.#numberWithSpaces(this.gameController.playerConfig.money);
+
+        const but = this.globalRuntime.getInstanceByUid(18);
+        but.setAnimation(this.gameController.Language)
+        but.animationFrame = 5;
+
         this.globalRuntime.getInstanceByUid(8).text = this.#numberWithSpaces(this.gameController.playerConfig.money);
         this.globalRuntime.objects.Text.getAllInstances().forEach(function(element) {
             element.text = "";
