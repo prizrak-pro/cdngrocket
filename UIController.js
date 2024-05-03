@@ -204,21 +204,22 @@ export class UISelectCargo {
                     break;
 
                 case 12:
-                    element.text =  self.gameController.ship.nextMassCargo>0?self.#numberWithSpaces(self.gameController.ship.nextMassCargo):"MAX";
+                    element.text =  self.gameController.ship.nextMassCargo>0?self.#numberWithSpaces(self.gameController.ship.nextMassCargo):"max";
                     break;
                 case 5:
-                    element.text =  self.gameController.ship.nextFuel>0?self.#numberWithSpaces(self.gameController.ship.nextFuel):"MAX";
+                    element.text =  self.gameController.ship.nextFuel>0?self.#numberWithSpaces(self.gameController.ship.nextFuel):"max";
                     break;
                 case 13:
-                    element.text =  self.gameController.ship.nextShuntingEngine>0?self.#numberWithSpaces(self.gameController.ship.nextShuntingEngine):"MAX";
+                    element.text =  self.gameController.ship.nextShuntingEngine>0?self.#numberWithSpaces(self.gameController.ship.nextShuntingEngine):"max";
                     break;
                 case 14:
-                    element.text =  self.gameController.ship.nextStrength>0?self.#numberWithSpaces(self.gameController.ship.nextStrength):"MAX";
+                    element.text =  self.gameController.ship.nextStrength>0?self.#numberWithSpaces(self.gameController.ship.nextStrength):"max";
                     break;
             }
         });
 
         this.globalRuntime.objects.UpdatePrice.getAllInstances().forEach(function(element) {
+            element.text = "";
             switch(element.uid)
             {
                 case 7:

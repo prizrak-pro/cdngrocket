@@ -110,6 +110,7 @@ export class PlayerConfig {
 
 	creatShip(classShip)
 	{
+		console.log(this.#ship);
 		this.#currentShip = new classShip(this.#ship);
 	}
 
