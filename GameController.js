@@ -245,6 +245,23 @@ export default class GameController {
         this.massCalculation();
     }
 
+    //двигатель
+    controlMainPower(run=false)
+    {
+        if(run) {
+			this.#_shipVisual.behaviors.physics.applyForce(0, -1*PlayShip.powerMain);
+			this.#_shipVisual.behaviors.physics.isImmovable=false;
+			const Fire = this.runtime.objects.Fire.getFirstInstance();
+			Fire.setAnimation("1", "beginning");
+			this.fuelConsumptionMainEngine();
+            this.globalVar.instVars.powerMain1 = 1;
+        } else {
+            const Fire = this.runtime.objects.Fire.getFirstInstance();
+			Fire.setAnimation("2", "beginning");
+            this.globalVar.instVars.powerMain1 = 0;
+        }
+    }
+
     //задаю временные параметры
     addVisualObjectShip(value)
     {
