@@ -282,7 +282,7 @@ export default class GameController {
     {
         if(run) {
             this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting, 0);
-			const FireMiniLeft = runtime.objects.FireMiniLeft.getFirstInstance();
+			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
 			FireMiniLeft.setAnimation("1", "beginning");
 			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==0)?2:this.globalVar.instVars.powerShuntingL1;
