@@ -249,7 +249,7 @@ export default class GameController {
     controlMainPower(run=false)
     {
         if(run) {
-			this.#_shipVisual.behaviors.physics.applyForce(0, -1*PlayShip.powerMain);
+			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
 			const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("1", "beginning");
