@@ -16,6 +16,7 @@ export default class GameController {
     //временные
     #_shipVisual;
     #_uiMainGame;
+    #_powerState = [false, false, false];
 
     constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship) {
         this.#LevelConfig = LevelConfig;
@@ -225,6 +226,7 @@ export default class GameController {
         this.#_shipVisual.instVars.PowerMainEngine = this.playerConfig.currentShip.powerMain;
         this.#_shipVisual.instVars.PowerShuntingEngine = this.playerConfig.currentShip.powerShunting;
         this.playerConfig.currentShip.repairFull();
+        this.#_powerState = [false, false, false];
         this.massCalculation();
     }
 
@@ -247,6 +249,30 @@ export default class GameController {
     }
 
     //двигатель
+    controlPower(main, left, right)
+    {
+        if(main)
+            this.controlMainPower(main)
+        else
+            if (this.#_powerState[0])
+                this.controlMainPower(main)
+        this.#_powerState[0] = main;
+
+        if(left)
+            this.controlShuntingPowerL(left)
+        else
+            if (this.#_powerState[1])
+                this.controlShuntingPowerL(left)
+        this.#_powerState[1] = left;
+
+        if(right)
+            this.controlShuntingPowerR(right)
+        else
+            if (this.#_powerState[2])
+                this.controlShuntingPowerR(right)
+        this.#_powerState[2] = right;
+    }
+
     controlMainPower(run=false)
     {
         if(run) {
