@@ -1,0 +1,8 @@
+import Ship from "./ShipController.js";
+import {PlayerConfig, GameConfig, LevelConfig} from "./Config.js";
+import {UISelectCargo} from "./UIController.js";
+import GameController from "./GameController.js";
+import AudioManager from "./AudioManager.js";
+import {YandexSDC} from "./YandexSDK.js";
+import UIMainGame from "./UIMainGame.js";
+import DictConroller from "./DictConroller.js";
