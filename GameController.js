@@ -251,26 +251,21 @@ export default class GameController {
     //двигатель
     controlPower(main, left, right)
     {
-        if(main)
+        if(main || this.#_powerState[0]) {
             this.controlMainPower(main)
-        else
-            if (this.#_powerState[0])
-                this.controlMainPower(main)
-        this.#_powerState[0] = main;
+            this.#_powerState[0] = main;
+        }
 
-        if(left)
+        if(left || this.#_powerState[1]) {
             this.controlShuntingPowerL(left)
-        else
-            if (this.#_powerState[1])
-                this.controlShuntingPowerL(left)
-        this.#_powerState[1] = left;
-
-        if(right)
+            this.#_powerState[1] = left;
+        }
+        
+        if(right || this.#_powerState[2]) {
             this.controlShuntingPowerR(right)
-        else
-            if (this.#_powerState[2])
-                this.controlShuntingPowerR(right)
-        this.#_powerState[2] = right;
+            this.#_powerState[2] = right;
+        }
+        
     }
 
     controlMainPower(run=false)
