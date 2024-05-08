@@ -17,6 +17,7 @@ export default class GameController {
     #_shipVisual;
     #_uiMainGame;
     #_powerState = [false, false, false];
+    #_mobButUi = [null, null, null];
 
     constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship) {
         this.#LevelConfig = LevelConfig;
@@ -277,10 +278,14 @@ export default class GameController {
 			Fire.setAnimation("1", "beginning");
 			this.fuelConsumptionMainEngine();
             this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==0)?2:this.globalVar.instVars.powerMain1;
+
+            this.#_mobButUi[0].animationFrame = 1;
         } else {
             const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("2", "beginning");
             this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==1)?3:this.globalVar.instVars.powerMain1;
+
+            this.#_mobButUi[0].animationFrame = 0;
         }
     }
 
@@ -323,5 +328,10 @@ export default class GameController {
     setUIMainGames(value)
     {
         this.#_uiMainGame = value;
+    }
+
+    getMobUIButton()
+    {
+        this.#_mobButUi = [this.runtime.objects.BtnUP.getFirstInstance(), this.runtime.objects.BtnLeft.getFirstInstance(), this.runtime.objects.BtnRight.getFirstInstance()];
     }
 }
