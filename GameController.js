@@ -328,6 +328,7 @@ export default class GameController {
     setUIMainGames(value)
     {
         this.#_uiMainGame = value;
+        this.getMobUIButton();
     }
 
     getMobUIButton()
