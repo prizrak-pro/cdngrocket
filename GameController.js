@@ -298,13 +298,13 @@ export default class GameController {
 			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==0)?2:this.globalVar.instVars.powerShuntingR1;
 
-            this.#_mobButUi[2].animationFrame = 1;
+            this.#_mobButUi[1].animationFrame = 1;
         } else {
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
 			FireMiniRight.setAnimation("2", "beginning");
             this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==1)?3:this.globalVar.instVars.powerShuntingR1;
 
-            this.#_mobButUi[2].animationFrame = 0;
+            this.#_mobButUi[1].animationFrame = 0;
         }
     }
 
@@ -317,13 +317,13 @@ export default class GameController {
 			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==0)?2:this.globalVar.instVars.powerShuntingL1;
 
-            this.#_mobButUi[1].animationFrame = 1;
+            this.#_mobButUi[2].animationFrame = 1;
         } else {
 			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
 			FireMiniLeft.setAnimation("2", "beginning");
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==1)?3:this.globalVar.instVars.powerShuntingL1;
 
-            this.#_mobButUi[1].animationFrame = 0;
+            this.#_mobButUi[2].animationFrame = 0;
         }
     }
 
