@@ -331,6 +331,32 @@ export default class GameController {
     addVisualObjectShip(value)
     {
         this.#_shipVisual = value;
+
+        const Fire = this.runtime.objects.Fire.getFirstInstance();
+        Fire.x = this.#_shipVisual.x
+        Fire.y = this.#_shipVisual.y+60;
+
+        const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
+        FireMiniLeft.x = this.#_shipVisual.x-32
+        FireMiniLeft.y = this.#_shipVisual.y+15;
+
+        const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
+        FireMiniRight.x = this.#_shipVisual.x+32
+        FireMiniRight.y = this.#_shipVisual.y+15;
+
+
+        const LandingFireLeft = this.runtime.objects.LandingFireLeft.getFirstInstance();
+        LandingFireLeft.x = this.#_shipVisual.x-30;
+        LandingFireLeft.y = this.#_shipVisual.y+13;
+
+        const LandingFireRight = this.runtime.objects.LandingFireRight.getFirstInstance();
+        LandingFireRight.x = this.#_shipVisual.x+30;
+        LandingFireRight.y = this.#_shipVisual.y+13;
+
+
+        const Collision = this.runtime.objects.Collision.getFirstInstance();
+        Collision.x = this.#_shipVisual.x;
+        Collision.y = this.#_shipVisual.y;
     }
 
     setUIMainGames(value)
