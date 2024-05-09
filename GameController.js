@@ -395,6 +395,7 @@ export default class GameController {
     //Help Mobil
     showElementHelpMobile()
     {
+        this.runtime.objects.Help_Blackout.createInstance(1,185,507);
         let elem;
         elem = this.runtime.objects.Help_1.createInstance(1,0,470);
         elem.fontFace = "minecraft-ten-font-cyrillic"
@@ -405,7 +406,7 @@ export default class GameController {
 
         this.runtime.objects.Help_2.createInstance(1,10,500);
         this.runtime.objects.Help_3.createInstance(1,242,500);
-        this.runtime.objects.Help_Blackout.createInstance(1,185,507);
+        
     }
 
     destroyHelpMobile()
