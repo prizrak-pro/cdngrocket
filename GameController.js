@@ -395,8 +395,11 @@ export default class GameController {
     //Help Mobil
     showElementHelpMobile()
     {
-        this.runtime.objects.Help_Blackout.createInstance(1,185,507);
         let elem;
+        elem = this.runtime.objects.Help_Blackout.createInstance(1,185,507);
+        elem.width = 400;
+        elem.height = 80;
+        
         elem = this.runtime.objects.Help_1.createInstance(1,0,470);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
@@ -406,8 +409,23 @@ export default class GameController {
         elem.height = 20;
         elem.text = "управление";
 
-        this.runtime.objects.Help_2.createInstance(1,10,500);
-        this.runtime.objects.Help_3.createInstance(1,242,500);
+        elem = this.runtime.objects.Help_2.createInstance(1,10,500);
+        elem.fontFace = "minecraft-ten-font-cyrillic"
+        elem.fontColor = [1,1,1,1];
+        elem.sizePt = 8;
+        elem.horizontalAlign = "center"
+        elem.width = 120;
+        elem.height = 45;
+        elem.text = "маневры\n\nвлево - вправо";
+
+        elem = this.runtime.objects.Help_3.createInstance(1,242,500);
+        elem.fontFace = "minecraft-ten-font-cyrillic"
+        elem.fontColor = [1,1,1,1];
+        elem.sizePt = 8;
+        elem.horizontalAlign = "center"
+        elem.width = 120;
+        elem.height = 45;
+        elem.text = "главная тяга\n\nвверх";
         
     }
 
