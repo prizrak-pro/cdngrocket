@@ -395,7 +395,14 @@ export default class GameController {
     //Help Mobil
     showElementHelpMobile()
     {
-        this.runtime.objects.Help_1.createInstance(1,0,470);
+        let elem;
+        elem = this.runtime.objects.Help_1.createInstance(1,0,470);
+        elem.fontFace = "minecraft-ten-font-cyrillic"
+        elem.fontColor = [1,1,1,1];
+        elem.width = 360;
+        elem.height = 20;
+        elem.text = "управление";
+
         this.runtime.objects.Help_2.createInstance(1,10,500);
         this.runtime.objects.Help_3.createInstance(1,242,500);
         this.runtime.objects.Help_Blackout.createInstance(1,185,507);
