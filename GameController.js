@@ -18,6 +18,7 @@ export default class GameController {
     #_uiMainGame;
     #_powerState = [false, false, false];
     #_mobButUi = [null, null, null];
+    #_engine_shutdown = true;
 
     constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship) {
         this.#LevelConfig = LevelConfig;
@@ -271,6 +272,9 @@ export default class GameController {
 
     controlMainPower(run=false)
     {
+        if(!this.#_engine_shutdown)
+            return;
+
         if(run) {
 			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
@@ -291,6 +295,9 @@ export default class GameController {
 
     controlShuntingPowerR(run=false)
     {
+        if(!this.#_engine_shutdown)
+            return;
+
         if(run) {
             this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
@@ -310,6 +317,9 @@ export default class GameController {
 
     controlShuntingPowerL(run=false)
     {
+        if(!this.#_engine_shutdown)
+            return;
+
         if(run) {
             this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting, 0);
 			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
@@ -325,6 +335,12 @@ export default class GameController {
 
             this.#_mobButUi[2].animationFrame = 0;
         }
+    }
+
+    actionEngineShutdown(delay)
+    {
+        this.#_engine_shutdown = false;
+        setTimeout((this) => {this.#_engine_shutdown=true}, delay*1000);
     }
 
     //задаю временные параметры
