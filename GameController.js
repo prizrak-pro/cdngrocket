@@ -340,8 +340,12 @@ export default class GameController {
     actionEngineShutdown(delay)
     {
         this.#_engine_shutdown = false;
-        let self = this
-        setTimeout((self) => {self.#_engine_shutdown=true}, delay*1000);
+        setTimeout(this.#runEngineShutdown(), delay*1000);
+    }
+
+    #runEngineShutdown()
+    {
+        this.#_engine_shutdown = true;
     }
 
     //задаю временные параметры
