@@ -391,4 +391,25 @@ export default class GameController {
     {
         this.#_mobButUi = [this.runtime.objects.BtnUP.getFirstInstance(), this.runtime.objects.BtnLeft.getFirstInstance(), this.runtime.objects.BtnRight.getFirstInstance()];
     }
+
+    //Help Mobil
+    showElementHelpMobile()
+    {
+        this.runtime.objects.Help_1.createInstance(1,0,470);
+        this.runtime.objects.Help_2.createInstance(1,10,500);
+        this.runtime.objects.Help_3.createInstance(1,242,500);
+        this.runtime.objects.Help_Blackout.createInstance(1,185,507);
+    }
+
+    destroyHelpMobile()
+    {
+        let helpVar = this.runtime.objects.Help_1.getFirstInstance();
+        helpVar.destroy();
+        helpVar = this.runtime.objects.Help_2.getFirstInstance();
+        helpVar.destroy();
+        helpVar = this.runtime.objects.Help_3.getFirstInstance();
+        helpVar.destroy();
+        helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
+        helpVar.destroy();
+    }
 }
