@@ -272,10 +272,9 @@ export default class GameController {
 
     controlMainPower(run=false)
     {
-        if(!this.#_engine_shutdown)
-            return;
-
         if(run) {
+            if(!this.#_engine_shutdown)
+                return;
 			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
 			const Fire = this.runtime.objects.Fire.getFirstInstance();
@@ -295,10 +294,9 @@ export default class GameController {
 
     controlShuntingPowerR(run=false)
     {
-        if(!this.#_engine_shutdown)
-            return;
-
         if(run) {
+            if(!this.#_engine_shutdown)
+                return;
             this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
 			FireMiniRight.setAnimation("1", "beginning");
@@ -317,10 +315,9 @@ export default class GameController {
 
     controlShuntingPowerL(run=false)
     {
-        if(!this.#_engine_shutdown)
-            return;
-
         if(run) {
+            if(!this.#_engine_shutdown)
+                return;
             this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting, 0);
 			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
 			FireMiniLeft.setAnimation("1", "beginning");
