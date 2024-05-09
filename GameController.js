@@ -340,7 +340,7 @@ export default class GameController {
     actionEngineShutdown(delay)
     {
         this.#_engine_shutdown = false;
-        setTimeout(this.#runEngineShutdown(), delay*1000);
+        setTimeout(this.#runEngineShutdown, delay*1000);
     }
 
     #runEngineShutdown()
