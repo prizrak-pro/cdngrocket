@@ -273,7 +273,7 @@ export default class GameController {
     controlMainPower(run=false)
     {
         if(run) {
-            if(!this.#_engine_shutdown)
+            if(!this.#_engine_shutdown && run)
                 return;
 			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
@@ -337,6 +337,9 @@ export default class GameController {
     actionEngineShutdown(delay)
     {
         this.#_engine_shutdown = false;
+        this.controlMainPower(false)
+        this.controlShuntingPowerL(false)
+        this.controlShuntingPowerR(false)
         let self = this;
         setTimeout(self.#runEngineShutdown, delay*1000, self);
     }
