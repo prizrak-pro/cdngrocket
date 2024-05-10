@@ -273,7 +273,7 @@ export default class GameController {
     controlMainPower(run=false)
     {
         if(run) {
-            if(!this.#_engine_shutdown && run)
+            if(!this.#_engine_shutdown)
                 return;
 			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
