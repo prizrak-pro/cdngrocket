@@ -424,7 +424,7 @@ export default class GameController {
         elem.width = 120;
         elem.height = 45;
         elem.text = "главная тяга\n\nвверх";
-        
+
         this.addEventHelpDestroy();
     }
 
@@ -445,23 +445,25 @@ export default class GameController {
 
     }
 
-    OnDownHelpDestroy()
+    OnDownHelpDestroy(self)
     {
-        this.destroyHelpMobile();
-        this.removeEventHelpDestroy();
+        self.destroyHelpMobile();
+        self.removeEventHelpDestroy();
     }
 
     addEventHelpDestroy()
     {
-        this.runtime.addEventListener("mousedown", this.OnDownHelpDestroy);
-        this.runtime.addEventListener("pointerdown", this.OnDownHelpDestroy);
-        this.runtime.addEventListener("keydown", this.OnDownHelpDestroy);
+        let self = this;
+        this.runtime.addEventListener("mousedown", () => this.OnDownHelpDestroy(self));
+        this.runtime.addEventListener("pointerdown", () => this.OnDownHelpDestroy(self));
+        this.runtime.addEventListener("keydown", () => this.OnDownHelpDestroy(self));
     }
 
     removeEventHelpDestroy()
     {
-        this.runtime.removeEventListener("mousedown", this.OnDownHelpDestroy);
-        this.runtime.removeEventListener("pointerdown", this.OnDownHelpDestroy);
-        this.runtime.removeEventListener("keydown", this.OnDownHelpDestroy);
+        let self = this;
+        this.runtime.removeEventListener("mousedown", () => this.OnDownHelpDestroy(self));
+        this.runtime.removeEventListener("pointerdown", () => this.OnDownHelpDestroy(self));
+        this.runtime.removeEventListener("keydown", () => this.OnDownHelpDestroy(self));
     }
 }
