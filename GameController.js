@@ -425,10 +425,12 @@ export default class GameController {
         elem.height = 45;
         elem.text = "главная тяга\n\nвверх";
         
+        this.addEventHelpDestroy();
     }
 
     destroyHelpMobile()
     {
+        console.log("destroyHelpMobile")
         let helpVar = this.runtime.objects.Help_1.getFirstInstance();
         if (helpVar)
         {
@@ -441,5 +443,25 @@ export default class GameController {
             helpVar.destroy();
         }
 
+    }
+
+    OnDownHelpDestroy()
+    {
+        this.destroyHelpMobile();
+        this.removeEventHelpDestroy();
+    }
+
+    addEventHelpDestroy()
+    {
+        this.runtime.addEventListener("mousedown", this.OnDownHelpDestroy);
+        this.runtime.addEventListener("pointerdown", this.OnDownHelpDestroy);
+        this.runtime.addEventListener("keydown", this.OnDownHelpDestroy);
+    }
+
+    removeEventHelpDestroy()
+    {
+        this.runtime.removeEventListener("mousedown", this.OnDownHelpDestroy);
+        this.runtime.removeEventListener("pointerdown", this.OnDownHelpDestroy);
+        this.runtime.removeEventListener("keydown", this.OnDownHelpDestroy);
     }
 }
