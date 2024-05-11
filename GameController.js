@@ -445,9 +445,9 @@ export default class GameController {
 
     }
 
-    OnDownHelpDestroy(self)
+    OnDownHelpDestroy()
     {
-        self.destroyHelpMobile();
+        this.destroyHelpMobile();
         //self.removeEventHelpDestroy();
     }
 
