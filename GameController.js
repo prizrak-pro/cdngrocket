@@ -424,6 +424,8 @@ export default class GameController {
         elem.width = 120;
         elem.height = 45;
         elem.text = "главная тяга\n\nвверх";
+
+        this.addEventHelpDestroy();
     }
 
     destroyHelpMobile()
@@ -441,5 +443,19 @@ export default class GameController {
             helpVar.destroy();
         }
 
+    }
+
+    OnDownHelpDestroy(self)
+    {
+        self.destroyHelpMobile();
+        //self.removeEventHelpDestroy();
+    }
+
+    addEventHelpDestroy()
+    {
+        let self = this;
+        window.addEventListener("mousedown", function(){self.OnDownHelpDestroy()},{once:true});
+        window.addEventListener("pointerdown", function(){self.OnDownHelpDestroy()},{once:true});
+        window.addEventListener("keydown", function(){self.OnDownHelpDestroy()},{once:true});
     }
 }
