@@ -454,16 +454,16 @@ export default class GameController {
     addEventHelpDestroy()
     {
         let self = this;
-        this.runtime.addEventListener("mousedown", () => this.OnDownHelpDestroy(self));
-        this.runtime.addEventListener("pointerdown", () => this.OnDownHelpDestroy(self));
-        this.runtime.addEventListener("keydown", () => this.OnDownHelpDestroy(self));
+        this.runtime.addEventListener("mousedown", this.OnDownHelpDestroy(self));
+        this.runtime.addEventListener("pointerdown", this.OnDownHelpDestroy(self));
+        this.runtime.addEventListener("keydown", this.OnDownHelpDestroy(self));
     }
 
     removeEventHelpDestroy()
     {
         let self = this;
-        this.runtime.removeEventListener("mousedown", () => this.OnDownHelpDestroy(self));
-        this.runtime.removeEventListener("pointerdown", () => this.OnDownHelpDestroy(self));
-        this.runtime.removeEventListener("keydown", () => this.OnDownHelpDestroy(self));
+        this.runtime.removeEventListener("mousedown", this.OnDownHelpDestroy(self));
+        this.runtime.removeEventListener("pointerdown", this.OnDownHelpDestroy(self));
+        this.runtime.removeEventListener("keydown", this.OnDownHelpDestroy(self));
     }
 }
