@@ -454,8 +454,8 @@ export default class GameController {
     addEventHelpDestroy()
     {
         let self = this;
-        window.addEventListener("mousedown", function(){this.OnDownHelpDestroy()},{once:true});
-        window.addEventListener("pointerdown", function(){this.OnDownHelpDestroy()},{once:true});
-        window.addEventListener("keydown", function(){this.OnDownHelpDestroy()},{once:true});
+        window.addEventListener("mousedown", function(){self.OnDownHelpDestroy()},{once:true});
+        window.addEventListener("pointerdown", function(){self.OnDownHelpDestroy()},{once:true});
+        window.addEventListener("keydown", function(){self.OnDownHelpDestroy()},{once:true});
     }
 }
