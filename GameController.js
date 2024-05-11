@@ -430,12 +430,16 @@ export default class GameController {
     destroyHelpMobile()
     {
         let helpVar = this.runtime.objects.Help_1.getFirstInstance();
-        helpVar.destroy();
-        helpVar = this.runtime.objects.Help_2.getFirstInstance();
-        helpVar.destroy();
-        helpVar = this.runtime.objects.Help_3.getFirstInstance();
-        helpVar.destroy();
-        helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
-        helpVar.destroy();
+        if (helpVar)
+        {
+            helpVar.destroy();
+            helpVar = this.runtime.objects.Help_2.getFirstInstance();
+            helpVar.destroy();
+            helpVar = this.runtime.objects.Help_3.getFirstInstance();
+            helpVar.destroy();
+            helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
+            helpVar.destroy();
+        }
+
     }
 }
