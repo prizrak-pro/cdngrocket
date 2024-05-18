@@ -435,7 +435,7 @@ export default class GameController {
         elem.width = 400;
         elem.height = 160;
 
-        elem = runtime.objects.Help_1.createInstance(1,0,360);
+        elem = this.runtime.objects.Help_1.createInstance(1,0,360);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
