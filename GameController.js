@@ -407,7 +407,7 @@ export default class GameController {
         elem.height = 20;
         elem.text = "управление";
 
-        elem = this.runtime.objects.Help_2.createInstance(1,10,500);
+        elem = this.runtime.objects.Help_1.createInstance(1,10,500);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
@@ -416,7 +416,7 @@ export default class GameController {
         elem.height = 45;
         elem.text = "маневры\n\nвлево - вправо";
 
-        elem = this.runtime.objects.Help_3.createInstance(1,242,500);
+        elem = this.runtime.objects.Help_1.createInstance(1,242,500);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
@@ -435,10 +435,10 @@ export default class GameController {
         if (helpVar)
         {
             helpVar.destroy();
-            helpVar = this.runtime.objects.Help_2.getFirstInstance();
-            helpVar.destroy();
-            helpVar = this.runtime.objects.Help_3.getFirstInstance();
-            helpVar.destroy();
+            // helpVar = this.runtime.objects.Help_2.getFirstInstance();
+            // helpVar.destroy();
+            // helpVar = this.runtime.objects.Help_3.getFirstInstance();
+            // helpVar.destroy();
             helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
             helpVar.destroy();
         }
