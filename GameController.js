@@ -485,7 +485,7 @@ export default class GameController {
             element.destroy()
         });
 
-        this.runtime.objects.HelpKey.forEach(function(element) {
+        this.runtime.objects.HelpKey.getAllInstances().forEach(function(element) {
             element.destroy()
         });
 
