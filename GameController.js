@@ -428,25 +428,81 @@ export default class GameController {
         this.addEventHelpDestroy();
     }
 
+    showElementHelpDesktop()
+    {
+        let elem;
+			elem = this.runtime.objects.Help_Blackout.createInstance(1,185,440);
+			elem.width = 400;
+			elem.height = 200;
+
+			elem = this.runtime.objects.Help_1.createInstance(1,0,350);
+			elem.fontFace = "minecraft-ten-font-cyrillic"
+			elem.fontColor = [1,1,1,1];
+			elem.sizePt = 8;
+			elem.horizontalAlign = "center"
+			elem.width = 360;
+			elem.height = 20;
+			elem.text = "управление";
+
+			elem = this.runtime.objects.HelpKey.createInstance(1,50,400);
+			elem.setAnimation("up", "beginning");
+
+			elem = this.runtime.objects.Help_1.createInstance(1,80,400);
+			elem.fontFace = "minecraft-ten-font-cyrillic"
+			elem.fontColor = [1,1,1,1];
+			elem.sizePt = 8;
+			elem.horizontalAlign = "center"
+			elem.width = 120;
+			elem.height = 45;
+			elem.text = "- главная тяга";
+
+			elem = this.runtime.objects.HelpKey.createInstance(1,30,460);
+			elem.setAnimation("left", "beginning");
+			
+			elem = this.runtime.objects.HelpKey.createInstance(1,70,460);
+			elem.setAnimation("rigth", "beginning");
+
+			elem = this.runtime.objects.Help_1.createInstance(1,80,460);
+			elem.fontFace = "minecraft-ten-font-cyrillic"
+			elem.fontColor = [1,1,1,1];
+			elem.sizePt = 8;
+			elem.horizontalAlign = "center"
+			elem.width = 120;
+			elem.height = 45;
+			elem.text = "- маневры";
+
+        this.addEventHelpDestroy();
+    }
+
     destroyHelpMobile()
     {
         console.log("destroyHelpMobile")
-        let helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
-        //let helpVar = this.runtime.objects.Help_1.getFirstInstance();
-        if (helpVar)
-        {
-            //helpVar.destroy();
-            // helpVar = this.runtime.objects.Help_2.getFirstInstance();
-            // helpVar.destroy();
-            // helpVar = this.runtime.objects.Help_3.getFirstInstance();
-            // helpVar.destroy();
-            //helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
-            helpVar.destroy();
+        // let helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
+        // //let helpVar = this.runtime.objects.Help_1.getFirstInstance();
+        // if (helpVar)
+        // {
+        //     //helpVar.destroy();
+        //     // helpVar = this.runtime.objects.Help_2.getFirstInstance();
+        //     // helpVar.destroy();
+        //     // helpVar = this.runtime.objects.Help_3.getFirstInstance();
+        //     // helpVar.destroy();
+        //     //helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
+        //     helpVar.destroy();
 
-            this.runtime.objects.Help_1.getAllInstances().forEach(function(element) {
-                element.destroy()
-            });
-        }
+
+        // }
+
+        this.runtime.objects.Help_Blackout.getAllInstances().forEach(function(element) {
+            element.destroy()
+        });
+
+        this.runtime.objects.Help_1.getAllInstances().forEach(function(element) {
+            element.destroy()
+        });
+
+        this.runtime.objects.Help_1.HelpKey().forEach(function(element) {
+            element.destroy()
+        });
 
     }
 
