@@ -431,16 +431,21 @@ export default class GameController {
     destroyHelpMobile()
     {
         console.log("destroyHelpMobile")
-        let helpVar = this.runtime.objects.Help_1.getFirstInstance();
+        let helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
+        //let helpVar = this.runtime.objects.Help_1.getFirstInstance();
         if (helpVar)
         {
-            helpVar.destroy();
+            //helpVar.destroy();
             // helpVar = this.runtime.objects.Help_2.getFirstInstance();
             // helpVar.destroy();
             // helpVar = this.runtime.objects.Help_3.getFirstInstance();
             // helpVar.destroy();
-            helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
+            //helpVar = this.runtime.objects.Help_Blackout.getFirstInstance();
             helpVar.destroy();
+
+            this.runtime.objects.Help_1.getAllInstances().forEach(function(element) {
+                element.destroy()
+            });
         }
 
     }
