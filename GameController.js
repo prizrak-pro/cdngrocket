@@ -282,13 +282,15 @@ export default class GameController {
 			this.fuelConsumptionMainEngine();
             this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==0)?2:this.globalVar.instVars.powerMain1;
 
-            this.#_mobButUi[0].animationFrame = 1;
+            if(this.yandexSDC.isMobile)
+                this.#_mobButUi[0].animationFrame = 1;
         } else {
             const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("2", "beginning");
             this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==1)?3:this.globalVar.instVars.powerMain1;
 
-            this.#_mobButUi[0].animationFrame = 0;
+            if(this.yandexSDC.isMobile)
+                this.#_mobButUi[0].animationFrame = 0;
         }
     }
 
@@ -303,13 +305,15 @@ export default class GameController {
 			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==0)?2:this.globalVar.instVars.powerShuntingR1;
 
-            this.#_mobButUi[1].animationFrame = 1;
+            if(this.yandexSDC.isMobile)
+                this.#_mobButUi[1].animationFrame = 1;
         } else {
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
 			FireMiniRight.setAnimation("2", "beginning");
             this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==1)?3:this.globalVar.instVars.powerShuntingR1;
 
-            this.#_mobButUi[1].animationFrame = 0;
+            if(this.yandexSDC.isMobile)
+                this.#_mobButUi[1].animationFrame = 0;
         }
     }
 
@@ -324,13 +328,15 @@ export default class GameController {
 			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==0)?2:this.globalVar.instVars.powerShuntingL1;
 
-            this.#_mobButUi[2].animationFrame = 1;
+            if(this.yandexSDC.isMobile)
+                this.#_mobButUi[2].animationFrame = 1;
         } else {
 			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
 			FireMiniLeft.setAnimation("2", "beginning");
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==1)?3:this.globalVar.instVars.powerShuntingL1;
 
-            this.#_mobButUi[2].animationFrame = 0;
+            if(this.yandexSDC.isMobile)
+                this.#_mobButUi[2].animationFrame = 0;
         }
     }
 
@@ -382,7 +388,8 @@ export default class GameController {
     setUIMainGames(value)
     {
         this.#_uiMainGame = value;
-        this.showUIGameControllerMobile();
+        if(this.yandexSDC.isMobile)
+            this.showUIGameControllerMobile();
     }
 
     showUIGameControllerMobile()
@@ -400,6 +407,14 @@ export default class GameController {
     }
 
     //Help Mobil
+    showElementHelp()
+    {
+        if(this.yandexSDC.isMobile)
+            this.showElementHelpMobile();
+        else
+            this.showElementHelpDesktop();
+    }
+
     showElementHelpMobile()
     {
         let elem;
