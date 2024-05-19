@@ -13,6 +13,9 @@ export class PlayerConfig {
 
 	#currentShip;
 
+	#showHelpMobile = false;
+	#showHelpDesktop = false;
+
 	constructor(obj)
 	{
 		if(obj){
@@ -41,6 +44,21 @@ export class PlayerConfig {
 	}
 	set currentShip(_currentShip) {
 		this.#currentShip = _currentShip;
+	}
+
+	isShowHelp(mobile=false)
+	{
+		if(mobile)
+			return this.#showHelpMobile;
+		return this.#showHelpDesktop;
+	}
+
+	shownHelp(mobile=false)
+	{
+		if(mobile)
+			this.#showHelpMobile = true;
+		else
+			this.#showHelpDesktop = true;
 	}
 
 	updateMassCargo() {

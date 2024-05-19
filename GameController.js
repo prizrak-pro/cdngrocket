@@ -382,7 +382,16 @@ export default class GameController {
     setUIMainGames(value)
     {
         this.#_uiMainGame = value;
-        this.getMobUIButton();
+        this.showUIGameControllerMobile();
+    }
+
+    showUIGameControllerMobile()
+    {
+        let btnUp = this.runtime.objects.BtnUP.createInstance(1,300,590);
+        let BtnLeft = this.runtime.objects.BtnLeft.createInstance(1,38,590);
+        let BtnRight = this.runtime.objects.BtnRight.createInstance(1,104,590);
+        this.#_mobButUi = [btnUp, BtnLeft, BtnRight];
+
     }
 
     getMobUIButton()

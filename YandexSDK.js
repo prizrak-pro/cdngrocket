@@ -2,6 +2,8 @@ export class YandexSDC {
 
     #controlActivation = false;
 
+    #platform = 'mobile';
+
     constructor(control = false)
     {
         this.#controlActivation = control;
@@ -22,6 +24,18 @@ export class YandexSDC {
         if(typeof window.ysdk !== "undefined") 
             return true
         return false;
+    }
+
+    get isMobile()
+    {
+        if(this.#platform == 'mobile')
+            return true;
+        return false;
+    }
+
+    set Mobile(value)
+    {
+        this.#platform = value
     }
 
     #addYandexSDK(d = document) {
