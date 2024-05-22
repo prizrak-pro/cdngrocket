@@ -70,4 +70,20 @@ export class YandexSDC {
         return 1;
 
     }
+
+    async initPlayer() {
+        window.ysdk.getPlayer().then(_player => {
+            window.player = _player;
+        });
+        await new Promise((resolve, reject) => {
+            setTimeout(function f() {
+                if(typeof window.player !== "undefined") {
+                    resolve(1)
+                } else {
+                    setTimeout(f, 1); 
+                }
+            }, 1);
+        });
+        return 1;
+    }
 }
