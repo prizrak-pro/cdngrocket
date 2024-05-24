@@ -73,7 +73,7 @@ export class YandexSDC {
 
     async initPlayer() {
         if(!this.isActivation)
-            return resolve(1);
+            return false;
         window.ysdk.getPlayer().then(_player => {
             window.player = _player;
         });
