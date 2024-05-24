@@ -184,6 +184,9 @@ export default class GameController {
                 const but1 = this.runtime.objects.UIMainButton.getFirstInstance();
                 but1.setAnimation(this.Language)
                 but1.animationFrame = 0;
+
+                audioEpicArpg.play();
+			    audioEpicArpg.volume-=0.9
                 break;
             case 2:
                 const but2 = this.runtime.objects.UIMainButton.getFirstInstance();
