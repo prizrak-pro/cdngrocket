@@ -78,13 +78,13 @@ export class YandexSDC {
             window.player = _player;
         });
         await new Promise((resolve, reject) => {
-            setTimeout(function f() {
+            setTimeout(async function f() {
                 if(typeof window.player !== "undefined") {
 
                     console.log(window.player.getMode());
                     if (window.player.getMode() === 'lite') {
                         // Игрок не авторизован.
-                        window.ysdk.auth.openAuthDialog().then(() => {
+                        await window.ysdk.auth.openAuthDialog().then(() => {
                                 
                                 console.log('Игрок успешно авторизован');
                                 
