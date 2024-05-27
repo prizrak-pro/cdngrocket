@@ -102,4 +102,29 @@ export class YandexSDC {
         });
         return 1;
     }
+
+    async initPlayerTest() {
+        if(!this.isActivation)
+            return false;
+
+        window.player = await window.ysdk.getPlayer()
+        if (!this.isAuth) {
+            await window.ysdk.auth.openAuthDialog().then(() => {
+                    console.log('Игрок успешно авторизован');
+                }).catch(() => {
+                    console.log('Игрок не авторизован');
+                });
+        } else {
+
+        }
+        return 1;
+    }
+
+    get isAuth()
+    {
+        if(!this.isActivation)
+            return false;
+
+        return window.player.getMode() !== 'lite';
+    }
 }
