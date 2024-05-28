@@ -103,7 +103,8 @@ export class YandexSDC {
         return 1;
     }
 
-    async initPlayerTest() {
+    async initPlayerTest() 
+    {
         if(!this.isActivation)
             return false;
 
@@ -127,4 +128,57 @@ export class YandexSDC {
 
         return window.player.getMode() !== 'lite';
     }
+
+    async setData(obj={})
+    {
+        let result = false;
+        if(!this.isActivation || !this.isAuth)
+            return result;
+
+        await window.player.setData(obj, true).then(() => {
+            result = true; 
+        });
+
+        return result;
+    }
+
+    async getData(keys=[])
+    {
+        let result = false;
+        if(!this.isActivation || !this.isAuth)
+            return result;
+
+        await window.player.getData(keys).then(_data => {
+            result = _data; 
+        });
+
+        return result;
+    }
+
+    async setStats(obj={})
+    {
+        let result = false;
+        if(!this.isActivation || !this.isAuth)
+            return result;
+
+        await window.player.setStats(obj).then(() => {
+            result = true; 
+        });
+
+        return result;
+    }
+
+    async getStats(keys=[])
+    {
+        let result = false;
+        if(!this.isActivation || !this.isAuth)
+            return result;
+
+        await window.player.getStats(keys).then(_data => {
+            result = _data; 
+        });
+
+        return result;
+    }
+    
 }

@@ -1,0 +1,23 @@
+
+<script>
+    console.log(123);
+
+    async function setData1()
+    {
+        return 2;
+    }
+
+    async function setData(obj)
+    {
+        let result = false;
+        
+        await setData1().then(() => {
+            result = true; 
+        });
+
+        return result;
+    }
+
+   setData().then(_data => { console.log(_data)});
+
+</script>
