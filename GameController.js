@@ -34,10 +34,13 @@ export default class GameController {
         this.yandexSDC = yandexSDC;
         this.globalVar = globalVar;
 
+        this.#_dict = new this.#DictConroller();
+    }
+
+    initPlayerConfig()
+    {
         this.playerConfig = new this.#PlayerConfig();
         this.playerConfig.creatShip(this.#Ship);
-
-        this.#_dict = new this.#DictConroller();
     }
 
     get ship() {
