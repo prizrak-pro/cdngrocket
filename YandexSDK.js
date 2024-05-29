@@ -115,9 +115,8 @@ export class YandexSDC {
                 }).catch(() => {
                     console.log('Игрок не авторизован');
                 });
-        } else {
-
-        }
+        } 
+        console.log(window.player);
         return 1;
     }
 
