@@ -107,8 +107,11 @@ export class YandexSDC {
     {
         if(!this.isActivation)
             return false;
-
         window.player = await window.ysdk.getPlayer()
+    }
+
+    async openAuthDialog()
+    {
         if (!this.isAuth) {
             await window.ysdk.auth.openAuthDialog().then(() => {
                     console.log('Игрок успешно авторизован');
@@ -116,8 +119,6 @@ export class YandexSDC {
                     console.log('Игрок не авторизован');
                 });
         } 
-        
-        return 1;
     }
 
     get isAuth()

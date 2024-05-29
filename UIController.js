@@ -275,6 +275,11 @@ export class UISelectCargo {
         //this.runtime.getObjectByUID(uid)
     }
 
+    authDialog()
+    {
+        this.globalRuntime.getInstanceByUid(77).text = self.gameController.dict('authdialog');
+    }
+
     #numberWithSpaces(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }

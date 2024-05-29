@@ -37,7 +37,7 @@ export default class GameController {
         this.#_dict = new this.#DictConroller();
     }
 
-    initPlayerConfig()
+    initPlayerConfig(obj={})
     {
         this.playerConfig = new this.#PlayerConfig();
         this.playerConfig.creatShip(this.#Ship);
@@ -140,7 +140,6 @@ export default class GameController {
 
     mouseDownUpdateShip(e)
     {
-        console.log('mouseDownUpdateShip');
         const currentLayer = this.runtime.layout.getLayer(0);
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
         const sprites = this.runtime.objects.UIMainButton.getAllInstances();
@@ -177,6 +176,26 @@ export default class GameController {
         }
     }
 
+    mouseDownAuthDialog(e)
+    {
+        const currentLayer = this.runtime.layout.getLayer(0);
+        const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
+        const btns = this.runtime.objects.UIMainButton.getAllInstances()
+        for(var i = 0; i < btns.length; i++) {
+            if(btns[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                switch(btns[i].instVars.Type)
+                {
+                    case 1:
+                        
+                        break;
+                    case 2:
+                        
+                        break;
+                }
+                this.runtime.goToLayout("SelectLevel")
+            }
+        }
+    }
 
 
     setUIButton(level)

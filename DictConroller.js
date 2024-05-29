@@ -8,13 +8,15 @@ export default class DictConroller {
             'cargo': "Cargo",
             'fuel': "Fuel",
             'shunting':"Maneuverability",
-            'strength':"Strength"
+            'strength':"Strength",
+            'authdialog':"please authorize!\n\nthis will allow you to save achievements and progress in the game.\n\nas well as continue the game on another device."
         },
         'ru':{
             'cargo': "Груз",
             'fuel': "Топливо",
             'shunting':"Маневренность",
-            'strength':"Прочность"
+            'strength':"Прочность",
+            'authdialog':"пожалуйста авторизируйте!\n\nэто позволить сохранить достижения и прогресс в игре.\n\nа так же продолжить игру на другом устройстве."
         }
     }
 
