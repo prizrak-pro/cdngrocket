@@ -144,7 +144,7 @@ export class YandexSDC {
 
     async getData(keys=[])
     {
-        let result = false;
+        let result = {};
         if(!this.isActivation || !this.isAuth)
             return result;
 
