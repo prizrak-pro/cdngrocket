@@ -43,7 +43,10 @@ export default class GameController {
     {
         if (this.yandexSDC.isAuth) {
             //this.yandexSDC.setData({});
-            let obj = this.yandexSDC.getData();
+            let obj;
+            this.yandexSDC.getData(keys).then(_data => {
+                obj = _data; 
+            });
             console.log(obj);
             console.log(this.Functions.isEmptyObject(obj));
             if (this.Functions.isEmptyObject(obj)){
