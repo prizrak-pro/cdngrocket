@@ -213,7 +213,7 @@ export default class GameController {
 
     async OpenAuthDialog()
     {
-        await yandexSDC.initPlayerTest();
+        await this.yandexSDC.initPlayerTest();
     }
 
     setUIButton(level)
