@@ -44,7 +44,7 @@ export default class GameController {
         if (this.yandexSDC.isAuth) {
             //this.yandexSDC.setData({});
             let obj = this.yandexSDC.getData();
-            if (this.Functions.isEmptyObject){
+            if (this.Functions.isEmptyObject(obj)){
                 this.playerConfig = new this.#PlayerConfig(obj);
                 this.playerConfig.creatShip(this.#Ship);
                 return;
