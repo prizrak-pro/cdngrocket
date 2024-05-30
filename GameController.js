@@ -240,14 +240,9 @@ export default class GameController {
                 but.animationFrame = 5;
                 break;
             case 4:
-                let self = this;
-                this.runtime.objects.UIMainButton.getAllInstances().forEach(function(element) {
-                    if(element.uid == 422)
-                    {
-                        element.setAnimation(self.Language)
-                        element.animationFrame = 3;
-                    }
-                });
+                let but4 = this.runtime.getInstanceByUid(422);
+                but4.setAnimation(this.Language);
+                but4.animationFrame = 3;
                 break;
         }
     }
