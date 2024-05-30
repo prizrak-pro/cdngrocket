@@ -7,6 +7,7 @@ export default class GameController {
     yandexSDC;
     globalVar;
     
+    Functions
     GameConfig;
     #LevelConfig;
     #DictConroller;
@@ -20,12 +21,13 @@ export default class GameController {
     #_mobButUi = [null, null, null];
     #_engine_shutdown = true;
 
-    constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship) {
+    constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship, Functions) {
         this.#LevelConfig = LevelConfig;
         this.GameConfig = GameConfig;
         this.#DictConroller = DictConroller;
         this.#PlayerConfig = PlayerConfig;
         this.#Ship = Ship;
+        this.Functions = Functions;
 	}
 
     init(runtime, yandexSDC, globalVar)
@@ -39,8 +41,17 @@ export default class GameController {
 
     initPlayerConfig(obj={})
     {
+        if (this.yandexSDC.isAuth) {
+            this.yandexSDC.setData({});
+            let obj = this.yandexSDC.getData();
+            if (this.Functions.isEmptyObject){
+                this.playerConfig = new this.#PlayerConfig(obj);
+                this.playerConfig.creatShip(this.#Ship);
+                return;
+            }
+        }
         this.playerConfig = new this.#PlayerConfig();
-        this.playerConfig.creatShip(this.#Ship);
+        this.playerConfig.creatShip(this.#Ship);        
     }
 
     get ship() {
@@ -185,11 +196,8 @@ export default class GameController {
             if(btns[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
                 switch(btns[i].instVars.Type)
                 {
-                    case 1:
-                        
-                        break;
-                    case 2:
-                        
+                    case 1://ok
+                        this.OpenAuthDialog();
                         break;
                 }
                 this.runtime.goToLayout("SelectLevel")
@@ -197,6 +205,10 @@ export default class GameController {
         }
     }
 
+    async OpenAuthDialog()
+    {
+        await yandexSDC.initPlayerTest();
+    }
 
     setUIButton(level)
     {
