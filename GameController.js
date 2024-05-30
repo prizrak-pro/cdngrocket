@@ -82,7 +82,7 @@ export default class GameController {
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
         const sprites = this.runtime.objects.UIMainButton.getAllInstances();
         if(sprites[0].containsPoint(mouseXYAr[0], mouseXYAr[1])){
-            if (!yandexSDC.isAuth)
+            if (!this.yandexSDC.isAuth)
             {
                 this.runtime.goToLayout("UIDialog");
             }
