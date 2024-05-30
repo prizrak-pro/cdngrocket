@@ -221,6 +221,13 @@ export class LevelConfig {
 		return this.#total;
 	}
 
+	getTotalZero()
+	{
+		const total = this.#total;
+		this.#total = 0;
+		return total;
+	}
+
 	getMoneyCargo()
 	{
 		return GameConfig.cargoLevel[this.level][this.numberMassCargo][0];

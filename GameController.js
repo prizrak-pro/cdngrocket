@@ -42,7 +42,7 @@ export default class GameController {
     initPlayerConfig(obj={})
     {
         if (this.yandexSDC.isAuth) {
-            this.yandexSDC.setData({});
+            //this.yandexSDC.setData({});
             let obj = this.yandexSDC.getData();
             if (this.Functions.isEmptyObject){
                 this.playerConfig = new this.#PlayerConfig(obj);
@@ -57,9 +57,9 @@ export default class GameController {
     get ship() {
 		return this.playerConfig.currentShip;
 	}
-	set ship(_ship) {
-        this.playerConfig.currentShip = _ship;
-	}
+	// set ship(_ship) {
+    //     this.playerConfig.currentShip = _ship;
+	// }
 
     dict(value)
     {
@@ -562,5 +562,13 @@ export default class GameController {
         window.addEventListener("mousedown", function(){self.OnDownHelpDestroy()},{once:true});
         window.addEventListener("pointerdown", function(){self.OnDownHelpDestroy()},{once:true});
         window.addEventListener("keydown", function(){self.OnDownHelpDestroy()},{once:true});
+    }
+
+    deposit()
+    {
+        this.playerConfig.money = this.levelConfig.getTotalZero();
+        if (this.yandexSDC.isAuth) {
+            this.yandexSDC.getData(this.playerConfig.stringSerialize())
+        }
     }
 }
