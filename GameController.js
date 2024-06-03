@@ -39,24 +39,24 @@ export default class GameController {
         this.#_dict = new this.#DictConroller();
     }
 
-    initPlayerConfig(obj={})
+    async initPlayerConfig(obj={})
     {
         if (this.yandexSDC.isAuth) {
             //this.yandexSDC.setData({});
             let obj;
-            this.yandexSDC.getData(keys).then(_data => {
+            await this.yandexSDC.getData(keys).then(_data => {
                 obj = _data; 
             });
-            console.log(obj);
-            console.log(this.Functions.isEmptyObject(obj));
+
             if (this.Functions.isEmptyObject(obj)){
                 this.playerConfig = new this.#PlayerConfig(obj);
                 this.playerConfig.creatShip(this.#Ship);
-                return;
+                return 1;
             }
         }
         this.playerConfig = new this.#PlayerConfig();
-        this.playerConfig.creatShip(this.#Ship);        
+        this.playerConfig.creatShip(this.#Ship);
+        return 1;        
     }
 
     get ship() {
