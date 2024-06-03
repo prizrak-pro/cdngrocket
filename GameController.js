@@ -44,7 +44,7 @@ export default class GameController {
         if (this.yandexSDC.isAuth) {
             //this.yandexSDC.setData({});
             let obj;
-            await this.yandexSDC.getData(keys).then(_data => {
+            await this.yandexSDC.getData().then(_data => {
                 obj = _data; 
             });
 
