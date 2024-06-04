@@ -56,6 +56,7 @@ export default class GameController {
             } else {
                 this.playerConfig = new this.#PlayerConfig(obj);
                 this.playerConfig.creatShip(this.#Ship);
+                await this.yandexSDC.setData(this.playerConfig.stringSerialize());
                 return 1;
             }
         }
