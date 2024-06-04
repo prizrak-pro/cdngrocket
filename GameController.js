@@ -92,6 +92,7 @@ export default class GameController {
                 this.runtime.goToLayout("UIDialog");
             }
             this.initPlayerConfig();
+            console.log('123123');
             this.runtime.goToLayout("SelectLevel")
         }
     }
