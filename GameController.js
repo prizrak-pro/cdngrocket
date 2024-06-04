@@ -50,14 +50,16 @@ export default class GameController {
             console.log(obj)
             if (this.Functions.isEmptyObject(obj)){
                 console.log('isEmptyObject')
+                this.playerConfig = new this.#PlayerConfig();
+                this.playerConfig.creatShip(this.#Ship);
+                return 1;  
+            } else {
                 this.playerConfig = new this.#PlayerConfig(obj);
                 this.playerConfig.creatShip(this.#Ship);
                 return 1;
             }
         }
-        this.playerConfig = new this.#PlayerConfig();
-        this.playerConfig.creatShip(this.#Ship);
-        return 1;        
+              
     }
 
     get ship() {
@@ -212,8 +214,9 @@ export default class GameController {
                         this.OpenAuthDialog();
                         break;
                 }
-                this.initPlayerConfig();
-                this.runtime.goToLayout("SelectLevel")
+                this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
+                // this.initPlayerConfig();
+                // this.runtime.goToLayout("SelectLevel")
             }
         }
     }
