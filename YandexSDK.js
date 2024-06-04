@@ -153,6 +153,7 @@ export class YandexSDC {
                 result = _data; 
             });
         } else {
+            console.log(123);
             await window.player.getData().then(_data => {
                 result = _data; 
             });
