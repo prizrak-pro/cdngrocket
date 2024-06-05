@@ -138,8 +138,8 @@ export class PlayerConfig {
 		obj.money = this.#money
 		obj.ship = this.#ship
 		obj.className = this.constructor.name;
-        return JSON.stringify(obj);
-		//return obj;
+        //return JSON.stringify(obj);
+		return obj;
     }
 
 	static deserializeObject(obj) {
