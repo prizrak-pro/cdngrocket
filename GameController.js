@@ -42,7 +42,6 @@ export default class GameController {
     async initPlayerConfig(obj={})
     {
         if (this.yandexSDC.isAuth) {
-            //this.yandexSDC.setData({});
             let obj;
             await this.yandexSDC.getData().then(_data => {
                 obj = _data; 
@@ -53,15 +52,23 @@ export default class GameController {
                 this.playerConfig = new this.#PlayerConfig();
                 this.playerConfig.creatShip(this.#Ship);
                 console.log(this.playerConfig.stringSerialize());
-                await this.yandexSDC.setData(this.playerConfig.stringSerialize()).then(result => console.log(result));
+                this.setDataPlayerConfig();
                 return 1;  
             } else {
+                console.log('LOAD');
                 this.playerConfig = new this.#PlayerConfig(obj);
                 this.playerConfig.creatShip(this.#Ship);
                 return 1;
             }
         }
               
+    }
+
+    async setDataPlayerConfig()
+    {
+        if (this.yandexSDC.isAuth) {
+            await this.yandexSDC.setData(this.playerConfig.stringSerialize());
+        }
     }
 
     get ship() {
@@ -96,9 +103,7 @@ export default class GameController {
             {
                 this.runtime.goToLayout("UIDialog");
             }
-            console.log('1');
             this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
-            console.log('2');
         }
     }
 
@@ -579,8 +584,6 @@ export default class GameController {
     deposit()
     {
         this.playerConfig.money = this.levelConfig.getTotalZero();
-        if (this.yandexSDC.isAuth) {
-            this.yandexSDC.getData(this.playerConfig.stringSerialize())
-        }
+        this.setDataPlayerConfig()
     }
 }

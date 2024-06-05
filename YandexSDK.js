@@ -149,7 +149,6 @@ export class YandexSDC {
             return result;
 
         if(keys.length == 0) {
-            console.log(123);
             await window.player.getData().then(_data => {
                 result = _data; 
             });
