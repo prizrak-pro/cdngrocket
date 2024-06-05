@@ -164,14 +164,16 @@ export class YandexSDC {
 
     async setStats(obj={})
     {
+        console.log(obj);
         let result = false;
         if(!this.isActivation || !this.isAuth)
             return result;
 
+        console.log('good');
         await window.player.setStats(obj).then(() => {
             result = true; 
         });
-
+        console.log(result);
         return result;
     }
 
