@@ -148,16 +148,13 @@ export class YandexSDC {
         if(!this.isActivation || !this.isAuth)
             return result;
 
-        console.log('keys');
-        console.log(keys);
-        console.log(!!keys);
-        if(!!keys) {
-            await window.player.getData(keys).then(_data => {
+        if(keys.length == 0) {
+            console.log(123);
+            await window.player.getData().then(_data => {
                 result = _data; 
             });
         } else {
-            console.log(123);
-            await window.player.getData().then(_data => {
+            await window.player.getData(keys).then(_data => {
                 result = _data; 
             });
         }
