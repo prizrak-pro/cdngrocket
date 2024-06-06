@@ -178,28 +178,34 @@ export default class GameController {
         
         for(var i = 0; i < sprites.length; i++) {
             if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                let result = false;
                 switch(sprites[i].instVars.Type)
                 {
                     case 1:
                         if (this.playerConfig.updateMassCargo())
-                            this.playerConfig.creatShip(this.#Ship);
+                            result = true;
                         break;
                     case 2:
                         if (this.playerConfig.updateFuel())
-                            this.playerConfig.creatShip(this.#Ship);
+                            result = true;
                         break;
                     case 3:
                         if (this.playerConfig.updateShuntingEngine())
-                            this.playerConfig.creatShip(this.#Ship);
+                            result = true;
                         break;
                     case 4:
                         if (this.playerConfig.updateStrength())
-                            this.playerConfig.creatShip(this.#Ship);
+                            result = true;
                         break;
                     case 5:
                         this.runtime.goToLayout("SelectLevel")
                         break;
                         
+                }
+
+                if(result){
+                    this.playerConfig.creatShip(this.#Ship);
+                    this.setDataPlayerConfig()
                 }
 
                 if(sprites[i].instVars.Type != 5)
