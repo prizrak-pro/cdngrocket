@@ -52,6 +52,7 @@ export class YandexSDC {
 		.init()
 		.then(ysdk => {
 			console.log('Yandex SDK initialized');
+            console.log(ysdk);
 			window.ysdk = ysdk;
 		});
     }
