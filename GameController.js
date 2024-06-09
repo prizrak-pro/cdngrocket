@@ -48,14 +48,12 @@ export default class GameController {
             });
             console.log(obj)
             if (this.Functions.isEmptyObject(obj)){
-                console.log('isEmptyObject')
                 this.playerConfig = new this.#PlayerConfig();
                 this.playerConfig.creatShip(this.#Ship);
                 console.log(this.playerConfig.stringSerialize());
                 this.setDataPlayerConfig();
                 return 1;  
             } else {
-                console.log('LOAD');
                 this.playerConfig = new this.#PlayerConfig(obj);
                 this.playerConfig.creatShip(this.#Ship);
                 return 1;
