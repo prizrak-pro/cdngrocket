@@ -16,6 +16,10 @@ export class YandexSDC {
         {
             this.#addYandexSDK(); 
             await this.#expectationInitSDK()
+            console.log(window.ysdk.deviceInfo._type);
+            onsole.log( window.ysdk.i18n.lang);
+            this.#platform = window.ysdk.deviceInfo._type;
+            this.#lang = window.ysdk.i18n.lang;
         }
     }
 
@@ -61,8 +65,6 @@ export class YandexSDC {
         await new Promise((resolve, reject) => {
             setTimeout(function f() {
                 if(typeof window.ysdk !== "undefined") {
-                    this.#platform = ysdk.deviceInfo._type;
-                    this.#lang = ysdk.i18n.lang;
                     resolve(1)
                 } else {
                     setTimeout(f, 1); 
