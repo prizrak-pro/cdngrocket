@@ -53,9 +53,10 @@ export class YandexSDC {
 		.then(ysdk => {
 			console.log('Yandex SDK initialized');
             console.log(ysdk);
-            this.#platform = ysdk.deviceInfo.type
-            this.#lang = ysdk.i18n.lang
-			window.ysdk = ysdk;
+            window.ysdk = ysdk;
+            this.#platform = ysdk.deviceInfo.type();
+            this.#lang = ysdk.i18n.lang;
+			
 		});
     }
 
