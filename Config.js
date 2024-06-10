@@ -13,8 +13,8 @@ export class PlayerConfig {
 
 	#currentShip;
 
-	#showHelpMobile = false;
-	#showHelpDesktop = false;
+	#showHelpMobile = true;
+	#showHelpDesktop = true;
 
 	constructor(obj)
 	{
@@ -23,6 +23,24 @@ export class PlayerConfig {
 			this.#money = obj.money;
 			this.#ship = obj.ship
 		}
+	}
+
+	get HelpMobile()
+	{
+		if(this.#showHelpMobile){
+			this.#showHelpMobile = false;
+			return true;
+		}
+		return false;
+	}
+
+	get HelpDesktop()
+	{
+		if(this.#showHelpDesktop){
+			this.#showHelpDesktop = false;
+			return true;
+		}
+		return false;
 	}
 
 	get maxOpenLevel() {

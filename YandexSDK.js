@@ -3,6 +3,7 @@ export class YandexSDC {
     #controlActivation = false;
 
     #platform = 'mobile';
+    #lang = "en";
 
     constructor(control = false)
     {
@@ -16,7 +17,6 @@ export class YandexSDC {
             this.#addYandexSDK(); 
             await this.#expectationInitSDK()
         }
-        //return this.isActivation;
     }
 
     get isActivation()
@@ -33,9 +33,9 @@ export class YandexSDC {
         return false;
     }
 
-    set Mobile(value)
+    get Lang()
     {
-        this.#platform = value
+        return this.#lang;
     }
 
     #addYandexSDK(d = document) {
@@ -53,6 +53,8 @@ export class YandexSDC {
 		.then(ysdk => {
 			console.log('Yandex SDK initialized');
             console.log(ysdk);
+            this.#platform = ysdk.deviceInfo.type
+            this.#lang = ysdk.i18n.lang
 			window.ysdk = ysdk;
 		});
     }
@@ -165,16 +167,12 @@ export class YandexSDC {
 
     async setStats(obj={})
     {
-        console.log(obj);
         let result = false;
         if(!this.isActivation || !this.isAuth)
             return result;
-
-        console.log('good');
         await window.player.setStats(obj).then(() => {
             result = true; 
         });
-        console.log(result);
         return result;
     }
 
@@ -183,11 +181,9 @@ export class YandexSDC {
         let result = false;
         if(!this.isActivation || !this.isAuth)
             return result;
-
         await window.player.getStats(keys).then(_data => {
             result = _data; 
         });
-
         return result;
     }
     

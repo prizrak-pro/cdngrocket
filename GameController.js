@@ -36,7 +36,7 @@ export default class GameController {
         this.yandexSDC = yandexSDC;
         this.globalVar = globalVar;
 
-        this.#_dict = new this.#DictConroller();
+        this.#_dict = new this.#DictConroller(this.yandexSDC.Lang);
     }
 
     async initPlayerConfig(obj={})
@@ -466,9 +466,11 @@ export default class GameController {
     showElementHelp()
     {
         if(this.yandexSDC.isMobile)
-            this.showElementHelpMobile();
+            if (this.playerConfig.HelpMobile)
+                this.showElementHelpMobile();
         else
-            this.showElementHelpDesktop();
+            if (this.playerConfig.HelpDesktop)
+                this.showElementHelpDesktop();
     }
 
     showElementHelpMobile()

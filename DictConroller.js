@@ -21,6 +21,17 @@ export default class DictConroller {
     }
 
 	constructor(lang = 'en') {
+        switch(lang) {
+            case "be":
+            case "kk":
+            case "uk":
+            case "uz":
+            case "ru":
+                lang = 'ru';
+                break;
+            default:
+                lang = 'en'; 
+        }
         this.#lang = lang;
 	}
     dict(value){
