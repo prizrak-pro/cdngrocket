@@ -52,11 +52,7 @@ export class YandexSDC {
 		.init()
 		.then(ysdk => {
 			console.log('Yandex SDK initialized');
-            console.log(ysdk);
-            window.ysdk = ysdk;
-            this.#platform = ysdk.deviceInfo._type;
-            this.#lang = ysdk.i18n.lang;
-			
+            window.ysdk = ysdk;			
 		});
     }
 
@@ -65,6 +61,8 @@ export class YandexSDC {
         await new Promise((resolve, reject) => {
             setTimeout(function f() {
                 if(typeof window.ysdk !== "undefined") {
+                    this.#platform = ysdk.deviceInfo._type;
+                    this.#lang = ysdk.i18n.lang;
                     resolve(1)
                 } else {
                     setTimeout(f, 1); 
