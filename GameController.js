@@ -58,6 +58,10 @@ export default class GameController {
                 this.playerConfig.creatShip(this.#Ship);
                 return 1;
             }
+        } else {
+            this.playerConfig = new this.#PlayerConfig();
+            this.playerConfig.creatShip(this.#Ship);
+            return 1;
         }
               
     }
