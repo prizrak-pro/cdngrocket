@@ -313,14 +313,6 @@ export default class GameController {
     //двигатель
     controlPower(main, left, right)
     {
-
-        if(this.playerConfig.currentShip.fuel <=0){
-            main = false;
-            left = false;
-            right = false;
-        }
-        
-
         if(main || this.#_powerState[0]) {
             this.controlMainPower(main)
             this.#_powerState[0] = main;
