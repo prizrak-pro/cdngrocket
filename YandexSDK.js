@@ -18,9 +18,9 @@ export class YandexSDC {
             await this.#expectationInitSDK()
             console.log(window.ysdk);
             console.log(window.ysdk.deviceInfo._type);
-            console.log(window.ysdk.i18n.lang);
+            console.log(window.ysdk.environment.i18n.lang);
             this.#platform = window.ysdk.deviceInfo._type;
-            this.#lang = window.ysdk.i18n.lang;
+            this.#lang = window.ysdk.environment.i18n.lang;
         }
     }
 
