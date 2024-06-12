@@ -245,7 +245,7 @@ export default class GameController {
     async FullscreenAdv()
     {
         let self = this;
-        await this.yandexSDC.adv.showFullscreenAdv({
+        await window.ysdk.adv.showFullscreenAdv({
             callbacks: {
                 onClose: function(wasShown) {
                     self.runtime.goToLayout("Level"+self.levelConfig.level)
