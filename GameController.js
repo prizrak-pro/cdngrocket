@@ -141,7 +141,8 @@ export default class GameController {
                 switch(btnStart[i].instVars.Type)
                 {
                     case 1:
-                        this.runtime.goToLayout("Level"+this.levelConfig.level)
+                        //this.runtime.goToLayout("Level"+this.levelConfig.level)
+                        this.runtime.goToLayout("FullscreenAdv")
                         return;
                     case 2:
                         this.runtime.goToLayout("SelectLevel")
@@ -239,6 +240,24 @@ export default class GameController {
     async OpenAuthDialog()
     {
         await this.yandexSDC.initPlayerTest();
+    }
+
+    async FullscreenAdv()
+    {
+        let self = this;
+        await this.yandexSDC.adv.showFullscreenAdv({
+            callbacks: {
+                onClose: function(wasShown) {
+                    self.runtime.goToLayout("Level"+self.levelConfig.level)
+                },
+                onError: function(error) {
+                    self.runtime.goToLayout("Level"+self.levelConfig.level)
+                },
+                onOffline: function() {
+                    self.runtime.goToLayout("Level"+self.levelConfig.level)
+                }
+            }
+        })
     }
 
     setUIButton(level)
