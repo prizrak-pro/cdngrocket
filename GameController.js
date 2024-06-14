@@ -260,7 +260,7 @@ export default class GameController {
                 }
             })
         } else {
-            this.runtime.goToLayout("Level"+self.levelConfig.level)
+            this.runtime.goToLayout("Level"+this.levelConfig.level)
         }
     }
 
