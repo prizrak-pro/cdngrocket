@@ -170,7 +170,7 @@ export class PlayerConfig {
 }
 
 export class GameConfig {
-	static maxLevel = 3;
+	static maxLevel = 12;
 
 	static cargoLevel = {
 		1:[[600,400],[400,200],[200,100]],
