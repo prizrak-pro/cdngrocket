@@ -244,20 +244,24 @@ export default class GameController {
 
     async FullscreenAdv()
     {
-        let self = this;
-        await window.ysdk.adv.showFullscreenAdv({
-            callbacks: {
-                onClose: function(wasShown) {
-                    self.runtime.goToLayout("Level"+self.levelConfig.level)
-                },
-                onError: function(error) {
-                    self.runtime.goToLayout("Level"+self.levelConfig.level)
-                },
-                onOffline: function() {
-                    self.runtime.goToLayout("Level"+self.levelConfig.level)
+        if(this.yandexSDC.isActivation){
+            let self = this;
+            await window.ysdk.adv.showFullscreenAdv({
+                callbacks: {
+                    onClose: function(wasShown) {
+                        self.runtime.goToLayout("Level"+self.levelConfig.level)
+                    },
+                    onError: function(error) {
+                        self.runtime.goToLayout("Level"+self.levelConfig.level)
+                    },
+                    onOffline: function() {
+                        self.runtime.goToLayout("Level"+self.levelConfig.level)
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            this.runtime.goToLayout("Level"+self.levelConfig.level)
+        }
     }
 
     setUIButton(level)
