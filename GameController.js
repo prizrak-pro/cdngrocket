@@ -80,6 +80,15 @@ export default class GameController {
     //     this.playerConfig.currentShip = _ship;
 	// }
 
+    incrementLevel()
+    {
+        if(this.levelConfig.level == this.playerConfig.maxOpenLevel && this.levelConfig.level < this.GameConfig.maxLevel)
+			{
+				this.playerConfig.maxOpenLevel++;
+                this.setDataPlayerConfig()
+			}
+    }
+
     dict(value)
     {
         return this.#_dict.dict(value);
