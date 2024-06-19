@@ -82,7 +82,7 @@ export default class GameController {
 
     incrementLevel()
     {
-        if(this.levelConfig.level == this.playerConfig.maxOpenLevel && this.levelConfig.level < this.GameConfig.maxLevel)
+        if(this.levelConfig.level == this.playerConfig.maxOpenLevel && this.levelConfig.level < this.GameConfig.maxLevel && this.levelConfig.levelStatus == "end_success")
 			{
 				this.playerConfig.maxOpenLevel++;
                 this.setDataPlayerConfig()
