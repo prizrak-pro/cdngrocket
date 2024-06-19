@@ -46,11 +46,9 @@ export default class GameController {
             await this.yandexSDC.getData().then(_data => {
                 obj = _data; 
             });
-            console.log(obj)
             if (this.Functions.isEmptyObject(obj)){
                 this.playerConfig = new this.#PlayerConfig();
                 this.playerConfig.creatShip(this.#Ship);
-                console.log(this.playerConfig.stringSerialize());
                 this.setDataPlayerConfig();
                 return 1;  
             } else {
