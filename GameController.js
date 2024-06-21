@@ -258,7 +258,7 @@ export default class GameController {
 			{
 				case 2:
 					const uiselectcargo1 = new this.UISelectCargo(this);
-					uiselectcargo1.createdUIModalTransfMoney(gameController.levelConfig.getTotal());
+					uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
 					this.deposit();
 					break;
 				case 3:
