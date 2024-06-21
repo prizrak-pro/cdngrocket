@@ -9,6 +9,7 @@ export default class GameController {
     
     Functions
     GameConfig;
+    UISelectCargo;
     #LevelConfig;
     #DictConroller;
     #PlayerConfig;
@@ -21,9 +22,10 @@ export default class GameController {
     #_mobButUi = [null, null, null];
     #_engine_shutdown = true;
 
-    constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship, Functions) {
+    constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship, Functions, UISelectCargo) {
         this.#LevelConfig = LevelConfig;
         this.GameConfig = GameConfig;
+        this.UISelectCargo = UISelectCargo;
         this.#DictConroller = DictConroller;
         this.#PlayerConfig = PlayerConfig;
         this.#Ship = Ship;
@@ -243,6 +245,29 @@ export default class GameController {
             }
         }
     }
+
+    mouseDownEndLevel(e)
+{
+	const currentLayer = this.runtime.layout.getLayer(0);
+	const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
+	const sprites = this.runtimes.objects.UIMainButton.getAllInstances();
+	
+	for(var i = 0; i < sprites.length; i++) {
+		if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+			switch(sprites[i].instVars.Type)
+			{
+				case 2:
+					const uiselectcargo1 = new this.UISelectCargo(this);
+					uiselectcargo1.createdUIModalTransfMoney(gameController.levelConfig.getTotal());
+					this.deposit();
+					break;
+				case 3:
+					this.runtime.goToLayout("SelectLevel")
+					
+			}
+		}
+	}
+}
 
     async OpenAuthDialog()
     {
