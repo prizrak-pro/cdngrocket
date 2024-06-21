@@ -250,7 +250,7 @@ export default class GameController {
 {
 	const currentLayer = this.runtime.layout.getLayer(0);
 	const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
-	const sprites = this.runtimes.objects.UIMainButton.getAllInstances();
+	const sprites = this.runtime.objects.UIMainButton.getAllInstances();
 	
 	for(var i = 0; i < sprites.length; i++) {
 		if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
