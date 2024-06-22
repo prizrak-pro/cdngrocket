@@ -329,11 +329,13 @@ export default class GameController {
             })
 
         } else {
+            console.log('GO');
             this.levelConfig.increase3Total()
-            this.runtime.goToLayout("EndLevel")
+            //this.runtime.goToLayout("EndLevel")
             const uiselectcargo1 = new this.UISelectCargo(this);
             uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
             this.deposit();
+            console.log('GO1');
         }
     }
 
