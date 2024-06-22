@@ -239,6 +239,11 @@ export class LevelConfig {
 		return this.#total;
 	}
 
+	increase3Total()
+	{
+		this.#total*=3;
+	}
+
 	getTotalZero()
 	{
 		const total = this.#total;

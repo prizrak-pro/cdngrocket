@@ -256,6 +256,9 @@ export default class GameController {
 		if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
 			switch(sprites[i].instVars.Type)
 			{
+                case 1:
+                    this.runtime.goToLayout("RewardedVideoAdv")
+                    break;
 				case 2:
 					const uiselectcargo1 = new this.UISelectCargo(this);
 					uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
@@ -293,6 +296,42 @@ export default class GameController {
             })
         } else {
             this.runtime.goToLayout("Level"+this.levelConfig.level)
+        }
+    }
+
+    async RewardedVideoAdv()
+    {
+        if(this.yandexSDC.isActivation){
+            let self = this;
+            await window.ysdk.adv.showRewardedVideo({
+                callbacks: {
+                    onOpen: () => {
+                      
+                    },
+                    onRewarded: () => {
+                        self.levelConfig.increase3Total()
+                        self.runtime.goToLayout("EndLevel")
+                        const uiselectcargo1 = new self.UISelectCargo(this);
+                        uiselectcargo1.createdUIModalTransfMoney(self.levelConfig.getTotal());
+                        self.deposit();
+                    },
+                    onClose: () => {
+                        const uiselectcargo1 = new self.UISelectCargo(self);
+                        uiselectcargo1.createdUIModalTransfMoney(self.levelConfig.getTotal());
+                        self.deposit();
+                    }, 
+                    onError: (e) => {
+                        const uiselectcargo1 = new self.UISelectCargo(self);
+                        uiselectcargo1.createdUIModalTransfMoney(self.levelConfig.getTotal());
+                        self.deposit();
+                    }
+                }
+            })
+
+        } else {
+            const uiselectcargo1 = new this.UISelectCargo(this);
+            uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
+            this.deposit();
         }
     }
 
