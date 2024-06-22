@@ -247,30 +247,30 @@ export default class GameController {
     }
 
     mouseDownEndLevel(e)
-{
-	const currentLayer = this.runtime.layout.getLayer(0);
-	const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
-	const sprites = this.runtime.objects.UIMainButton.getAllInstances();
-	
-	for(var i = 0; i < sprites.length; i++) {
-		if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
-			switch(sprites[i].instVars.Type)
-			{
-                case 1:
-                    this.runtime.goToLayout("RewardedVideoAdv")
-                    break;
-				case 2:
-					const uiselectcargo1 = new this.UISelectCargo(this);
-					uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
-					this.deposit();
-					break;
-				case 3:
-					this.runtime.goToLayout("SelectLevel")
-					
-			}
-		}
-	}
-}
+    {
+        const currentLayer = this.runtime.layout.getLayer(0);
+        const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
+        const sprites = this.runtime.objects.UIMainButton.getAllInstances();
+        
+        for(var i = 0; i < sprites.length; i++) {
+            if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                switch(sprites[i].instVars.Type)
+                {
+                    case 1:
+                        this.runtime.goToLayout("RewardedVideoAdv")
+                        break;
+                    case 2:
+                        const uiselectcargo1 = new this.UISelectCargo(this);
+                        uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
+                        this.deposit();
+                        break;
+                    case 3:
+                        this.runtime.goToLayout("SelectLevel")
+                        
+                }
+            }
+        }
+    }
 
     async OpenAuthDialog()
     {
@@ -310,10 +310,7 @@ export default class GameController {
                     },
                     onRewarded: () => {
                         self.levelConfig.increase3Total()
-                        self.runtime.goToLayout("EndLevel")
-                        const uiselectcargo1 = new self.UISelectCargo(this);
-                        uiselectcargo1.createdUIModalTransfMoney(self.levelConfig.getTotal());
-                        self.deposit();
+                        self.runtime.goToLayout("EndLevelRewarded")
                     },
                     onClose: () => {
                         const uiselectcargo1 = new self.UISelectCargo(self);
@@ -329,13 +326,8 @@ export default class GameController {
             })
 
         } else {
-            console.log('GO');
             this.levelConfig.increase3Total()
-            //this.runtime.goToLayout("EndLevel")
-            const uiselectcargo1 = new this.UISelectCargo(this);
-            uiselectcargo1.createdUIModalTransfMoney(this.levelConfig.getTotal());
-            this.deposit();
-            console.log('GO1');
+            this.runtime.goToLayout("EndLevelRewarded")
         }
     }
 
