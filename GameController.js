@@ -311,7 +311,7 @@ export default class GameController {
                     onRewarded: () => {
                         console.log('onRewarded');
                         self.levelConfig.increase3Total()
-                        self.runtime.goToLayout("EndLevelRewarded")
+                        //self.runtime.goToLayout("EndLevelRewarded")
                     },
                     onClose: () => {
                         console.log('onClose');
