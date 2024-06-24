@@ -306,21 +306,20 @@ export default class GameController {
             await window.ysdk.adv.showRewardedVideo({
                 callbacks: {
                     onOpen: () => {
-                      
+                        console.log('onOpen');
                     },
                     onRewarded: () => {
+                        console.log('onRewarded');
                         self.levelConfig.increase3Total()
                         self.runtime.goToLayout("EndLevelRewarded")
                     },
                     onClose: () => {
-                        const uiselectcargo1 = new self.UISelectCargo(self);
-                        uiselectcargo1.createdUIModalTransfMoney(self.levelConfig.getTotal());
-                        self.deposit();
+                        console.log('onClose');
+                        self.runtime.goToLayout("EndLevelRewarded")
                     }, 
                     onError: (e) => {
-                        const uiselectcargo1 = new self.UISelectCargo(self);
-                        uiselectcargo1.createdUIModalTransfMoney(self.levelConfig.getTotal());
-                        self.deposit();
+                        console.log('onError');
+                        self.runtime.goToLayout("EndLevelRewarded")
                     }
                 }
             })
