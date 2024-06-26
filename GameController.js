@@ -166,15 +166,11 @@ export default class GameController {
         for(var i = 0; i < sprites.length; i++) {
             if (sprites[i].animationFrame==1)
                 select_cur = i;
-            //if (sprites[i].animationFrame!=2)
-                //sprites[i].animationFrame=0;
             if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1]))
                 select_new = i;
             
         }
-        console.log(select_new);
         if (select_new != undefined) {
-            console.log(123);
             if (sprites[select_new].animationFrame!=2) {
                 sprites[select_cur].animationFrame=0;
                 sprites[select_new].animationFrame=1;
