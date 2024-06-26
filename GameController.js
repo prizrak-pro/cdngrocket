@@ -558,6 +558,7 @@ export default class GameController {
     //Help Mobil
     showElementHelp()
     {
+        console.log(this.yandexSDC.isMobile);
         if(this.yandexSDC.isMobile)
             if (this.playerConfig.HelpMobile){
                 this.showElementHelpMobile();
