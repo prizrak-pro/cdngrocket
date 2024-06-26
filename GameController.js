@@ -176,8 +176,8 @@ export default class GameController {
         if (select_new != undefined) {
             console.log(123);
             if (sprites[select_new].animationFrame!=2) {
-                sprites[select_new].animationFrame=1;
                 sprites[select_cur].animationFrame=0;
+                sprites[select_new].animationFrame=1;
                 this.levelConfig.numberMassCargo = sprites[select_new].instVars.IndexElement
             } else {
                 sprites[select_cur].animationFrame=1;
