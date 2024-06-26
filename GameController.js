@@ -172,13 +172,16 @@ export default class GameController {
                 select_new = i;
             
         }
-        if (sprites[select_new].animationFrame!=2) {
-            sprites[select_new].animationFrame=1;
-            this.levelConfig.numberMassCargo = sprites[select_new].instVars.IndexElement
-        } else {
-            sprites[select_cur].animationFrame=1;
-            this.levelConfig.numberMassCargo = sprites[select_cur].instVars.IndexElement;
+        if (select_new) {
+            if (sprites[select_new].animationFrame!=2) {
+                sprites[select_new].animationFrame=1;
+                this.levelConfig.numberMassCargo = sprites[select_new].instVars.IndexElement
+            } else {
+                sprites[select_cur].animationFrame=1;
+                this.levelConfig.numberMassCargo = sprites[select_cur].instVars.IndexElement;
+            }
         }
+        
             
     }
 
@@ -558,7 +561,6 @@ export default class GameController {
     //Help Mobil
     showElementHelp()
     {
-        console.log(this.yandexSDC.isMobile);
         if(this.yandexSDC.isMobile) {
             if (this.playerConfig.HelpMobile){
                 this.showElementHelpMobile();
