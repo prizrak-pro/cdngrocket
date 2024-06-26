@@ -172,6 +172,7 @@ export default class GameController {
                 select_new = i;
             
         }
+        console.log(select_new);
         if (select_new) {
             if (sprites[select_new].animationFrame!=2) {
                 sprites[select_new].animationFrame=1;
