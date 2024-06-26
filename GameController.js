@@ -166,8 +166,8 @@ export default class GameController {
         for(var i = 0; i < sprites.length; i++) {
             if (sprites[i].animationFrame==1)
                 select_cur = i;
-            if (sprites[i].animationFrame!=2)
-                sprites[i].animationFrame=0;
+            //if (sprites[i].animationFrame!=2)
+                //sprites[i].animationFrame=0;
             if(sprites[i].containsPoint(mouseXYAr[0], mouseXYAr[1]))
                 select_new = i;
             
@@ -177,6 +177,7 @@ export default class GameController {
             console.log(123);
             if (sprites[select_new].animationFrame!=2) {
                 sprites[select_new].animationFrame=1;
+                sprites[select_cur].animationFrame=0;
                 this.levelConfig.numberMassCargo = sprites[select_new].instVars.IndexElement
             } else {
                 sprites[select_cur].animationFrame=1;
