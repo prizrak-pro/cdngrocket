@@ -21,7 +21,10 @@ export class PlayerConfig {
 		if(obj){
 			this.#maxOpenLevel = obj.maxOpenLevel;
 			this.#money = obj.money;
-			this.#ship = obj.ship
+			this.#ship = obj.ship;
+
+			this.#showHelpMobile = obj.showHelpMobile;
+			this.#showHelpDesktop = obj.showHelpDesktop;
 		}
 	}
 
@@ -155,6 +158,10 @@ export class PlayerConfig {
 		obj.maxOpenLevel = this.#maxOpenLevel
 		obj.money = this.#money
 		obj.ship = this.#ship
+
+		obj.showHelpMobile = this.#showHelpMobile
+		obj.showHelpDesktop = this.#showHelpDesktop
+
 		obj.className = this.constructor.name;
         //return JSON.stringify(obj);
 		return obj;

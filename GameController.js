@@ -559,11 +559,16 @@ export default class GameController {
     showElementHelp()
     {
         if(this.yandexSDC.isMobile)
-            if (this.playerConfig.HelpMobile)
+            if (this.playerConfig.HelpMobile){
                 this.showElementHelpMobile();
+                this.setDataPlayerConfig()
+            } 
         else
-            if (this.playerConfig.HelpDesktop)
+            if (this.playerConfig.HelpDesktop){
                 this.showElementHelpDesktop();
+                this.setDataPlayerConfig()
+            }
+                
     }
 
     showElementHelpMobile()
