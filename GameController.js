@@ -588,7 +588,7 @@ export default class GameController {
         elem.horizontalAlign = "center"
         elem.width = 360;
         elem.height = 20;
-        elem.text = "управление";
+        elem.text = this.dict('control');
 
         elem = this.runtime.objects.Help_1.createInstance(1,10,500);
         elem.fontFace = "minecraft-ten-font-cyrillic"
@@ -597,7 +597,7 @@ export default class GameController {
         elem.horizontalAlign = "center"
         elem.width = 120;
         elem.height = 45;
-        elem.text = "маневры\n\nвлево - вправо";
+        elem.text = this.dict('maneuversLR');
 
         elem = this.runtime.objects.Help_1.createInstance(1,242,500);
         elem.fontFace = "minecraft-ten-font-cyrillic"
@@ -606,7 +606,7 @@ export default class GameController {
         elem.horizontalAlign = "center"
         elem.width = 120;
         elem.height = 45;
-        elem.text = "главная тяга\n\nвверх";
+        elem.text = this.dict('main_thrust_up');
 
         this.addEventHelpDestroy();
     }
@@ -625,7 +625,7 @@ export default class GameController {
         elem.horizontalAlign = "center"
         elem.width = 360;
         elem.height = 20;
-        elem.text = "управление";
+        elem.text = this.dict('control');
 
         elem = this.runtime.objects.HelpKey.createInstance(1,50,410);
         elem.setAnimation("up", "beginning");
@@ -637,7 +637,7 @@ export default class GameController {
         elem.horizontalAlign = "center"
         elem.width = 120;
         elem.height = 45;
-        elem.text = "- главная тяга";
+        elem.text = this.dict('main_thrust');
 
         elem = this.runtime.objects.HelpKey.createInstance(1,30,470);
         elem.setAnimation("left", "beginning");
@@ -652,7 +652,7 @@ export default class GameController {
         elem.horizontalAlign = "center"
         elem.width = 120;
         elem.height = 45;
-        elem.text = "- маневры";
+        elem.text = this.dict('maneuvers');
 
         this.addEventHelpDestroy();
     }

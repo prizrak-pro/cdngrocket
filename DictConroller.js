@@ -9,14 +9,24 @@ export default class DictConroller {
             'fuel': "Fuel",
             'shunting':"Maneuverability",
             'strength':"Strength",
-            'authdialog':"please authorize!\n\nthis will allow you to save achievements and progress in the game.\n\nas well as continue the game on another device."
+            'authdialog':"please authorize!\n\nthis will allow you to save achievements and progress in the game.\n\nas well as continue the game on another device.",
+            'control': "control",
+            'maneuversLR':"maneuvers\n\nleft - right",
+            'maneuvers':"- maneuvers",
+            'main_thrust_up':"main thrust\n\nup",
+            'main_thrust':"- main thrust",
         },
         'ru':{
             'cargo': "Груз",
             'fuel': "Топливо",
             'shunting':"Маневренность",
             'strength':"Прочность",
-            'authdialog':"пожалуйста авторизируйте!\n\nэто позволить сохранить достижения и прогресс в игре.\n\nа так же продолжить игру на другом устройстве."
+            'authdialog':"пожалуйста авторизируйте!\n\nэто позволить сохранить достижения и прогресс в игре.\n\nа так же продолжить игру на другом устройстве.",
+            'control': "управление",
+            'maneuversLR':"маневры\n\nвлево - вправо",
+            'maneuvers':"- маневры",
+            'main_thrust_up':"главная тяга\n\nвверх",
+            'main_thrust':"- главная тяга",
         }
     }
 
