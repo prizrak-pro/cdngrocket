@@ -59,6 +59,8 @@ export default class ObjectDinamicController {
 
             console.log(this.#point.position);
             console.log(this.#point.points[this.#point.position]);
+
+        inst.effects[0].isActive = false;
         inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][1]);
     }
 
