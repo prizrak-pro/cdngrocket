@@ -40,7 +40,7 @@ export default class ObjectDinamicController {
 
 
         inst.x = this.#point.points[0][0];
-        inst.x = this.#point.points[0][1];
+        inst.y = this.#point.points[0][1];
         this.#point.position = 1;
         inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][1]);
     }
