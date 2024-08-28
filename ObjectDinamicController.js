@@ -46,12 +46,12 @@ console.log(inst);
 
     moveTo(inst)
     {
-        if(this.point.position == this.point.points.length-1)
-            this.point.position=0;
+        if(this.#point.position == this.#point.points.length-1)
+            this.#point.position=0;
         else
-            this.point.position++; 
+            this.#point.position++; 
 
-        inst.behaviors.ДвижениеК.moveToPosition(this.point.points[this.point.position][0], this.point.points[this.point.position][0]);
+        inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][0]);
     }
 
 }
