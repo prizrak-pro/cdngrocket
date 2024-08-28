@@ -693,4 +693,21 @@ export default class GameController {
         this.playerConfig.money = this.levelConfig.getTotalZero();
         this.setDataPlayerConfig()
     }
+
+    dinamicCollision()
+    {
+        if (this.globalVar.instVars.UidDinamicElementCollision == 0)
+        {
+            return true;
+        }
+            
+        let element = this.runtime.getInstanceByUid(this.globalVar.instVars.UidDinamicElementCollision);
+        this.globalVar.instVars.UidDinamicElementCollision = 0;
+        if (!element.effects[0].isActive){
+            element.effects[0].isActive = true;
+            return true;
+        }
+        this.globalVar.instVars.isHit = false;
+        return false;	
+    }
 }
