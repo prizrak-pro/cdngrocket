@@ -33,7 +33,7 @@ export default class ObjectDinamicController {
     {
         console.log(level);
         let inst = this.#runtime.getInstanceByUid(35)
-
+console.log(inst);
         inst.behaviors.MoveTo.addEventListener("arrived", e =>
         {
             console.log(e);
