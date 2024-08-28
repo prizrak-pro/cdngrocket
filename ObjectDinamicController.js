@@ -1,6 +1,7 @@
 export default class ObjectDinamicController {
 
-    runtime;
+    #runtime;
+
     #_dict;
     playerConfig;
     levelConfig;
@@ -23,12 +24,12 @@ export default class ObjectDinamicController {
     #_engine_shutdown = true;
 
     constructor(runtime) {
-
+        this.#runtime = runtime;
     }
 
     init(level)
     {
-
+        console.log(level);
     }
 
 }
