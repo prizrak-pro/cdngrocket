@@ -51,7 +51,7 @@ console.log(inst);
         else
             this.#point.position++; 
 
-        inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][0]);
+        inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][0], true);
     }
 
 }
