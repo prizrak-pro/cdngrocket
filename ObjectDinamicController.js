@@ -23,7 +23,7 @@ export default class ObjectDinamicController {
     #_mobButUi = [null, null, null];
     #_engine_shutdown = true;
 
-    #point = {points:[[80,800],[80, 800]], position:0};
+    #point = {points:[[80,800],[80, 1000]], position:0};
 
     constructor(runtime) {
         this.#runtime = runtime;
@@ -51,6 +51,8 @@ console.log(inst);
         else
             this.#point.position++; 
 
+            console.log(this.#point.position);
+            console.log(this.#point.points[this.#point.position]);
         inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][1], true);
     }
 
