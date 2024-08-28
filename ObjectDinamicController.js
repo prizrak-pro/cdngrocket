@@ -23,6 +23,8 @@ export default class ObjectDinamicController {
     #_mobButUi = [null, null, null];
     #_engine_shutdown = true;
 
+    #point = {points:[[80,800],[80, 800]], position:0};
+
     constructor(runtime) {
         this.#runtime = runtime;
     }
@@ -30,6 +32,26 @@ export default class ObjectDinamicController {
     init(level)
     {
         console.log(level);
+        let inst = this.runtime.getInstanceByUid(298)
+
+        inst.behaviors.MoveTo.addEventListener("arrived", e =>
+        {
+            console.log(e);
+            this.moveTo(e);
+        });
+
+        this.moveTo(inst);
+
+    }
+
+    moveTo(inst)
+    {
+        if(this.point.position == this.point.points.length-1)
+            this.point.position=0;
+        else
+            this.point.position++; 
+
+        inst.behaviors.MoveTo.moveToPosition(this.point.points[this.point.position][0], this.point.points[this.point.position][0]);
     }
 
 }
