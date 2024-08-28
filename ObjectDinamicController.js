@@ -31,16 +31,22 @@ export default class ObjectDinamicController {
 
     init(level)
     {
-        console.log(level);
-        let inst = this.#runtime.getInstanceByUid(35)
-        inst.behaviors.ДвижениеК.addEventListener("arrived", e =>
+        switch(level)
         {
-            console.log(e.instance.uid);
-            let inst = this.#runtime.getInstanceByUid(e.instance.uid)
-            this.moveTo(inst);
-        });
+            case 3:
+                console.log(level);
+                let inst = this.#runtime.getInstanceByUid(35)
+                inst.behaviors.ДвижениеК.addEventListener("arrived", e =>
+                {
+                    console.log(e.instance.uid);
+                    let inst = this.#runtime.getInstanceByUid(e.instance.uid)
+                    this.moveTo(inst);
+                });
+        
+                this.moveTo(inst);
+                break;
+        }
 
-        this.moveTo(inst);
 
     }
 
