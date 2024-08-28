@@ -34,7 +34,7 @@ export default class ObjectDinamicController {
         console.log(level);
         let inst = this.#runtime.getInstanceByUid(35)
 console.log(inst);
-        inst.behaviors.MoveTo.addEventListener("arrived", e =>
+        inst.behaviors.ДвижениеК.addEventListener("arrived", e =>
         {
             console.log(e);
             this.moveTo(e);
@@ -51,7 +51,7 @@ console.log(inst);
         else
             this.point.position++; 
 
-        inst.behaviors.MoveTo.moveToPosition(this.point.points[this.point.position][0], this.point.points[this.point.position][0]);
+        inst.behaviors.ДвижениеК.moveToPosition(this.point.points[this.point.position][0], this.point.points[this.point.position][0]);
     }
 
 }
