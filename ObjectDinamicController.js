@@ -38,9 +38,9 @@ export default class ObjectDinamicController {
     startElements(level)
     {
         let inst;
+        let self = this;
         this.#level_element[level].forEach(function(item, index, array) {
-            console.log(item);
-            inst = this.#runtime.getInstanceByUid(item)
+            inst = self.#runtime.getInstanceByUid(item)
             this.addEvent(inst);
             this.moveTo(inst);
         });
