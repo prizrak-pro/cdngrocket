@@ -338,6 +338,7 @@ export default class GameController {
         {
             case 1:
                 const but1 = this.runtime.objects.UIMainButton.getFirstInstance();
+                console.log(but1);
                 but1.setAnimation(this.Language)
                 but1.animationFrame = 0;
                 break;
