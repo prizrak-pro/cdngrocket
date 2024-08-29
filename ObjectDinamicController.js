@@ -3,7 +3,7 @@ export default class ObjectDinamicController {
     #runtime;
 
     #point = {
-        61:{type:line, points:[[155.5,56],[155.5,184]], position:0}
+        61:{type:'line', points:[[155.5,56],[155.5,184]], position:1}
     }
 
     #level_element = {
@@ -56,18 +56,26 @@ export default class ObjectDinamicController {
 
     moveTo(inst)
     {
-        if(this.#point.position == this.#point.points.length-1)
-            this.#point.position=0;
-        else
-            this.#point.position++; 
+        let uid = inst.uid;
+        let element_data = this.point[uid];
+
+        switch(element_data.type)
+        {
+            case 'line':
+                inst.x = element_data.points[0][0];
+                inst.y = element_data.points[0][1];
+                element_data.position = 1;
+                break;
+            case 'cicle':
+                if(element_data.position == element_data.points.length-1)
+                    element_data.position=0;
+                else
+                element_data.position++; 
+                break;
+        }
 
         inst.effects[0].isActive = false;
-
-
-        inst.x = this.#point.points[0][0];
-        inst.y = this.#point.points[0][1];
-        this.#point.position = 1;
-        inst.behaviors.ДвижениеК.moveToPosition(this.#point.points[this.#point.position][0], this.#point.points[this.#point.position][1]);
+        inst.behaviors.ДвижениеК.moveToPosition(element_data.points[element_data.position][0], element_data.points[element_data.position][1]);
     }
 
 }
