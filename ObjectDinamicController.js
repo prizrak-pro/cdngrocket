@@ -4,11 +4,12 @@ export default class ObjectDinamicController {
 
     #point = {
         61:{type:'line', points:[[155.5,56],[155.5,184]], position:1},
-        68:{type:'line', points:[[283.5,56],[283.5,184]], position:1}
+        68:{type:'line', points:[[283.5,56],[283.5,184]], position:1},
+        69:{type:'line', points:[[427.5,56],[427.5,232]], position:1}
     }
 
     #level_element = {
-        2:[61, 68]
+        2:[61, 68, 69]
     }
 
 
