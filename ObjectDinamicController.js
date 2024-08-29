@@ -8,7 +8,7 @@ export default class ObjectDinamicController {
     }
 
     #level_element = {
-        2:[61]
+        2:[61, 68]
     }
 
 
