@@ -3,7 +3,8 @@ export default class ObjectDinamicController {
     #runtime;
 
     #point = {
-        61:{type:'line', points:[[155.5,56],[155.5,184]], position:1}
+        61:{type:'line', points:[[155.5,56],[155.5,184]], position:1},
+        68:{type:'line', points:[[283.5,56],[283.5,184]], position:1}
     }
 
     #level_element = {
