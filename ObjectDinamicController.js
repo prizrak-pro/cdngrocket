@@ -58,7 +58,7 @@ export default class ObjectDinamicController {
     moveTo(inst)
     {
         let uid = inst.uid;
-        let element_data = this.point[uid];
+        let element_data = this.#point[uid];
 
         switch(element_data.type)
         {
