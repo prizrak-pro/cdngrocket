@@ -44,7 +44,7 @@ export default class ObjectDinamicController {
         this.#level_element[level].forEach(function(item, index, array) {
             inst = self.#runtime.getInstanceByUid(item)
             self.addEvent(inst);
-            self.moveTo(inst);
+            self.moveTo(inst, true);
         });
     }
 
@@ -57,7 +57,7 @@ export default class ObjectDinamicController {
         });
     }
 
-    moveTo(inst)
+    moveTo(inst, isFirst = false)
     {
         let uid = inst.uid;
         let element_data = this.#point[uid];
@@ -65,8 +65,12 @@ export default class ObjectDinamicController {
         switch(element_data.type)
         {
             case 'line':
-                inst.x = element_data.points[0][0];
-                inst.y = element_data.points[0][1];
+                if(!isFirst)
+                {
+                    inst.x = element_data.points[0][0];
+                    inst.y = element_data.points[0][1];
+    
+                }
                 element_data.position = 1;
                 break;
             case 'cicle':
