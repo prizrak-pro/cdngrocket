@@ -298,8 +298,9 @@ export class UISelectCargo {
         let is_hide_element=false
         if(weight>this.playerConfig.currentShip.maxMassCargo)
         {
-            this.globalRuntime.getInstanceByUid(298).y = 600;
             is_hide_element=true
+        } else {
+            this.globalRuntime.getInstanceByUid(298).y = 600;
         }
             
 
