@@ -6,11 +6,13 @@ export default class ObjectDinamicController {
         61:{type:'line', points:[[155.5,56],[155.5,184]], position:1},
         68:{type:'line', points:[[283.5,56],[283.5,184]], position:1},
         69:{type:'line', points:[[427.5,56],[427.5,232]], position:1},
-        70:{type:'line', points:[[515.5,56],[515.5,232]], position:1}
+        70:{type:'line', points:[[515.5,56],[515.5,232]], position:1},
+        75:{type:'cicle', points:[[728,1520],[728,1936]], position:1}
     }
 
     #level_element = {
-        2:[61, 68, 69, 70]
+        2:[61, 68, 69, 70],
+        3:[75]
     }
 
 
@@ -26,13 +28,13 @@ export default class ObjectDinamicController {
                 this.startElements(level);
                 break;
             case 3:
-                
+                this.startElements(level);
+                break;
                 //let inst = this.#runtime.getInstanceByUid(35)
                 //console.log(inst);
 
         
                 //this.moveTo(inst);
-                break;
         }
 
 
