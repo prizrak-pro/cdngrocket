@@ -7,7 +7,7 @@ export default class Ship {
 	#_levelShip = 0;
 	#_coefMainEngine = [1.8, 1.7, 1.6, 1.5, 1.4, 1.2];
 	#_maxMass=[200, 400, 600, 800, 1000, 1200];
-	#_priceLevelShip=[500, 1000, 1000, 50000, 100000];
+	#_priceLevelShip=[500, 1000, 10000, 50000, 100000];
 	#_massCargo=0;
 
 	#_levelShuntingEngine = 0;
