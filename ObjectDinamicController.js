@@ -7,12 +7,15 @@ export default class ObjectDinamicController {
         68:{type:'line', points:[[283.5,56],[283.5,184]], position:1},
         69:{type:'line', points:[[427.5,56],[427.5,232]], position:1},
         70:{type:'line', points:[[515.5,56],[515.5,232]], position:1},
-        75:{type:'cicle', points:[[728,1520],[728,1936]], position:1}
+        75:{type:'cicle', points:[[728,1520],[728,1936]], position:1},
+        76:{type:'cicle', points:[[552,1520],[552,1936]], position:1},
+        79:{type:'cicle', points:[[376,1392],[376,1936]], position:1},
+        78:{type:'cicle', points:[[200,1520],[200,1936]], position:1}
     }
 
     #level_element = {
         2:[61, 68, 69, 70],
-        3:[75]
+        3:[75, 76, 79, 78]
     }
 
 
