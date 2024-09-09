@@ -9,7 +9,7 @@ export default class ObjectDinamicController {
         70:{type:'line', points:[[515.5,56],[515.5,232]], position:1},
         75:{type:'cicle', points:[[728,1520],[728,1936]], position:1},
         76:{type:'cicle', points:[[552,1520],[552,1936]], position:1},
-        79:{type:'cicle', points:[[376,1392],[376,1936]], position:1},
+        79:{type:'cicle', points:[[376,1392],[376,1824]], position:1},
         80:{type:'cicle', points:[[200,1520],[200,1936]], position:1}
     }
 
