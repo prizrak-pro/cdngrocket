@@ -27,11 +27,11 @@ export default class ObjectDinamicController {
                 break;
             case 3:
                 
-                let inst = this.#runtime.getInstanceByUid(35)
-                console.log(inst);
+                //let inst = this.#runtime.getInstanceByUid(35)
+                //console.log(inst);
 
         
-                this.moveTo(inst);
+                //this.moveTo(inst);
                 break;
         }
 
