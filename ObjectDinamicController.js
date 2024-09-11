@@ -12,12 +12,14 @@ export default class ObjectDinamicController {
         79:{type:'cicle', points:[[376,1392],[376,1824]], position:1},
         80:{type:'cicle', points:[[200,1520],[200,1936]], position:1},
         81:{type:'cicle', points:[[456,415],[904,415]], position:1},
-        82:{type:'cicle', points:[[456,385],[904,385]], position:0}
+        82:{type:'cicle', points:[[456,385],[904,385]], position:0},
+        83:{type:'cicle', points:[[456,190],[904,190]], position:1},
+        84:{type:'cicle', points:[[456,225],[904,225]], position:0}
     }
 
     #level_element = {
         2:[61, 68, 69, 70],
-        3:[75, 76, 79, 80, 81, 82]
+        3:[75, 76, 79, 80, 81, 82, 83, 84]
     }
 
 
