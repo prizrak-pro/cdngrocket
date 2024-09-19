@@ -19,7 +19,7 @@ export default class ObjectDinamicController {
 
     #level_element = {
         2:[61, 68, 69, 70],
-        3:[75, 76, 79, 80, 81, 82, 83, 84]
+        4:[75, 76, 79, 80, 81, 82, 83, 84]
     }
 
 
