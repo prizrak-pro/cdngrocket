@@ -8,6 +8,9 @@ export default class ObjectDinamicController {
         69:{type:'line', points:[[427.5,56],[427.5,232]], position:1},
         70:{type:'line', points:[[515.5,56],[515.5,232]], position:1},
 
+        89:{type:'cicle', points:[[600,520],[752,520]], position:1},
+        90:{type:'cicle', points:[[984,520],[832,520]], position:1},
+
         110:{type:'cicle', points:[[728,1520],[728,1936]], position:1},
         109:{type:'cicle', points:[[552,1520],[552,1936]], position:1},
         108:{type:'cicle', points:[[376,1392],[376,1824]], position:1},
@@ -20,6 +23,7 @@ export default class ObjectDinamicController {
 
     #level_element = {
         2:[61, 68, 69, 70],
+        3:[89,90],
         4:[110,109,108,107,129,130,131,132]
     }
 
@@ -33,6 +37,9 @@ export default class ObjectDinamicController {
         switch(level)
         {
             case 2:
+                this.startElements(level);
+                break;
+            case 3:
                 this.startElements(level);
                 break;
             case 4:
