@@ -10,8 +10,12 @@ export default class ObjectDinamicController {
 
         89:{type:'cicle', points:[[600,520],[752,520]], position:1},
         90:{type:'cicle', points:[[984,520],[832,520]], position:1},
-        91:{type:'cicle', points:[[410,376],[710,376]], position:1},
-        92:{type:'cicle', points:[[1170,376],[870,376]], position:1},
+
+        91:{type:'cicle', points:[[364,424],[854,424]], position:1},
+        92:{type:'cicle', points:[[1170,376],[680,376]], position:1},
+
+        // 91:{type:'cicle', points:[[410,376],[710,376]], position:1},
+        // 92:{type:'cicle', points:[[1170,376],[870,376]], position:1},
 
         110:{type:'cicle', points:[[728,1520],[728,1936]], position:1},
         109:{type:'cicle', points:[[552,1520],[552,1936]], position:1},
