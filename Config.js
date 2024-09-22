@@ -5,7 +5,7 @@ export class PlayerConfig {
 
 	#ship = {
 		type: 1,
-		levelMass: 2,
+		levelMass: 5,
 		levelFuel: 3,
 		levelShuntingEngine: 0,
 		levelStrength: 0
