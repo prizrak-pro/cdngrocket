@@ -1,5 +1,5 @@
 export class PlayerConfig {
-	#maxOpenLevel = 4;
+	#maxOpenLevel = 1;
 
 	#money = 100000;
 
@@ -177,7 +177,7 @@ export class PlayerConfig {
 }
 
 export class GameConfig {
-	static maxLevel = 12;
+	static maxLevel = 4;
 
 	static cargoLevel = {
 		1:[[600,300],[400,200],[200,100]],
