@@ -3,7 +3,7 @@ export class YandexSDC {
     #controlActivation = false;
 
     #platform = 'mobile1';
-    #lang = "en";
+    #lang = "ru";
 
     constructor(control = false)
     {
