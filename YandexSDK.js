@@ -2,8 +2,8 @@ export class YandexSDC {
 
     #controlActivation = false;
 
-    #platform = 'mobile1';
-    #lang = "ru";
+    #platform = 'mobile';
+    #lang = "en";
 
     constructor(control = false)
     {
@@ -16,9 +16,6 @@ export class YandexSDC {
         {
             this.#addYandexSDK(); 
             await this.#expectationInitSDK()
-            console.log(window.ysdk);
-            console.log(window.ysdk.deviceInfo._type);
-            console.log(window.ysdk.environment.i18n.lang);
             this.#platform = window.ysdk.deviceInfo._type;
             this.#lang = window.ysdk.environment.i18n.lang;
         }
