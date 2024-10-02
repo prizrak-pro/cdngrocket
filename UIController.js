@@ -7,9 +7,9 @@ export class UISelectCargo {
     #UISelectCargoFirstPosition = {
         oj1:[139,59],
         oj2:[22,23],
-        oj3:[166,36.5],
+        oj3:[168,36.5],
         oj4:[176,20],
-        oj5:[320,43]
+        oj5:[315,43]
     }
 
     #UISelectCargoOffset = 116;
