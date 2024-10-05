@@ -3,7 +3,7 @@ export class YandexSDC {
     #controlActivation = false;
 
     #platform = 'mobile';
-    #lang = "en";
+    #lang = "ут";
 
     constructor(control = false)
     {
@@ -41,11 +41,12 @@ export class YandexSDC {
     }
 
     #addYandexSDK(d = document) {
-        var t = d.getElementsByTagName('script')[0];
+        //var t = d.getElementsByTagName('script')[0];
         var s = d.createElement('script');
-        s.src = 'https://yandex.ru/games/sdk/v2';
-        s.async = false;
-        t.parentNode.insertBefore(s, t);
+        s.src = 'https://sdk.games.s3.yandex.net/sdk.js';
+        s.async = true;
+        //t.parentNode.insertBefore(s, t);
+        d.body.append(s);
        	s.onload = this.#initSDK;
     }
 
