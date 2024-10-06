@@ -113,6 +113,7 @@ export class YandexSDC {
                                 window.ysdk.getPlayer().then(_player => {
                                     window.player = _player;
                                 });
+                                console.log(window.player);
                                 console.log('Игрок успешно авторизован');
                                 
                             }).catch(() => {
