@@ -113,8 +113,10 @@ export default class GameController {
             if (this.yandexSDC.isActivation && !this.yandexSDC.isAuth)
             {
                 this.runtime.goToLayout("UIDialog");
+            } else {
+                this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
             }
-            this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
+            
         }
     }
 
