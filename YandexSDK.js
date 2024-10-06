@@ -110,12 +110,13 @@ export class YandexSDC {
                     if (window.player.getMode() === 'lite') {
                         // Игрок не авторизован.
                         await window.ysdk.auth.openAuthDialog().then(() => {
-                                
+                                window.ysdk.getPlayer().then(_player => {
+                                    window.player = _player;
+                                });
                                 console.log('Игрок успешно авторизован');
                                 
                             }).catch(() => {
                                 console.log('Игрок не авторизован');
-                                
                             });
                     }
 
