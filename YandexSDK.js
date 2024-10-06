@@ -44,8 +44,7 @@ export class YandexSDC {
     #addYandexSDK(d = document) {
         //var t = d.getElementsByTagName('script')[0];
         var s = d.createElement('script');
-        //s.src = '/sdk.js';
-        s.src = 'https://sdk.games.s3.yandex.net/sdk.js';
+        s.src = '/sdk.js';
         s.async = true;
         //t.parentNode.insertBefore(s, t);
         d.body.append(s);
