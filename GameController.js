@@ -43,7 +43,7 @@ export default class GameController {
 
     async initPlayerConfig(obj={})
     {
-        if (this.yandexSDC.isAuth) {
+        if (this.yandexSDC.isActivation) {
             let obj;
             await this.yandexSDC.getData().then(_data => {
                 obj = _data; 
@@ -68,7 +68,7 @@ export default class GameController {
 
     async setDataPlayerConfig()
     {
-        if (this.yandexSDC.isAuth) {
+        if (this.yandexSDC.isActivation) {
             await this.yandexSDC.setData(this.playerConfig.stringSerialize());
         }
     }

@@ -130,7 +130,7 @@ export class YandexSDC {
         return 1;
     }
 
-    async initPlayerTest() 
+    async getPlayer() 
     {
         if(!this.isActivation)
             return false;
