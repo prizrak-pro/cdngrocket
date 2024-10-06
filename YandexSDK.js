@@ -159,7 +159,7 @@ export class YandexSDC {
     async setData(obj={})
     {
         let result = false;
-        if(!this.isActivation || !this.isAuth)
+        if(!this.isActivation)
             return result;
 
         await window.player.setData(obj, true).then(() => {
@@ -172,7 +172,7 @@ export class YandexSDC {
     async getData(keys=[])
     {
         let result = {};
-        if(!this.isActivation || !this.isAuth)
+        if(!this.isActivation)
             return result;
 
         if(keys.length == 0) {
