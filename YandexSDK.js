@@ -120,7 +120,7 @@ export class YandexSDC {
                                 console.log('Игрок не авторизован');
                             });
                     }
-
+                    window.player = await window.ysdk.getPlayer();
                     resolve(1)
                 } else {
                     setTimeout(f, 1); 
