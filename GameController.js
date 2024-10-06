@@ -228,7 +228,7 @@ export default class GameController {
         }
     }
 
-    mouseDownAuthDialog(e)
+    async mouseDownAuthDialog(e)
     {
         const currentLayer = this.runtime.layout.getLayer(0);
         const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
@@ -238,7 +238,7 @@ export default class GameController {
                 switch(btns[i].instVars.Type)
                 {
                     case 1://ok
-                        this.OpenAuthDialog();
+                        await this.OpenAuthDialog();
                         break;
                 }
                 this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
