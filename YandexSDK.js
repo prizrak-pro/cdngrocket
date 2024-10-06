@@ -14,7 +14,8 @@ export class YandexSDC {
     {
         if (this.#controlActivation)
         {
-            this.#addYandexSDK(); 
+            this.#addYandexSDK();
+            //this.#initSDK(); 
             await this.#expectationInitSDK()
             this.#platform = window.ysdk.deviceInfo._type;
             this.#lang = window.ysdk.environment.i18n.lang;
@@ -72,6 +73,27 @@ export class YandexSDC {
         });
         return 1;
 
+    }
+
+    async featuresReady()
+    {
+        if(!this.isActivation)
+            return false;
+        window.ysdk.features.LoadingAPI?.ready()
+    }
+
+    async featuresGPStart()
+    {
+        if(!this.isActivation)
+            return false;
+        window.ysdk.features.GameplayAPI?.start()
+    }
+
+    async featuresGPStop()
+    {
+        if(!this.isActivation)
+            return false;
+        window.ysdk.features.GameplayAPI?.stop()
     }
 
     async initPlayer() {

@@ -276,7 +276,7 @@ export default class GameController {
 
     async OpenAuthDialog()
     {
-        await this.yandexSDC.initPlayerTest();
+        await this.yandexSDC.initPlayer();
     }
 
     async FullscreenAdv()
