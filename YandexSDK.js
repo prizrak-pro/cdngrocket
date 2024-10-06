@@ -113,17 +113,10 @@ export class YandexSDC {
                                 window.ysdk.getPlayer().then(_player => {
                                     window.player = _player;
                                 });
-                                console.log('Получили игрока');
-                                console.log(window.player.getMode() === 'lite');
-                                console.log('Игрок успешно авторизован');
-                                
                             }).catch(() => {
                                 console.log('Игрок не авторизован');
                             });
                     }
-                    console.log('Получили игрока ещё раз');
-                    window.player = await window.ysdk.getPlayer();
-                    console.log('Закончили получать игрока ещё раз');
                     resolve(1)
                 } else {
                     setTimeout(f, 1); 

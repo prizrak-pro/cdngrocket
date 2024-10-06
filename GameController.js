@@ -247,7 +247,6 @@ export default class GameController {
                 {
                     case 1://ok
                         await this.OpenAuthDialog();
-                        console.log("endOpenAuthDialog");
                         break;
                 }
                 this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
