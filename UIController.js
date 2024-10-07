@@ -109,12 +109,12 @@ export class UISelectCargo {
         if(this.levelConfig.levelStatus == "end_success")
         {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
-            title.text = this.gameController.dict('successful_mission')
+            title.text = this.gameController.dict('successful_mission');
             cargoCount = 1;
             cargoPrice = this.gameController.levelConfig.getMoneyCargo();
         } else {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
-            title.text = this.gameController.dict('mission_failed')
+            title.text = this.gameController.dict('mission_failed');
 
         }
         
@@ -171,11 +171,12 @@ export class UISelectCargo {
                 case 415:
                     element.text = String(self.gameController.levelConfig.sumBonus(4));
                     break;
-
                 case 406:
                     totalObj = element;
+                    break;
                 case 407:
                     element.text = String(self.gameController.dict('total'));
+                    break;
 
             }
         });
