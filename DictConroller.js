@@ -15,6 +15,10 @@ export default class DictConroller {
             'maneuvers':"- maneuvers",
             'main_thrust_up':"main thrust\n\nup",
             'main_thrust':"- main thrust",
+            'successful_mission':"successful mission",
+            'mission_failed':"mission failed",
+            'max':"max",
+            'total':"total"
         },
         'ru':{
             'cargo': "Груз",
@@ -27,6 +31,10 @@ export default class DictConroller {
             'maneuvers':"- маневры",
             'main_thrust_up':"главная тяга\n\nвверх",
             'main_thrust':"- главная тяга",
+            'successful_mission':"успешная миссия",
+            'mission_failed':"миссия провалена",
+            'max':"макс",
+            'total':"общий"
         }
     }
 

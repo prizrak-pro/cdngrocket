@@ -109,12 +109,12 @@ export class UISelectCargo {
         if(this.levelConfig.levelStatus == "end_success")
         {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
-            title.text = "successful mission"
+            title.text = this.gameController.dict('successful_mission')
             cargoCount = 1;
             cargoPrice = this.gameController.levelConfig.getMoneyCargo();
         } else {
             const title = this.globalRuntime.objects.UITextTitle.getFirstInstance();
-            title.text = "mission failed"
+            title.text = this.gameController.dict('mission_failed')
 
         }
         
@@ -174,6 +174,8 @@ export class UISelectCargo {
 
                 case 406:
                     totalObj = element;
+                case 407:
+                    element.text = String(self.gameController.dict('total'));
 
             }
         });
@@ -210,16 +212,16 @@ export class UISelectCargo {
                     break;
 
                 case 12:
-                    element.text =  self.gameController.ship.nextMassCargo>0?self.#numberWithSpaces(self.gameController.ship.nextMassCargo):"max";
+                    element.text =  self.gameController.ship.nextMassCargo>0?self.#numberWithSpaces(self.gameController.ship.nextMassCargo):self.gameController.dict('max');
                     break;
                 case 5:
-                    element.text =  self.gameController.ship.nextFuel>0?self.#numberWithSpaces(self.gameController.ship.nextFuel):"max";
+                    element.text =  self.gameController.ship.nextFuel>0?self.#numberWithSpaces(self.gameController.ship.nextFuel):self.gameController.dict('max');
                     break;
                 case 13:
-                    element.text =  self.gameController.ship.nextShuntingEngine>0?self.#numberWithSpaces(self.gameController.ship.nextShuntingEngine):"max";
+                    element.text =  self.gameController.ship.nextShuntingEngine>0?self.#numberWithSpaces(self.gameController.ship.nextShuntingEngine):self.gameController.dict('max');
                     break;
                 case 14:
-                    element.text =  self.gameController.ship.nextStrength>0?self.#numberWithSpaces(self.gameController.ship.nextStrength):"max";
+                    element.text =  self.gameController.ship.nextStrength>0?self.#numberWithSpaces(self.gameController.ship.nextStrength):self.gameController.dict('max');
                     break;
             }
         });
