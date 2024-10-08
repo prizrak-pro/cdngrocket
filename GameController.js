@@ -104,6 +104,16 @@ export default class GameController {
         return this.playerConfig.money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 
+    playBacgroundMusic(action)
+    {
+        if(action)
+        {
+            this.globalVar.instVars.Musics = (this.globalVar.instVars.Musics!=2)?1:this.globalVar.instVars.Musics;
+        } else {
+            this.globalVar.instVars.Musics = (this.globalVar.instVars.Musics==2)?3:this.globalVar.instVars.Musics;
+        } 
+    }
+
     mouseDownMainPage(e)
     {
         const currentLayer = this.runtime.layout.getLayer(0);
