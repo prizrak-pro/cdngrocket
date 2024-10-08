@@ -108,9 +108,15 @@ export default class GameController {
     {
         if(action)
         {
-            this.globalVar.instVars.Musics = (this.globalVar.instVars.Musics==0)?1:this.globalVar.instVars.Musics;
+            if(this.globalVar.instVars.Musics==0)
+                this.globalVar.instVars.Musics=1;
+            if(this.globalVar.instVars.Musics==3)
+                this.globalVar.instVars.Musics=2;
         } else {
-            this.globalVar.instVars.Musics = (this.globalVar.instVars.Musics==2)?3:this.globalVar.instVars.Musics;
+            if(this.globalVar.instVars.Musics==2)
+                this.globalVar.instVars.Musics=3;
+            if(this.globalVar.instVars.Musics==1)
+                this.globalVar.instVars.Musics=0;
         } 
     }
 
