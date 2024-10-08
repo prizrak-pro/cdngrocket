@@ -396,6 +396,10 @@ export default class GameController {
         Fire.stopAnimation();
         FireMiniLeft.stopAnimation();
         FireMiniRight.stopAnimation();
+
+        this.globalVar.instVars.powerMain1 = 0;
+        this.globalVar.instVars.powerShuntingR1 = 0;
+        this.globalVar.instVars.powerShuntingL1 = 0;
     }
 
     setParametrsShip()
