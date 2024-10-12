@@ -668,7 +668,7 @@ export default class GameController {
         elem = this.runtime.objects.HelpKey.createInstance(1,100,410);
         elem.setAnimation("w", "beginning");
 
-        elem = this.runtime.objects.Help_1.createInstance(1,110,405);
+        elem = this.runtime.objects.Help_1.createInstance(1,120,405);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
