@@ -668,7 +668,7 @@ export default class GameController {
         elem = this.runtime.objects.HelpKey.createInstance(1,100,410);
         elem.setAnimation("w", "beginning");
 
-        elem = this.runtime.objects.Help_1.createInstance(1,130,405);
+        elem = this.runtime.objects.Help_1.createInstance(1,110,405);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
@@ -679,11 +679,31 @@ export default class GameController {
 
         elem = this.runtime.objects.HelpKey.createInstance(1,30,470);
         elem.setAnimation("left", "beginning");
+        elem = this.runtime.objects.Help_1.createInstance(1,50,405);
+        elem.fontFace = "minecraft-ten-font-cyrillic"
+        elem.fontColor = [1,1,1,1];
+        elem.sizePt = 8;
+        elem.horizontalAlign = "center"
+        elem.width = 10;
+        elem.height = 45;
+        elem.text = "/";
+        elem = this.runtime.objects.HelpKey.createInstance(1,80,470);
+        elem.setAnimation("a", "beginning");
         
-        elem = this.runtime.objects.HelpKey.createInstance(1,70,470);
+        elem = this.runtime.objects.HelpKey.createInstance(1,100,470);
         elem.setAnimation("rigth", "beginning");
+        elem = this.runtime.objects.Help_1.createInstance(1,120,405);
+        elem.fontFace = "minecraft-ten-font-cyrillic"
+        elem.fontColor = [1,1,1,1];
+        elem.sizePt = 8;
+        elem.horizontalAlign = "center"
+        elem.width = 10;
+        elem.height = 45;
+        elem.text = "/";
+        elem = this.runtime.objects.HelpKey.createInstance(1,150,470);
+        elem.setAnimation("d", "beginning");
 
-        elem = this.runtime.objects.Help_1.createInstance(1,80,470);
+        elem = this.runtime.objects.Help_1.createInstance(1,170,470);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
