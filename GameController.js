@@ -665,7 +665,7 @@ export default class GameController {
         elem.width = 10;
         elem.height = 45;
         elem.text = "/";
-        elem = this.runtime.objects.HelpKey.createInstance(1,90,410);
+        elem = this.runtime.objects.HelpKey.createInstance(1,110,410);
         elem.setAnimation("w", "beginning");
 
         elem = this.runtime.objects.Help_1.createInstance(1,130,410);
