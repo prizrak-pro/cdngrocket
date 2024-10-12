@@ -662,7 +662,7 @@ export default class GameController {
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
         elem.horizontalAlign = "center"
-        elem.width = 120;
+        elem.width = 10;
         elem.height = 45;
         elem.text = "/";
         elem = this.runtime.objects.HelpKey.createInstance(1,90,410);
