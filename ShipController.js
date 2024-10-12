@@ -11,7 +11,7 @@ export default class Ship {
 	#_massCargo=0;
 
 	#_levelShuntingEngine = 0;
-	#_coefShuntingEngine = [1.6, 1.6, 1.8, 2, 2.4, 2.6];
+	#_coefShuntingEngine = [1.4, 1.6, 1.8, 2, 2.4, 2.6];
 	#_priceLevelShuntingEngine=[5000, 25000, 50000, 72000, 110000];
 
 	#_levelFuel = 0;
