@@ -690,9 +690,9 @@ export default class GameController {
         elem = this.runtime.objects.HelpKey.createInstance(1,80,470);
         elem.setAnimation("a", "beginning");
         
-        elem = this.runtime.objects.HelpKey.createInstance(1,130,470);
+        elem = this.runtime.objects.HelpKey.createInstance(1,140,470);
         elem.setAnimation("rigth", "beginning");
-        elem = this.runtime.objects.Help_1.createInstance(1,150,465);
+        elem = this.runtime.objects.Help_1.createInstance(1,160,465);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
@@ -700,10 +700,10 @@ export default class GameController {
         elem.width = 10;
         elem.height = 45;
         elem.text = "/";
-        elem = this.runtime.objects.HelpKey.createInstance(1,180,470);
+        elem = this.runtime.objects.HelpKey.createInstance(1,190,470);
         elem.setAnimation("d", "beginning");
 
-        elem = this.runtime.objects.Help_1.createInstance(1,200,470);
+        elem = this.runtime.objects.Help_1.createInstance(1,200,465);
         elem.fontFace = "minecraft-ten-font-cyrillic"
         elem.fontColor = [1,1,1,1];
         elem.sizePt = 8;
