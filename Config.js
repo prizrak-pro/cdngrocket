@@ -1,5 +1,5 @@
 export class PlayerConfig {
-	#maxOpenLevel = 3;
+	#maxOpenLevel = 4;
 
 	#money = 0;
 
