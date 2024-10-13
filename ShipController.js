@@ -7,22 +7,22 @@ export default class Ship {
 	#_levelShip = 0;
 	#_coefMainEngine = [1.8, 1.7, 1.6, 1.5, 1.4, 1.2];
 	#_maxMass=[200, 400, 600, 800, 1000, 1200];
-	#_priceLevelShip=[2500, 16000, 38000, 70000, 105000];
+	#_priceLevelShip=[400, 4000, 12000, 28000, 44000];
 	#_massCargo=0;
 
 	#_levelShuntingEngine = 0;
 	#_coefShuntingEngine = [1.4, 1.6, 1.8, 2, 2.4, 2.6];
-	#_priceLevelShuntingEngine=[5000, 25000, 50000, 72000, 110000];
+	#_priceLevelShuntingEngine=[600, 6000, 18000, 32000, 48000];
 
 	#_levelFuel = 0;
 	#_maxFuel = [1000, 2000, 4000, 6000, 8000, 12000];
-	#_priceLevelFuel=[4500, 20000, 45000, 68000, 90000];
+	#_priceLevelFuel=[500, 5000, 16000, 60000, 46000];
 	#_fuel = 0;
 
 	#_levelStrength = 0;
 	#_massShip = [700, 900, 1000, 1100, 1200, 1400];
 	#_maxStrength = [150, 200, 250, 300, 350, 400];
-	#_priceLevelStrength=[6000, 30000, 60000, 90000, 120000];
+	#_priceLevelStrength=[800, 8000, 20000, 34000, 50000];
 	#_strength = 0
 
 	#_massCoefficient = 0.46;
