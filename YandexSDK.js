@@ -2,8 +2,8 @@ export class YandexSDC {
 
     #controlActivation = false;
 
-    #platform = 'mobile1';
-    #lang = "en1";
+    #platform = 'mobile';
+    #lang = "en";
 
     constructor(control = false)
     {
