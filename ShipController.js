@@ -15,7 +15,7 @@ export default class Ship {
 	#_priceLevelShuntingEngine=[600, 6000, 18000, 32000, 48000];
 
 	#_levelFuel = 0;
-	#_maxFuel = [2000, 4000, 6000, 8000, 10000, 12000];
+	#_maxFuel = [1500, 4000, 6000, 8000, 10000, 12000];
 	#_priceLevelFuel=[500, 5000, 16000, 60000, 46000];
 	#_fuel = 0;
 
