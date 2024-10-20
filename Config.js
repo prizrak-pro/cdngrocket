@@ -1,11 +1,11 @@
 export class PlayerConfig {
-	#maxOpenLevel = 1;
+	#maxOpenLevel = 4;
 
 	#money = 0;
 
 	#ship = {
 		type: 0,
-		levelMass: 0,
+		levelMass: 2,
 		levelFuel: 0,
 		levelShuntingEngine: 0,
 		levelStrength: 0
