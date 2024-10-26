@@ -263,4 +263,9 @@ export class LevelConfig {
 	{
 		return GameConfig.cargoLevel[this.level][this.numberMassCargo][0];
 	}
+
+	getMassCargo()
+	{
+		return GameConfig.cargoLevel[this.level][this.numberMassCargo][1];
+	}
 }

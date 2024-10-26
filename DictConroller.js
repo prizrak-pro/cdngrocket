@@ -19,7 +19,7 @@ export default class DictConroller {
             'mission_failed':"mission failed",
             'max':"max",
             'total':"total",
-            'begin_gialog':"do you want to start the level from the last platform you landed on?",
+            'begin_gialog':"do you want to start the level from the last platform you landed on? bonuses will be kept!",
             'begin_but':"begin"
         },
         'ru':{
@@ -37,7 +37,7 @@ export default class DictConroller {
             'mission_failed':"миссия провалена",
             'max':"макс",
             'total':"общий",
-            'begin_gialog':"хотите начать уровень с последней платформы, на которой вы приземлились?",
+            'begin_gialog':"хотите начать уровень с последней платформы, на которой вы приземлились? бонусы будут сохранены!",
             'begin_but':"начать"
         }
     }
