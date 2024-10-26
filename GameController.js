@@ -456,12 +456,15 @@ export default class GameController {
                 return;
 
             if(this.#_shipVisual.behaviors.physics.getVelocityY()>-50)
+            {
                 this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
+                this.fuelConsumptionMainEngine();
+            }
+                
 
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
 			const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("1", "beginning");
-			this.fuelConsumptionMainEngine();
             this.globalVar.instVars.powerMain1 = (this.globalVar.instVars.powerMain1==0)?2:this.globalVar.instVars.powerMain1;
 
             if(this.yandexSDC.isMobile)
