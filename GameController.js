@@ -455,7 +455,7 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            if(this.#_shipVisual.behaviors.physics.getVelocityY()>-100)
+            if(this.#_shipVisual.behaviors.physics.getVelocityY()>-50)
                 this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
