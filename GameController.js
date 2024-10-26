@@ -328,9 +328,9 @@ export default class GameController {
     {
         if(this.getXYLastPlanform())
         {
-            globalRuntime.goToLayout("UIDialogContinueAdvertising")
+            this.runtime.goToLayout("UIDialogContinueAdvertising")
         }else{
-            globalRuntime.goToLayout("EndLevel")
+            this.runtime.goToLayout("EndLevel")
         }
     }
 
