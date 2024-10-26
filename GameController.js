@@ -454,7 +454,11 @@ export default class GameController {
         if(run) {
             if(!this.#_engine_shutdown)
                 return;
+
+            console.log(this.#_shipVisual.behaviors.physics.getVelocityX())
+
 			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
+
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
 			const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("1", "beginning");
