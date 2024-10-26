@@ -564,7 +564,7 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            if(this.#_shipVisual.behaviors.physics.getVelocityX()>-1*this.#maxSpeedX*-1)
+            if(this.#_shipVisual.behaviors.physics.getVelocityX()>-1*this.#maxSpeedX)
             {
                 this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
                 this.fuelConsumptionShuntingEngine();
