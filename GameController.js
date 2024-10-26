@@ -21,6 +21,7 @@ export default class GameController {
     #_powerState = [false, false, false];
     #_mobButUi = [null, null, null];
     #_engine_shutdown = true;
+    #latest_platform = null;
 
     constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship, Functions, UISelectCargo) {
         this.#LevelConfig = LevelConfig;
@@ -493,7 +494,7 @@ export default class GameController {
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
 			FireMiniRight.setAnimation("1", "beginning");
             this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==0)?2:this.globalVar.instVars.powerShuntingR1;
-            
+
             if(this.yandexSDC.isMobile)
                 this.#_mobButUi[1].animationFrame = 1;
         } else {
@@ -783,4 +784,19 @@ export default class GameController {
         this.globalVar.instVars.isHit = false;
         return false;	
     }
+
+    setXYLastPlanform(x,y)
+	{
+		this.#latest_platform = [x,y];
+	}
+
+    nullXYLastPlanform(x,y)
+	{
+		this.#latest_platform = null;
+	}
+
+	getXYLastPlanform()
+	{
+		return this.#latest_platform;
+	}
 }
