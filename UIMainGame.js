@@ -17,7 +17,6 @@ export default class UIMainGame {
         this.#init();
 
         this.#max_fuel = this.#value_fuel = max_fuel;
-        console.log(max_strength);
         this.#max_strength = this.#value_strength = max_strength;
 
     }
