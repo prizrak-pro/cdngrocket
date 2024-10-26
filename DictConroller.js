@@ -18,7 +18,9 @@ export default class DictConroller {
             'successful_mission':"successful mission",
             'mission_failed':"mission failed",
             'max':"max",
-            'total':"total"
+            'total':"total",
+            'begin_gialog':"do you want to start the level from the last platform you landed on?",
+            'begin_but':"begin"
         },
         'ru':{
             'cargo': "Груз",
@@ -34,7 +36,9 @@ export default class DictConroller {
             'successful_mission':"успешная миссия",
             'mission_failed':"миссия провалена",
             'max':"макс",
-            'total':"общий"
+            'total':"общий",
+            'begin_gialog':"хотите начать уровень с последней платформы, на которой вы приземлились?",
+            'begin_but':"начать"
         }
     }
 

@@ -280,16 +280,25 @@ export class UISelectCargo {
 
     authDialog()
     {
-        this.globalRuntime.getInstanceByUid(77).text = this.gameController.dict('authdialog');
+        this.globalRuntime.getInstanceByUid(44).text = this.gameController.dict('authdialog');
 
-        let buttom_element = this.globalRuntime.getInstanceByUid(36);
+        let buttom_element = this.globalRuntime.getInstanceByUid(42);
         buttom_element.setAnimation(this.gameController.Language)
         buttom_element.animationFrame = 6;
 
-        buttom_element = this.globalRuntime.getInstanceByUid(55);
+        buttom_element = this.globalRuntime.getInstanceByUid(43);
         buttom_element.setAnimation(this.gameController.Language)
         buttom_element.animationFrame = 4;
 
+    }
+
+    beginDialog()
+    {
+        this.globalRuntime.getInstanceByUid(77).text = this.gameController.dict('begin_gialog');
+        this.globalRuntime.getInstanceByUid(46).text = this.gameController.dict('begin_but');
+        let buttom_element = this.globalRuntime.getInstanceByUid(36);
+        buttom_element.setAnimation(this.gameController.Language)
+        buttom_element.animationFrame = 6;
     }
 
     #numberWithSpaces(x) {

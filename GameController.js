@@ -273,6 +273,27 @@ export default class GameController {
         }
     }
 
+    async mouseDownBeginDialog(e)
+    {
+        const currentLayer = this.runtime.layout.getLayer(0);
+        const mouseXYAr = currentLayer.cssPxToLayer(e.clientX, e.clientY, 0);
+        const btns = this.runtime.objects.UIMainButton.getAllInstances()
+        for(var i = 0; i < btns.length; i++) {
+            if(btns[i].containsPoint(mouseXYAr[0], mouseXYAr[1])){
+                switch(btns[i].instVars.Type)
+                {
+                    case 1://ok
+                        await this.OpenAuthDialog();
+                        break;
+                    case 2:
+                }
+                this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
+                // this.initPlayerConfig();
+                // this.runtime.goToLayout("SelectLevel")
+            }
+        }
+    }
+
     mouseDownEndLevel(e)
     {
         const currentLayer = this.runtime.layout.getLayer(0);
@@ -296,6 +317,16 @@ export default class GameController {
                         
                 }
             }
+        }
+    }
+
+    openFailedEndLevel()
+    {
+        if(this.getXYLastPlanform())
+        {
+            globalRuntime.goToLayout("UIDialogContinueAdvertising")
+        }else{
+            globalRuntime.goToLayout("EndLevel")
         }
     }
 
