@@ -403,33 +403,33 @@ export default class GameController {
                     },
                     onRewarded: () => {
                         console.log('onRewarded');
-                        this.latest_platform_begin = true;
+                        self.latest_platform_begin = true;
                     },
                     onClose: () => {
                         console.log('onClose');
                         self.runtime.goToLayout("EndLevelRewarded")
                         if(this.latest_platform_begin)
                         {
-                            this.latest_platform_begin = false;
+                            self.latest_platform_begin = false;
                             self.runtime.goToLayout("Level"+self.levelConfig.level)
                         } else {
-                            this.latest_platform_begin = false;
-                            this.nullXYLastPlanform;
-                            this.runtime.goToLayout("EndLevel")
+                            self.latest_platform_begin = false;
+                            self.nullXYLastPlanform;
+                            self.runtime.goToLayout("EndLevel")
                         }
                     }, 
                     onError: (e) => {
                         console.log('onError');
-                        this.latest_platform_begin = false;
-                        this.nullXYLastPlanform;
-                        this.runtime.goToLayout("EndLevel")
+                        self.latest_platform_begin = false;
+                        self.nullXYLastPlanform;
+                        self.runtime.goToLayout("EndLevel")
                     }
                 }
             })
 
         } else {
             this.latest_platform_begin = false;
-            self.runtime.goToLayout("Level"+self.levelConfig.level)
+            this.runtime.goToLayout("Level"+this.levelConfig.level)
         }
     }
 
