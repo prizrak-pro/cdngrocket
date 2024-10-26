@@ -484,7 +484,10 @@ export default class GameController {
         if(run) {
             if(!this.#_engine_shutdown)
                 return;
+
             this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
+            console.log(this.#_shipVisual.behaviors.physics.getVelocityX())
+
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
 			FireMiniRight.setAnimation("1", "beginning");
 			this.fuelConsumptionShuntingEngine();
