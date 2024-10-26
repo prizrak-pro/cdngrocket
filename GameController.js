@@ -455,7 +455,7 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            console.log(this.#_shipVisual.behaviors.physics.getVelocityX())
+            console.log(this.#_shipVisual.behaviors.physics.getVelocityY())
 
 			this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
 
