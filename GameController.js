@@ -15,8 +15,8 @@ export default class GameController {
     #PlayerConfig;
     #Ship;
 
-    #maxSpeedY = 50;
-    #maxSpeedX = 50;
+    #maxSpeedY = 100;
+    #maxSpeedX = 100;
 
     //временные
     #_shipVisual;
