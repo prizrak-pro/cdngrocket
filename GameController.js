@@ -15,6 +15,9 @@ export default class GameController {
     #PlayerConfig;
     #Ship;
 
+    #maxSpeedY = 50;
+    #maxSpeedX = 50;
+
     //временные
     #_shipVisual;
     #_uiMainGame;
@@ -532,7 +535,7 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            if(this.#_shipVisual.behaviors.physics.getVelocityY()>-50)
+            if(this.#_shipVisual.behaviors.physics.getVelocityY()>(this.maxSpeedY*-1))
             {
                 this.#_shipVisual.behaviors.physics.applyForce(0, -1*this.playerConfig.currentShip.powerMain);
                 this.fuelConsumptionMainEngine();
@@ -561,7 +564,7 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            if(this.#_shipVisual.behaviors.physics.getVelocityX()>-50)
+            if(this.#_shipVisual.behaviors.physics.getVelocityX()>(this.maxSpeedX*-1))
             {
                 this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
                 this.fuelConsumptionShuntingEngine();
@@ -589,7 +592,7 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            if(this.#_shipVisual.behaviors.physics.getVelocityX()<50)
+            if(this.#_shipVisual.behaviors.physics.getVelocityX()<this.maxSpeedX)
             {
                 this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting, 0);
                 this.fuelConsumptionShuntingEngine();
