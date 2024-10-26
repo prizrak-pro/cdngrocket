@@ -461,7 +461,6 @@ export default class GameController {
                 this.fuelConsumptionMainEngine();
             }
                 
-
 			this.#_shipVisual.behaviors.physics.isImmovable=false;
 			const Fire = this.runtime.objects.Fire.getFirstInstance();
 			Fire.setAnimation("1", "beginning");
@@ -485,14 +484,16 @@ export default class GameController {
             if(!this.#_engine_shutdown)
                 return;
 
-            this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
-            console.log(this.#_shipVisual.behaviors.physics.getVelocityX())
+            if(this.#_shipVisual.behaviors.physics.getVelocityX()>-50)
+            {
+                this.#_shipVisual.behaviors.physics.applyForce(-1*this.playerConfig.currentShip.powerShunting, 0);
+                this.fuelConsumptionShuntingEngine();
+            }
 
 			const FireMiniRight = this.runtime.objects.FireMiniRight.getFirstInstance();
 			FireMiniRight.setAnimation("1", "beginning");
-			this.fuelConsumptionShuntingEngine();
             this.globalVar.instVars.powerShuntingR1 = (this.globalVar.instVars.powerShuntingR1==0)?2:this.globalVar.instVars.powerShuntingR1;
-
+            
             if(this.yandexSDC.isMobile)
                 this.#_mobButUi[1].animationFrame = 1;
         } else {
@@ -510,10 +511,15 @@ export default class GameController {
         if(run) {
             if(!this.#_engine_shutdown)
                 return;
-            this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting, 0);
+
+            if(this.#_shipVisual.behaviors.physics.getVelocityX()<50)
+            {
+                this.#_shipVisual.behaviors.physics.applyForce(this.playerConfig.currentShip.powerShunting, 0);
+                this.fuelConsumptionShuntingEngine();
+            }
+
 			const FireMiniLeft = this.runtime.objects.FireMiniLeft.getFirstInstance();
-			FireMiniLeft.setAnimation("1", "beginning");
-			this.fuelConsumptionShuntingEngine();
+			FireMiniLeft.setAnimation("1", "beginning");	
             this.globalVar.instVars.powerShuntingL1 = (this.globalVar.instVars.powerShuntingL1==0)?2:this.globalVar.instVars.powerShuntingL1;
 
             if(this.yandexSDC.isMobile)
