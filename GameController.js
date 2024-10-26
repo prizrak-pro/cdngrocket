@@ -22,6 +22,7 @@ export default class GameController {
     #_mobButUi = [null, null, null];
     #_engine_shutdown = true;
     #latest_platform = null;
+    #latest_platform_begin = false;
 
     constructor(LevelConfig, GameConfig, DictConroller, PlayerConfig, Ship, Functions, UISelectCargo) {
         this.#LevelConfig = LevelConfig;
@@ -283,9 +284,12 @@ export default class GameController {
                 switch(btns[i].instVars.Type)
                 {
                     case 1://ok
-                        await this.OpenAuthDialog();
+                        await this.RewardedVideoAdvBegin();
                         break;
                     case 2:
+                        this.nullXYLastPlanform();
+                        this.runtime.goToLayout("EndLevel")
+                        break;
                 }
                 this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
                 // this.initPlayerConfig();
@@ -385,6 +389,47 @@ export default class GameController {
         } else {
             this.levelConfig.increase3Total()
             this.runtime.goToLayout("EndLevelRewarded")
+        }
+    }
+
+    async RewardedVideoAdvBegin()
+    {
+        if(this.yandexSDC.isActivation){
+            let self = this;
+            await window.ysdk.adv.showRewardedVideo({
+                callbacks: {
+                    onOpen: () => {
+                        console.log('onOpen');
+                    },
+                    onRewarded: () => {
+                        console.log('onRewarded');
+                        this.latest_platform_begin = true;
+                    },
+                    onClose: () => {
+                        console.log('onClose');
+                        self.runtime.goToLayout("EndLevelRewarded")
+                        if(this.latest_platform_begin)
+                        {
+                            this.latest_platform_begin = false;
+                            self.runtime.goToLayout("Level"+self.levelConfig.level)
+                        } else {
+                            this.latest_platform_begin = false;
+                            this.nullXYLastPlanform;
+                            this.runtime.goToLayout("EndLevel")
+                        }
+                    }, 
+                    onError: (e) => {
+                        console.log('onError');
+                        this.latest_platform_begin = false;
+                        this.nullXYLastPlanform;
+                        this.runtime.goToLayout("EndLevel")
+                    }
+                }
+            })
+
+        } else {
+            this.latest_platform_begin = false;
+            self.runtime.goToLayout("Level"+self.levelConfig.level)
         }
     }
 
