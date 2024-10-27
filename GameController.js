@@ -294,7 +294,7 @@ export default class GameController {
                         this.runtime.goToLayout("EndLevel")
                         break;
                 }
-                this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
+                //this.initPlayerConfig().finally(() => this.runtime.goToLayout("SelectLevel"))
                 // this.initPlayerConfig();
                 // this.runtime.goToLayout("SelectLevel")
             }
