@@ -206,7 +206,7 @@ export class UISelectCargo {
                     element.text =  self.gameController.dict('fuel') + ": " + self.#numberWithSpaces(self.gameController.ship.maxFuel);
                     break;
                 case 313:
-                    element.text =  self.gameController.dict('shunting') + ": " + self.#numberWithSpaces(self.gameController.ship.currentShuntingEngine());
+                    element.text =  self.gameController.dict('shunting') + ": " + self.#numberWithSpaces(self.gameController.ship.currentShuntingEngine);
                     break;
                 case 316:
                     element.text =  self.gameController.dict('strength') + ": " + self.#numberWithSpaces(self.gameController.ship.maxStrength);

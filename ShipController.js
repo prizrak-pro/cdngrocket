@@ -12,8 +12,8 @@ export default class Ship {
 	#_massCargo=0;
 
 	#_levelShuntingEngine = 0;
-	//#_coefShuntingEngine = [1.4, 1.6, 1.8, 2, 2.4, 2.6];
-	#_coefShuntingEngine = [6.6, 6.2, 5.8, 5.4, 5, 4.6];
+	//#_coefShuntingEngine = [6.6, 6.2, 5.8, 5.4, 5, 4.6];
+	#_coefShuntingEngine = [4.6, 5, 5.4, 5.8, 6.2, 6.6];
 	#_priceLevelShuntingEngine=[600, 6000, 18000, 32000, 48000];
 
 	#_levelFuel = 0;
@@ -51,7 +51,7 @@ export default class Ship {
 	}
 	
 	calcPowerShunting(){
-		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_maxFuel[this.#_levelFuel]/100)/100*this.#_coefShuntingPower*this.#_coefShuntingEngine[this.#_levelShuntingEngine] );
+		return Math.round( (this.#_massShip[this.#_levelStrength]+this.#_maxMass[this.#_levelShip]+this.#_maxFuel[this.#_levelFuel]/100)/100*this.#_coefShuntingPower*this.#_coefShuntingEngine[this.levelShuntingEngine] );
 	}
 	
 	get powerMain(){
@@ -75,7 +75,7 @@ export default class Ship {
 	}
 
 	get fuel(){
-		return  Math.round(this.#_fuel);
+		return Math.round(this.#_fuel);
 	}
 	
 	get maxFuel(){
@@ -145,23 +145,24 @@ export default class Ship {
 		return this.#_priceLevelShip[this.#_levelShip];
 	}
 
-	currentShuntingEngine()
+	get currentShuntingEngine()
 	{	
-		return this.#_coefShuntingEngine[this.#_levelShuntingEngine];
+		return this.#_coefShuntingEngine[this.levelShuntingEngine];
 	}
 	get nextShuntingEngine()
 	{
-		if (this.#_levelShuntingEngine == 5)
+		if (this.levelShuntingEngine == 5)
 			return 0;
-		return this.#_coefShuntingEngine[this.#_levelShuntingEngine+1];
+		return this.#_coefShuntingEngine[this.levelShuntingEngine+1];
 	}
 	get levelShuntingEngine()
 	{
-		return this.#_levelShuntingEngine;
+		let level = 5-(this.#_levelShip-this.#_levelShuntingEngine);
+		return (level>5)?5:level;
 	}
 	get priceUpdateShuntingEngine()
 	{
-		if (this.#_levelShuntingEngine == 5)
+		if (this.levelShuntingEngine == 5)
 			return 0;
 		return this.#_priceLevelShuntingEngine[this.#_levelShuntingEngine];
 	}
