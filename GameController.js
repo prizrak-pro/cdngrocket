@@ -513,6 +513,7 @@ export default class GameController {
     {
         this.playerConfig.currentShip.fullFuelUp();
         this.playerConfig.currentShip.repairFull();
+        this.playerConfig.currentShip = this.levelConfig.getMassCargo();
         
     }
 
