@@ -261,11 +261,11 @@ export class LevelConfig {
 
 	getMoneyCargo()
 	{
-		return GameConfig.cargoLevel[this.level][this.numberMassCargo][0];
+		return GameConfig.cargoLevel[this.level][this.numberMassCargo][1];
 	}
 
 	getMassCargo()
 	{
-		return GameConfig.cargoLevel[this.level][this.numberMassCargo][1];
+		return GameConfig.cargoLevel[this.level][this.numberMassCargo][0];
 	}
 }
