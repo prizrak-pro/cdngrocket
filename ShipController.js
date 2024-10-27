@@ -13,11 +13,11 @@ export default class Ship {
 
 	#_levelShuntingEngine = 0;
 	//#_coefShuntingEngine = [1.4, 1.6, 1.8, 2, 2.4, 2.6];
-	#_coefShuntingEngine = [6.6, 3.7, 3.8, 3.9, 4, 4.1];
+	#_coefShuntingEngine = [6.6, 6.2, 5.8, 5.4, 5, 4.6];
 	#_priceLevelShuntingEngine=[600, 6000, 18000, 32000, 48000];
 
 	#_levelFuel = 0;
-	#_maxFuel = [1500, 4000, 6000, 8000, 10000, 12000];
+	#_maxFuel = [2000, 4000, 6000, 8000, 10000, 12000];
 	#_priceLevelFuel=[500, 5000, 16000, 60000, 46000];
 	#_fuel = 0;
 
