@@ -486,7 +486,9 @@ export default class GameController {
     {
         this.#_shipVisual.instVars.PowerMainEngine = this.playerConfig.currentShip.powerMain;
         this.#_shipVisual.instVars.PowerShuntingEngine = this.playerConfig.currentShip.powerShunting;
+        this.playerConfig.currentShip.fullFuelUp();
         this.playerConfig.currentShip.repairFull();
+        //this.playerConfig.currentShip = this.levelConfig.getMassCargo();
         this.#_powerState = [false, false, false];
         this.massCalculation();
     }
@@ -507,14 +509,6 @@ export default class GameController {
     {
         this.playerConfig.currentShip.fuelConsumptionShuntingEngine();
         this.massCalculation();
-    }
-
-    initLoadShip()
-    {
-        this.playerConfig.currentShip.fullFuelUp();
-        this.playerConfig.currentShip.repairFull();
-        this.playerConfig.currentShip = this.levelConfig.getMassCargo();
-        
     }
 
     //двигатель
