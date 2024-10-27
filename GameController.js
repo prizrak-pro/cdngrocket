@@ -410,7 +410,6 @@ export default class GameController {
                     },
                     onClose: () => {
                         console.log('onClose');
-                        self.runtime.goToLayout("EndLevelRewarded")
                         if(self.latest_platform_begin)
                         {
                             self.latest_platform_begin = false;
