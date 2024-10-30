@@ -42,13 +42,13 @@ export default class ObjectDinamicController {
     {
         switch(level)
         {
-            case 2:
-                this.startElements(level);
-                break;
             case 3:
                 this.startElements(level);
                 break;
             case 4:
+                this.startElements(level);
+                break;
+            case 5:
                 this.startElements(level);
                 break;
                 //let inst = this.#runtime.getInstanceByUid(35)
