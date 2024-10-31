@@ -886,11 +886,11 @@ export default class GameController {
         {
             case 2:
                 this.ship.fullFuelUp();
-                this.setXYLastPlanform(shipPlayer.x,shipPlayer.y)
+                this.setXYLastPlanform(this.#_shipVisual.x,this.#_shipVisual.y)
                 break;
             case 3:
                 this.ship.repairFull();
-                this.setXYLastPlanform(shipPlayer.x,shipPlayer.y)
+                this.setXYLastPlanform(this.#_shipVisual.x,this.#_shipVisual.y)
                 break;
             case 5:
                 this.levelConfig.levelStatus = "end_success"; 
