@@ -28,9 +28,9 @@ export default class ObjectDinamicController {
     }
 
     #level_element = {
-        3:[61,68,69,70],
-        4:[89,90,91,92],
-        5:[110,109,108,107,129,130,131,132]
+        4:[61,68,69,70],
+        5:[89,90,91,92],
+        6:[110,109,108,107,129,130,131,132]
     }
 
 
@@ -42,13 +42,13 @@ export default class ObjectDinamicController {
     {
         switch(level)
         {
-            case 3:
-                this.startElements(level);
-                break;
             case 4:
                 this.startElements(level);
                 break;
             case 5:
+                this.startElements(level);
+                break;
+            case 6:
                 this.startElements(level);
                 break;
                 //let inst = this.#runtime.getInstanceByUid(35)
