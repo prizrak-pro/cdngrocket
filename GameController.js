@@ -882,7 +882,6 @@ export default class GameController {
 
     platform(type=0)
     {
-        self = this;
         switch(type)
         {
             case 2:
@@ -894,10 +893,8 @@ export default class GameController {
                 this.setXYLastPlanform(shipPlayer.x,shipPlayer.y)
                 break;
             case 5:
-                console.log(self.levelConfig);
-                console.log(self.levelConfig.levelStatus);
-                self.levelConfig.levelStatus = "end_success"; 
-                self.runtime.goToLayout("EndLevel")
+                this.levelConfig.levelStatus = "end_success"; 
+                this.runtime.goToLayout("EndLevel")
                 break;
         }
         
