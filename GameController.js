@@ -879,4 +879,33 @@ export default class GameController {
 	{
 		return this.#latest_platform;
 	}
+
+    platform(type=0)
+    {
+        switch(type)
+        {
+            case 2:
+                this.ship.fullFuelUp();
+                this.setXYLastPlanform(shipPlayer.x,shipPlayer.y)
+                break;
+            case 3:
+                this.ship.repairFull();
+                this.setXYLastPlanform(shipPlayer.x,shipPlayer.y)
+                break;
+            case 5:
+                this.levelConfig.levelStatus = "end_success"; 
+                this.runtime.goToLayout("EndLevel")
+                break;
+        }
+        
+        this.actionEngineShutdown(1);
+        const LandingFireLeft = this.runtime.objects.LandingFireLeft.getFirstInstance();
+        LandingFireLeft.setAnimation("default", "beginning");
+        const LandingFireRight = this.runtime.objects.LandingFireRight.getFirstInstance();
+        LandingFireRight.setAnimation("default", "beginning");
+
+        
+        this.#_uiMainGame.setFuel(this.ship.fuel);
+        this.#_uiMainGame.setStrength(this.ship.strength);
+    }
 }
